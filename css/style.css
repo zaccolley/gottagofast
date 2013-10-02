@@ -64,10 +64,11 @@ header, #logo, nav li a{ height: 70px; }
 
 #logo::before,
 #logo::after{
-	content: '';
+	content: '+';
 	display: inline-block;
 	width: 45px;
 	height: 45px;
+	color: transparent;
 	background: bottom center no-repeat;
 	background-size: 100%;
 	-webkit-transition: all .5s;
