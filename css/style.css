@@ -1,0 +1,61 @@
+/*
+red: #AF4120
+green: #939740
+blue: #4C79BA
+yellow: #F2A216
+*/
+
+*{
+	margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	   		box-sizing: border-box;
+}
+
+body{ font-family: Helvetica, Arial, sans-serif; }
+
+header{
+	overflow: hidden;
+	background: #F0F0F0;
+}
+
+header, #logo, nav li a{ height: 64px; }
+
+#logo, nav, nav li{ float: left; }
+
+#logo{
+	padding: 20px;
+	width: 20%;
+	text-indent: -54321px;
+	background: url('../img/logo.svg') no-repeat center;
+	background-origin: content-box;
+	background-size: 100%;
+}
+
+nav{
+	padding-left: 10%;
+	width: 80%;
+}
+
+nav li{
+	text-align: center;
+	text-transform: uppercase;
+	width: 25%;
+	border-left: 1px solid #DDD;
+	list-style: none;
+}
+
+nav li a{
+	color: rgba(50,50,50,.5);
+	padding: 20px 0;
+	text-decoration: none;
+	display: block;
+}
+
+nav li a:hover{ color: rgba(50,50,50,.75); }
+
+nav li:nth-child(1) a:hover{ color: #AF4120; }
+nav li:nth-child(2) a:hover{ color: #939740; }
+nav li:nth-child(3) a:hover{ color: #4C79BA; }
+
+nav #signup-button{ color: #939740; }
