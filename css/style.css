@@ -1,9 +1,11 @@
 /*
-red: #AF4120
-green: #939740
-blue: #4C79BA
-yellow: #F2A216
+	red: #AF4120
+	green: #939740
+	blue: #4C79BA
+	yellow: #F2A216
 */
+
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
 
 *{
 	margin: 0; padding: 0;
@@ -24,17 +26,53 @@ header, #logo, nav li a{ height: 64px; }
 #logo, nav, nav li{ float: left; }
 
 #logo{
+	width: 25%;
+
+	/*	
 	padding: 20px;
-	width: 20%;
 	text-indent: -54321px;
 	background: url('../img/logo.svg') no-repeat center;
 	background-origin: content-box;
 	background-size: 100%;
+	*/
+
+	padding: 5px 20px;
+	font-size: 42px;
+	line-height: 45px;
+	font-weight: 500;
+	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
+	color: #181818;
+	-webkit-transition: letter-spacing .25s, color .1s;
+}
+
+#logo::before,
+#logo::after{
+	content: '';
+	display: inline-block;
+	width: 45px;
+	height: 45px;
+	background: bottom center no-repeat;
+	background-size: 100%;
+	-webkit-transition: all 1s;
+}
+
+#logo::before{ background-image: url('../img/logo-cross.svg'); }
+#logo::after{ background-image: url('../img/logo-buttons.svg'); }
+
+#logo:hover{
+	letter-spacing: -.75em;
+	color: transparent;
+}
+
+#logo:hover::before,
+#logo:hover::after {	
+	-webkit-transform: rotateZ(180deg);
+	-webkit-transform-origin: 50% 50%;
 }
 
 nav{
 	padding-left: 10%;
-	width: 80%;
+	width: 75%;
 }
 
 nav li{
