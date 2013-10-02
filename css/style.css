@@ -5,7 +5,7 @@
 	yellow: #F2A216
 */
 
-@import url(http://fonts.googleapis.com/css?family=Fredoka+One);
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,800,300,600|Open+Sans+Condensed:300,300italic,700);
 
 *{
 	margin: 0; padding: 0;
@@ -14,7 +14,7 @@
 	   		box-sizing: border-box;
 }
 
-body{ font-family: Helvetica, Arial, sans-serif; }
+body{ font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
 
 header{
 	overflow: hidden;
@@ -37,8 +37,9 @@ header, #logo, nav li a{ height: 70px; }
 	*/
 
 	padding: 10px 20px;
-	font-size: 35px;
-	line-height: 35px;
+	font-size: 45px;
+	font-weight: 500;
+	line-height: 45px;
 	font-weight: 500;
 	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
 	color: #181818;
@@ -49,8 +50,8 @@ header, #logo, nav li a{ height: 70px; }
 #logo::after{
 	content: '';
 	display: inline-block;
-	width: 35px;
-	height: 35px;
+	width: 45px;
+	height: 45px;
 	background: bottom center no-repeat;
 	background-size: 100%;
 	-webkit-transition: all .5s;
@@ -76,7 +77,9 @@ nav{
 nav li{
 	text-align: center;
 	text-transform: uppercase;
-	font-style: italic;
+	font-weight: 500;
+	font-size: 20px;
+	font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 	width: 25%;
 	list-style: none;
 }
