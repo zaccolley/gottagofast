@@ -60,7 +60,7 @@ header, #logo, nav li a{ height: 70px; }
 	text-align: center;
 	color: #181818;
 	white-space: nowrap;
-	-webkit-transition: letter-spacing .5s, color .15s;
+	-webkit-transition: letter-spacing .5s .25s, color .15s .25s;
 }
 
 #logo::before,
@@ -131,10 +131,7 @@ nav #signup-button{ color: #939740; }
 
 	header{ height: auto; }
 	
-	#logo{
-		background: rgba(50,50,50,.01);
-		text-align: center;
-	}
+	#logo{ background: rgba(50,50,50,.01);	}
 	
 	#logo, nav{
 		width: 100%;
