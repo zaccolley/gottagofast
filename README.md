@@ -1,5 +1,4 @@
-gottagofast
-===========
+### gottagofast
 
 Unviersity of Portsmouth Gaming Society's website
 
