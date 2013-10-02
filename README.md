@@ -1,4 +1,6 @@
 gottagofast
 ===========
 
-upgs' website, as part of the webf2 unit
+Unviersity of Portsmouth Gaming Society's website
+
+Initial development as part of the WEBF2 unit on the Web Technologies course.
