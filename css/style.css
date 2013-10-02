@@ -1,4 +1,5 @@
 /*
+	cross: #323232
 	red: #AF4120
 	green: #939740
 	blue: #4C79BA
@@ -14,28 +15,37 @@
 	   		box-sizing: border-box;
 }
 
-body{ font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
+body{
+	background: #323232;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.wrap{
+	width: 80%;
+	margin: 0 auto;
+}
 
 header{
 	overflow: hidden;
 	background: #F0F0F0;
+	box-shadow: 0 5px 0 rgba(255,255,255,.15);
 }
 
 header, #logo, nav li a{ height: 70px; }
 
 #logo, nav, nav li{ float: left; }
 
-#logo{
-	width: 25%;
-
-	/*	
+/*#logo{
+	width: 35%;
 	padding: 20px;
 	text-indent: -54321px;
-	background: url('../img/logo.svg') no-repeat center;
+	background: url('../img/logo.svg') no-repeat center left;
 	background-origin: content-box;
-	background-size: 100%;
-	*/
+	background-size: 70%;
+}*/
 
+#logo{
+	width: 35%;
 	padding: 10px 20px;
 	font-size: 45px;
 	font-weight: 500;
@@ -43,6 +53,7 @@ header, #logo, nav li a{ height: 70px; }
 	font-weight: 500;
 	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
 	color: #181818;
+	white-space: nowrap;
 	-webkit-transition: letter-spacing .5s, color .15s;
 }
 
@@ -70,8 +81,8 @@ header, #logo, nav li a{ height: 70px; }
 #logo:hover::after{	-webkit-transform: rotateZ(-180deg); }
 
 nav{
-	padding-left: 10%;
-	width: 75%;
+	width: 65%;
+	padding-left: 5%;
 }
 
 nav li{
@@ -93,9 +104,8 @@ nav li a{
 }
 
 nav li a:hover{
-	border-bottom: 1px solid;
+	border-top: 5px solid;
 	color: rgba(50,50,50,.75);
-	padding: 25px 0 15px;
 }
 
 nav li:nth-child(1) a:hover{ color: #F2A216 }
@@ -103,3 +113,22 @@ nav li:nth-child(2) a:hover{ color: #AF4120; }
 nav li:nth-child(3) a:hover{ color: #4C79BA; }
 
 nav #signup-button{ color: #939740; }
+
+
+@media all and (max-width: 1000px){
+	.wrap{ width: 100%; }
+}
+
+@media all and (max-width: 700px){
+
+	header{ height: auto; }
+	
+	#logo{ text-align: center;	}
+	
+	#logo, nav{
+		width: 100%;
+	}
+
+	nav{ padding: 0; }
+
+}
