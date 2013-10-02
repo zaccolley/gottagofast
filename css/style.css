@@ -57,6 +57,7 @@ header, #logo, nav li a{ height: 70px; }
 	line-height: 45px;
 	font-weight: 500;
 	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
+	text-align: center;
 	color: #181818;
 	white-space: nowrap;
 	-webkit-transition: letter-spacing .5s, color .15s;
@@ -94,7 +95,7 @@ nav{
 nav li{
 	text-align: center;
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 20px;
 	font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 	width: 25%;
