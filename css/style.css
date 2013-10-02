@@ -21,7 +21,7 @@ header{
 	background: #F0F0F0;
 }
 
-header, #logo, nav li a{ height: 64px; }
+header, #logo, nav li a{ height: 70px; }
 
 #logo, nav, nav li{ float: left; }
 
@@ -36,24 +36,25 @@ header, #logo, nav li a{ height: 64px; }
 	background-size: 100%;
 	*/
 
-	padding: 5px 20px;
-	font-size: 42px;
-	line-height: 45px;
+	padding: 10px 20px;
+	font-size: 35px;
+	line-height: 35px;
 	font-weight: 500;
 	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
 	color: #181818;
-	-webkit-transition: letter-spacing .25s, color .1s;
+	-webkit-transition: letter-spacing .5s, color .15s;
 }
 
 #logo::before,
 #logo::after{
 	content: '';
 	display: inline-block;
-	width: 45px;
-	height: 45px;
+	width: 35px;
+	height: 35px;
 	background: bottom center no-repeat;
 	background-size: 100%;
-	-webkit-transition: all 1s;
+	-webkit-transition: all .5s;
+	-webkit-transform-origin: 50% 50%;
 }
 
 #logo::before{ background-image: url('../img/logo-cross.svg'); }
@@ -64,11 +65,8 @@ header, #logo, nav li a{ height: 64px; }
 	color: transparent;
 }
 
-#logo:hover::before,
-#logo:hover::after {	
-	-webkit-transform: rotateZ(180deg);
-	-webkit-transform-origin: 50% 50%;
-}
+#logo:hover::before{ -webkit-transform: rotateZ(180deg); }
+#logo:hover::after{	-webkit-transform: rotateZ(-180deg); }
 
 nav{
 	padding-left: 10%;
@@ -78,8 +76,8 @@ nav{
 nav li{
 	text-align: center;
 	text-transform: uppercase;
+	font-style: italic;
 	width: 25%;
-	border-left: 1px solid #DDD;
 	list-style: none;
 }
 
@@ -88,12 +86,17 @@ nav li a{
 	padding: 20px 0;
 	text-decoration: none;
 	display: block;
+	-webkit-transition: padding .1s, border .1s, color .1s;
 }
 
-nav li a:hover{ color: rgba(50,50,50,.75); }
+nav li a:hover{
+	border-bottom: 1px solid;
+	color: rgba(50,50,50,.75);
+	padding: 25px 0 15px;
+}
 
-nav li:nth-child(1) a:hover{ color: #AF4120; }
-nav li:nth-child(2) a:hover{ color: #939740; }
+nav li:nth-child(1) a:hover{ color: #F2A216 }
+nav li:nth-child(2) a:hover{ color: #AF4120; }
 nav li:nth-child(3) a:hover{ color: #4C79BA; }
 
 nav #signup-button{ color: #939740; }
