@@ -17,7 +17,6 @@
 }
 
 body{
-	background: #323232;
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
@@ -29,7 +28,6 @@ body{
 header{
 	overflow: hidden;
 	background: #F0F0F0;
-	box-shadow: 0 5px 0 rgba(240,240,240,.15);
 }
 
 header, .logo, nav li a{ height: 70px; }
@@ -125,9 +123,19 @@ nav li:nth-child(3) a:hover{ color: #4C79BA; }
 nav #signup-button{ color: #939740; }
 
 section{
-	background-color: whiteSmoke;
+	background: #323232;
 	overflow: hidden;
-	margin: 25px 0;;
+	margin: 50px 0;
+	padding: .5em 0;
+}
+
+section h2{
+	color: #f5f5f5;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 1.5em;
+	padding: .5em 0;
+	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
 }
 
 .games-section{
@@ -136,14 +144,24 @@ section{
 
 .games-section .game{
 	float: left;
-	width: 20%;
-	padding: 0 10px;
+	width: 14.5%;
+	margin-right: 2.6%;
 	list-style: none;
+}
+
+.games-section .game:last-child{
+	margin-right: 0;
+}
+
+.games-section .game p{
+	color: #f5f5f5;
+	padding: 1em 0;
 	text-align: center;
 }
+
 .boxart{
-	margin: 0 auto;
 	display: block;
+	width: 100%;
 }
 
 
