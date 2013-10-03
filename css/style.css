@@ -22,7 +22,7 @@ body{
 }
 
 .wrap{
-	width: 80%;
+	width: 75%;
 	margin: 0 auto;
 }
 
@@ -57,7 +57,6 @@ header, .logo, nav li a{ height: 70px; }
 	line-height: 45px;
 	font-weight: 500;
 	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
-	text-align: center;
 	color: #181818;
 	white-space: nowrap;
 	-webkit-transition: letter-spacing .5s .25s, color .15s .25s;
@@ -125,12 +124,37 @@ nav li:nth-child(3) a:hover{ color: #4C79BA; }
 
 nav #signup-button{ color: #939740; }
 
+section{
+	background-color: whiteSmoke;
+	overflow: hidden;
+	margin: 25px 0;;
+}
+
+.games-section{
+
+}
+
+.games-section .game{
+	float: left;
+	width: 20%;
+	padding: 0 10px;
+	list-style: none;
+	text-align: center;
+}
+.boxart{
+	margin: 0 auto;
+	display: block;
+}
+
 
 @media all and (max-width: 1000px){
-	.wrap{ width: 100%; }
+	.wrap{ width: 85%; }
+	
 }
 
 @media all and (max-width: 700px){
+
+	.wrap{ width: 100%; }
 
 	header{ height: auto; }
 	
