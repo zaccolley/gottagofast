@@ -29,7 +29,6 @@ body{
 header{
 	overflow: hidden;
 	background: #F0F0F0;
-	box-shadow: 0 5px 0 rgba(240,240,240,.15);
 }
 
 header, .logo, nav li a{ height: 70px; }
@@ -73,7 +72,7 @@ header, .logo, nav li a{ height: 70px; }
 	background: bottom center no-repeat;
 	background-size: 100%;
 	-webkit-transition: all .5s;
-	-webkit-transform-origin: 50%; /* ensures they spin from the center */
+	-webkit-transform-origin: 50%;  /* ensures they spin from the center */
 }
 
 .logo::before{ background-image: url('../img/logo-cross.svg'); }
@@ -89,6 +88,9 @@ header, .logo, nav li a{ height: 70px; }
 .logo:hover::before{ -webkit-transform: rotateZ(180deg); }
 .logo-animation::after,
 .logo:hover::after{	-webkit-transform: rotateZ(-180deg); }
+
+.logo:active::before{ -webkit-transform: rotateZ(360deg); }
+.logo:active::after{ -webkit-transform: rotateZ(-360deg); }
 
 nav{
 	width: 65%;
