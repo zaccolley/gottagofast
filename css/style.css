@@ -107,8 +107,8 @@ nav li{
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 600;
-	font-size: 20px;
-	font-family: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	font-family: 'Fredoka One', Helvetica, Arial, sans-serif;
 	width: 25%;
 	list-style: none;
 }
