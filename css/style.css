@@ -78,11 +78,11 @@ header a{ color: #181818; }
 .logo::after{
 	content: '+';
 	display: inline-block;
-	width: 45px;
+	width: 43px;
 	height: 45px;
 	color: transparent;
-	background: bottom center no-repeat;
-	background-size: 100%;
+	background: url('../img/logo.svg') no-repeat;
+	background-size: cover;
 
 	-webkit-transition: all .5s;
 			transition: all .5s;
@@ -91,8 +91,8 @@ header a{ color: #181818; }
 			transform-origin: 50%;
 }
 
-.logo::before{ background-image: url('../img/logo-cross.svg'); }
-.logo::after{ background-image: url('../img/logo-buttons.svg'); }
+.logo::before{ background-position: left; }
+.logo::after{ background-position: right; }
 
 .logo-animation,
 .logo:hover{
