@@ -8,6 +8,7 @@
 		$('li.game').each(function(){
 			$(this).addClass('game-unselected');
 		})
+		$(this).addClass('game-selected');
 		$(this).removeClass('game-unselected');
 	});
 
