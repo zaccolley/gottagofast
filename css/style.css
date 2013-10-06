@@ -171,7 +171,7 @@ section h2{
 
 .info-section .social li{
 	float: left;
-	width: 25%;
+	width: 33.33%;
 	padding: 0 2.5%;
 	list-style: none;
 }
@@ -240,12 +240,12 @@ section h2{
 
 .games-section .game:hover{ cursor: pointer; }
 
-.games-section .game img{
+.games-section .game .boxart{
 	width: 100%;
 	border-radius: 5px;
 }
 
-.games-section .game:hover img{ opacity: .75; }
+.games-section .game:hover .boxart{ opacity: .75; }
 
 .game-selected:hover{ opacity: 1; cursor: default; }
 
