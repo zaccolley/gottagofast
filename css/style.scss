@@ -192,9 +192,16 @@ section h2{
 
 .info-section .social li a{
 	height: 50px;
-	background: red;
 	display: block;
+	color: $white;
+	text-align: center;
+	padding: .25em 0;
+	border-radius: 2px;
 }
+
+.social .facebook{ background: #3B5998; }
+.social .twitter{ background: #4099FF; }
+.social .steam{ background: black; }
 
 .info-section .desc p{
 	padding-bottom: .25em;
@@ -256,7 +263,7 @@ section h2{
 
 .games-section .game .boxart{
 	width: 100%;
-	border-radius: 5px;
+	border-radius: 2px;
 }
 
 .games-section .game:hover .boxart{ opacity: .75; }
