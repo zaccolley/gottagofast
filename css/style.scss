@@ -247,15 +247,41 @@ section h2{
 .info-section .social li a{
 	height: 50px;
 	display: block;
-	color: $white;
+	text-indent: -5432px;
 	text-align: center;
 	padding: .25em 0;
 	border-radius: 2px;
+	background: center no-repeat;
+	background-size: 50%;
+	transition: opacity .15s;
 }
 
-.social .facebook{ background: #3B5998; }
-.social .twitter{ background: #4099FF; }
-.social .steam{ background: black; }
+.info-section .social li .facebook{
+	background-image: url('../img/facebook.svg');
+	background-color: #3B5998;
+}
+
+.info-section .social li .facebook:hover{
+	background-color: lighten(#3B5998, 5%);
+}
+
+.info-section .social li .twitter{
+	background-image: url('../img/twitter.svg');
+	background-color: #4099FF;
+}
+
+.info-section .social li .twitter:hover{
+	background-color: lighten(#4099FF, 5%);
+}
+
+.info-section .social li .steam{
+	background-image: url('../img/steam.svg');
+	background-color: lighten($black, 5%);;
+}
+
+.info-section .social li .steam:hover{
+	background-color: lighten($black, 7%);
+}
 
 .info-section .desc p{
 	padding-bottom: .25em;
@@ -289,12 +315,12 @@ section h2{
 	font-size: 1.5em;
 	color: $white;
 	border-radius: 2px;
-	transition: opacity .1s;
+	transition: background .1s;
 }
 
 .join button:hover{
+	background: lighten(saturate($green, 10%), 5%);
 	cursor: pointer;
-	opacity: .8;
 }
 
 .info-section,

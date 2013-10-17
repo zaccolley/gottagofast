@@ -226,19 +226,34 @@ section h2 {
 .info-section .social li a {
   height: 50px;
   display: block;
-  color: #f4f4f4;
+  text-indent: -5432px;
   text-align: center;
   padding: .25em 0;
-  border-radius: 2px; }
+  border-radius: 2px;
+  background: center no-repeat;
+  background-size: 50%;
+  transition: opacity .15s; }
 
-.social .facebook {
-  background: #3B5998; }
+.info-section .social li .facebook {
+  background-image: url("../img/facebook.svg");
+  background-color: #3B5998; }
 
-.social .twitter {
-  background: #4099FF; }
+.info-section .social li .facebook:hover {
+  background-color: #4264aa; }
 
-.social .steam {
-  background: black; }
+.info-section .social li .twitter {
+  background-image: url("../img/twitter.svg");
+  background-color: #4099FF; }
+
+.info-section .social li .twitter:hover {
+  background-color: #5aa7ff; }
+
+.info-section .social li .steam {
+  background-image: url("../img/steam.svg");
+  background-color: #252525; }
+
+.info-section .social li .steam:hover {
+  background-color: #2a2a2a; }
 
 .info-section .desc p {
   padding-bottom: .25em; }
@@ -268,11 +283,11 @@ section h2 {
   font-size: 1.5em;
   color: #f4f4f4;
   border-radius: 2px;
-  transition: opacity .1s; }
+  transition: background .1s; }
 
 .join button:hover {
-  cursor: pointer;
-  opacity: .8; }
+  background: #afb53c;
+  cursor: pointer; }
 
 .info-section,
 .games-section {
