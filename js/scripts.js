@@ -13,11 +13,15 @@
 		$(this).removeClass('game-unselected');
 	});
 
-	$('.log-in').click(function(){
-
+	$('.log-in a').click(function(){
 		$('.log-in').toggleClass('move');
-
 	});
 
+	$('.log-in button[type="reset"]').click(function(){
+		$('.log-in').toggleClass('move');
+	});
+
+	// replace text with X
+	$('.cancel').text('X');
 
 })()
