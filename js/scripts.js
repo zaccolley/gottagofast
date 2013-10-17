@@ -1,4 +1,5 @@
 (function(){
+
 	setTimeout(function(){
 		$('.logo').removeClass('logo-animation');
 	}, 250);
@@ -11,5 +12,12 @@
 		$(this).addClass('game-selected');
 		$(this).removeClass('game-unselected');
 	});
+
+	$('.log-in').click(function(){
+
+		$('.log-in').toggleClass('move');
+
+	});
+
 
 })()
