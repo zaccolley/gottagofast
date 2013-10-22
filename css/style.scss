@@ -11,13 +11,13 @@ $yellow: #F2A216;
 $white: #F4F4F4;
 $black: #181818;
 
+$headerHeight: 70px;
+
 // fonts
 
 $fredoka: 'Fredoka One', Helvetica, Arial, sans-serif;
 $openSans: 'Open Sans', Helvetica, Arial, sans-serif;
 $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
-
-$headerHeight: 70px;
 
 /* fonts */
 @import url(http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,800,300,600|Open+Sans+Condensed:300,300italic,700);
@@ -32,6 +32,7 @@ $headerHeight: 70px;
 li{ list-style-position: inside; }
 
 body{
+	height: 10000px;
 	padding-top: $headerHeight;
 	font-family: $openSans;
 	background: $white;
@@ -54,9 +55,10 @@ header{
 			transform: translateX(0);
 }
 
-header, .logo, nav li a{ height: $headerHeight; }
-
-.logo, nav, nav li{ float: left; }
+.logo, nav, nav li{
+	float: left; 
+	min-height: $headerHeight;
+}
 
 /* old normal background version of logo
 
@@ -72,6 +74,30 @@ header, .logo, nav li a{ height: $headerHeight; }
 */
 
 header a{ color: $black; }
+
+.account{
+	overflow: hidden;
+	display: none;
+	background: #B97395;
+	padding: .5em 0;
+	color: $white;
+}
+
+.account form{ float: right; }
+
+.account form label{
+	text-transform: uppercase;
+	font-size: .8em;
+	padding: 0 .5em;
+}
+.account form label,
+.account form input{
+	padding: .25em;
+}
+
+.account form input{
+	border: none;
+}
 
 .logo{
 	width: 30%;
@@ -138,7 +164,7 @@ nav li{
 	font-weight: 600;
 	font-size: 1em;
 	font-family: $openSansCon;
-	width: 23.33%;	
+	width: 25%;	
 	list-style: none;
 }
 
@@ -163,65 +189,9 @@ nav li:nth-child(2) a:hover{ color: $red; }
 nav li:nth-child(3) a:hover{ color: $blue; }
 nav li:nth-child(4) a:hover{ color: $green; }
 
-// nav .log-in:hover a{ display: none; }
-// nav .log-in:hover form{ display: block; }
-
-.log-in{
-	width: 30%;
-	-webkit-transform: translateY(0);
-	transition: -webkit-transform .25s;
-}
-
-.move{ -webkit-transform: translateY(-70px); }
-
-.log-in form{ overflow: hidden; }
-
-.log-in form input, .log-in form button{
-	outline: none;
-	display: block;
-	margin-top: 5px;
-	padding: .25em;
-	border: none;
-	background: lighten($black, 20%);
-	color: $white;
-}
-
-.log-in form input[type="text"]{
-	width: 100%;
-	border-radius: 4px;
-}
-
-.log-in form input[type="password"]{
-	float: left;
-	width: 50%;
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-}
-
-.log-in form button{
-	outline: none;
-	float: left;
-	width: 25%;
-	color: $white;
-}
-
-button[type="submit"]:hover, .log-in form button[type="reset"]:hover{
-	opacity: .9;
-	cursor: pointer;
-}
-
-.log-in form button[type="submit"]{ background: green; }
-
-.log-in form button[type="reset"]{
-	background: red;
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
-}
-
 section{
 	overflow: hidden;
-	margin-bottom: 25px;
-	padding: 1em 0;
+	padding: 1em 0 25px;
 }
 
 section h2{
@@ -385,6 +355,46 @@ section h2{
 	-webkit-filter: grayscale(1);
 			filter: grayscale(1);
 }
+
+.cookie-banner {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(124,88,63,.95);
+}
+
+.cookie-banner p{
+	padding: .75em;
+	padding-left: 2.5em;
+	font-size: .8em;
+	color: $white;
+	background: url('../img/info.png') no-repeat left;
+}
+
+.cookie-banner a{
+	color: lighten($green, 10%);
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.cookie-banner a:hover{ opacity: .9; }
+
+.cookie-banner button.close{
+	float: right;
+	margin-top: .25em;
+	padding: .5em;
+	border: none;
+	outline: none;
+	color: $white;
+	font-family: $fredoka;
+	background: rgba(255,255,255,.2);
+	border-radius: 2px;
+}
+
+.cookie-banner-hide{ display: none; }
+
+.cookie-banner button.close:hover{ background: rgba(255,255,255,.15); cursor: pointer; }
 
 @media all and (max-width: 1000px){
 	.wrap{ width: 85%; }

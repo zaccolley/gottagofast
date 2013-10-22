@@ -21,6 +21,16 @@
 <body>
 
 	<header>
+		<div class="account">
+			<div class="wrap">
+				<form>
+					<label for="user">Username</label><input placeholder="Username" type="text" name="user">
+					<label for="pass">Password</label><input placeholder="Password" type="password" name="pass">
+					<button type="submit">Go</button>
+					<button type="reset">Cancel</button>
+				</form>
+			</div>
+		</div>
 		<div class="wrap">
 		<a href="/"><h1 class="logo logo-animation">UPGS</h1></a>
 		<nav>
@@ -28,15 +38,7 @@
 				<li><a href="#">Info</a></li>
 				<li><a href="#">Events</a></li>
 				<li><a href="#">Games</a></li>
-				<li class="log-in">
-					<a href="#">Log-in</a>
-					<form>
-						<input placeholder="Username" type="text">
-						<input placeholder="Password" type="password">
-						<button type="submit">Go</button>
-						<button type="reset">Cancel</button>
-					</form>
-				</li>
+				<li class="log-in"><a href="#">Log-in</a></li>
 			</ul>			
 		</nav>
 		</div>
@@ -77,8 +79,8 @@
 					</ul>
 				</div>
 				<div class="join">
-					<button>Join our society!</button>
 					<p>Get access to all this gr8 shit and Tim's beaming smile.</p>
+					<button>Join our society!</button>
 				</div>
 			</div>			
 		</section>
@@ -121,6 +123,12 @@
 			</div>
 		</section>
 	</main>
+	<div class="cookie-banner">
+		<div class="wrap">			
+			<button class="close">X</button>
+			<p>Om nom nom&hellip; This page uses cookies. <a href="http://en.wikipedia.org/wiki/HTTP_cookie">What are cookies?</a></p>
+		</div>
+	</div>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 </body>

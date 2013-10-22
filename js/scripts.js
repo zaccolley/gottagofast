@@ -14,11 +14,13 @@
 	});
 
 	$('.log-in a').click(function(){
-		$('.log-in').toggleClass('move');
+		$('.account').slideToggle(function(){
+			$('body').css('paddingTop', $('header').height());
+		});
 	});
 
-	$('.log-in button[type="reset"]').click(function(){
-		$('.log-in').toggleClass('move');
+	$('.cookie-banner').find('button.close').click(function(){
+		$('.cookie-banner').addClass('cookie-banner-hide');
 	});
 
 	// replace text with X
