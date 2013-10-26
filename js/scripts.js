@@ -29,6 +29,10 @@
 		$('.cookie-banner').addClass('cookie-banner-hide');
 	});
 
+	$('.ip-address').click(function(){
+		$(this).select();
+	});
+
 	// replace text with X
 	$('.cancel').text('X');
 

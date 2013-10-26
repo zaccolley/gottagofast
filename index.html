@@ -21,18 +21,6 @@
 <body>
 
 	<header>
-		<div class="account">
-			<div class="wrap">
-				<form>
-					<div class="row"><label for="user">Username</label><input type="text" name="user"></div>
-					<div class="row"><label for="pass">Password</label><input type="password" name="pass"></div>
-					<div class="buttons">
-						<button type="submit">Ok log me in!</button>
-						<button type="reset">Nah</button>
-					</div>
-				</form>
-			</div>
-		</div>
 		<div class="wrap">
 		<a href="/"><h1 class="logo logo-animation">UPGS</h1></a>
 		<nav>
@@ -45,6 +33,20 @@
 		</nav>
 		</div>
 	</header>
+	
+	<div class="account">
+		<div class="wrap">
+			<form>
+				<div class="row"><label for="user">Username</label><input type="text" name="user"></div>
+				<div class="row"><label for="pass">Password</label><input type="password" name="pass"></div>
+				<div class="buttons">
+					<button type="submit">Ok log me in!</button>
+					<button type="reset">Nah</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
 	<main>
 
 		<section class="info-section">
@@ -122,6 +124,16 @@
 						<p>5 players</p>
 					</li>
 				</ol>
+			</div>
+		</section>
+		<section class="servers-section">
+			<div class="wrap">
+				<h2>Servers</h2>
+				<div class="server">
+					<h3 class="server-logo online">Minecraft</h3>
+					<p style="display:inline-block;">SERVER IS ONLINE!</p>
+					<textarea readonly class="ip-address">minecraft.thegamingsociety.co.uk</textarea>
+				</div>
 			</div>
 		</section>
 	</main>

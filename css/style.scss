@@ -39,7 +39,7 @@ body{
 	transition: height 1s;
 }
 
-button{
+input, textarea, button{
 	border: none;
 	outline: none;
 }
@@ -115,9 +115,7 @@ header a{ color: $black; }
 }
 
 .account form input{
-	outline: none;
 	width: 80%;
-	border: none;
 	border-radius: 2px;
 	background: rgba(0,0,0,.1);
 }
@@ -407,6 +405,53 @@ section h2{
 	opacity: .5; 
 	-webkit-filter: grayscale(1);
 			filter: grayscale(1);
+}
+
+.servers-section{}
+
+.servers-section .server{
+	overflow: hidden;
+}
+
+.servers-section .server .server-logo,
+.servers-section .server p,
+.servers-section .server .ip-address{	
+	padding: 1em;
+	float: left;
+	width: 33.33%;
+	font-size: 1em;
+}
+
+.servers-section .server .server-logo{
+	text-indent: -9999px;
+	background: url('../img/minecraft.png') no-repeat 2px center;
+	background-size: 80%;
+}
+
+.servers-section .server .server-logo.online{
+	-webkit-filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
+					drop-shadow(2px 0 0 lighten($green, 15%)) drop-shadow(-2px 0 0 lighten($green, 15%));
+}
+
+.servers-section .server .server-logo.offline{
+	-webkit-filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
+					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
+}
+
+.servers-section .server .server-logo.unknown{
+	-webkit-filter: drop-shadow(0 2px 0 lighten(#666, 15%)) drop-shadow(0 -2px 0 lighten(#666, 15%))
+					drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
+}
+
+.servers-section .server .ip-address{
+	background: $black;
+	border-radius: 2px;
+	color: $white;
+	font-family: monospace;
+	font-weight: 800;
+	text-align: center;
+	resize: none;
+	overflow: hidden;
 }
 
 .cookie-banner {
