@@ -15,7 +15,8 @@ body {
   height: 10000px;
   padding-top: 70px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  background: #f4f4f4; }
+  background: #f4f4f4;
+  transition: height 1s; }
 
 button {
   border: none;
@@ -58,24 +59,69 @@ header a {
 .account {
   overflow: hidden;
   display: none;
-  background: #B97395;
-  padding: .5em 0;
+  background: #e7e7e7;
+  padding: 1em 0;
   color: #f4f4f4; }
 
-.account form {
-  float: right; }
-
-.account form label {
-  text-transform: uppercase;
-  font-size: .8em;
-  padding: 0 .5em; }
+.account form .row {
+  overflow: hidden;
+  margin-bottom: 20px; }
 
 .account form label,
-.account form input {
-  padding: .25em; }
+.account form input,
+.account form button {
+  float: left;
+  font-size: 1.5em;
+  padding: .5em;
+  color: #323232; }
+
+.account form input,
+.account form button {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+
+.account form label {
+  width: 20%;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 800; }
 
 .account form input {
-  border: none; }
+  outline: none;
+  width: 80%;
+  border: none;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.1); }
+
+.account form input[type="password"] {
+  letter-spacing: .25em;
+  font-weight: 900; }
+
+.account .buttons {
+  overflow: hidden;
+  width: 80%;
+  float: right; }
+
+.account form button {
+  text-transform: uppercase;
+  color: #f4f4f4;
+  font-family: "Fredoka One", Helvetica, Arial, sans-serif;
+  transition: opacity .1s; }
+
+.account form button:hover {
+  opacity: .9;
+  cursor: pointer; }
+
+.account form button[type="submit"] {
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background: #939740;
+  width: 75%; }
+
+.account form button[type="reset"] {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background: #af4120;
+  width: 25%; }
 
 .logo {
   width: 30%;

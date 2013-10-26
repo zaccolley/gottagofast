@@ -15,7 +15,13 @@
 
 	$('.log-in a').click(function(){
 		$('.account').slideToggle(function(){
-			$('body').css('paddingTop', $('header').height());
+			$('.account').find('input[type="submit"]').focus();
+		});
+	});
+
+	$('.account').find('button[type="reset"]').click(function(){
+		$('.account').slideToggle(function(){
+			$('.account').attr('type', 'submit').focus();
 		});
 	});
 
