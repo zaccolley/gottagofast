@@ -227,16 +227,21 @@ section h2 {
 .info-section .desc, .info-section .social {
   float: left; }
 
+
+/* Removed for simplegrid
 .info-section .desc {
   width: 60%; }
 
 .info-section .social {
   width: 40%; }
+------------------------*/
+
 
 .info-section .social li {
+  /*
   float: left;
   width: 33.33%;
-  padding: 0 10px;
+  padding: 0 10px;*/
   list-style: none; }
 
 .info-section .social li a {
@@ -274,9 +279,11 @@ section h2 {
 .info-section .desc p {
   padding-bottom: .25em; }
 
+/*
 .events {
   float: left;
   width: 30%; }
+*/
 
 .join {
   float: left;
@@ -330,11 +337,12 @@ section h2 {
   background: #424242; }
 
 .games-section .game {
+  /*
   display: block;
   position: relative;
   float: left;
   width: 16.66%;
-  padding: 0 1%;
+  padding: 0 1%;*/
   list-style: none;
   color: #f4f4f4;
   font-size: .8em;
@@ -401,7 +409,7 @@ section h2 {
 .cookie-banner button.close:hover {
   background: rgba(255, 255, 255, 0.15);
   cursor: pointer; }
-
+/*
 @media all and (max-width: 1000px) {
   .wrap {
     width: 85%; } }
@@ -435,3 +443,4 @@ section h2 {
 @media all and (max-width: 400px) {
   nav li {
     font-size: 1em; } }
+*/
