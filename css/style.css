@@ -82,7 +82,8 @@ header a {
 .account form label {
   width: 20%;
   text-transform: uppercase;
-  font-family: "Fredoka One", Helvetica, Arial, sans-serif; }
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 800; }
 
 .account form input {
   width: 80%;
@@ -183,8 +184,9 @@ nav {
 nav li {
   text-align: center;
   text-transform: uppercase;
+  font-weight: 600;
   font-size: 1em;
-  font-family: "Fredoka One", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
   width: 25%;
   list-style: none; }
 
@@ -195,8 +197,12 @@ nav li a {
   display: block;
   -webkit-tap-highlight-color: transparent;
   /* removes tap highlight on touch devices */
-  -webkit-transition: color .1s;
-  transition: color .1s; }
+  -webkit-transition: padding .1s, border .1s, color .1s;
+  transition: padding .1s, border .1s, color .1s; }
+
+nav li a:hover {
+  border-top: 5px solid;
+  color: rgba(50, 50, 50, 0.75); }
 
 nav li:nth-child(1) a:hover {
   color: #f2a216; }
