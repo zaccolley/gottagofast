@@ -111,8 +111,7 @@ header a{ color: $black; }
 .account form label{
 	width: 20%;
 	text-transform: uppercase;
-	font-family: $openSansCon;
-	font-weight: 800;
+	font-family: $fredoka;
 }
 
 .account form input{
@@ -222,9 +221,8 @@ nav{
 nav li{
 	text-align: center;
 	text-transform: uppercase;
-	font-weight: 600;
 	font-size: 1em;
-	font-family: $openSansCon;
+	font-family: $fredoka;
 	width: 25%;	
 	list-style: none;
 }
@@ -236,19 +234,19 @@ nav li a{
 	display: block;
 	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
 
-	-webkit-transition: padding .1s, border .1s, color .1s;
-			transition: padding .1s, border .1s, color .1s;
-}
-
-nav li a:hover{
-	border-top: 5px solid;
-	color: rgba(50,50,50,.75);
+	-webkit-transition: color .1s;
+			transition: color .1s;
 }
 
 nav li:nth-child(1) a:hover{ color: $yellow; }
 nav li:nth-child(2) a:hover{ color: $red; }
 nav li:nth-child(3) a:hover{ color: $blue; }
 nav li:nth-child(4) a:hover{ color: $green; }
+
+main{
+	width: 75%;
+	margin: 0 auto;
+}
 
 section{
 	overflow: hidden;
