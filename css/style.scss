@@ -262,6 +262,11 @@ section h2{
 	font-family: $fredoka;
 }
 
+section h2 span{
+	font-family: $openSansCon;
+	font-weight: 500;
+}
+
 .info-section .desc, .info-section .social{ float: left; }
 .info-section .desc{ width: 60%; }
 .info-section .social{ width: 40%; }
@@ -361,11 +366,6 @@ section h2{
 	color: $white;
 }
 
-.games-section h2 span{
-	font-family: $openSansCon;
-	font-weight: 500;
-}
-
 .games-section .more{
 	border-radius: 2px;
 	font-size: .8em;
@@ -384,7 +384,7 @@ section h2{
 	position: relative;
 	float: left;
 	width: 16.66%;
-	padding: 0 1%;
+	padding-right: 1%;
 	list-style: none;
 	color: $white;
 	font-size: .8em;
@@ -418,22 +418,30 @@ section h2{
 
 .servers-section .server{
 	overflow: hidden;
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
+
+.servers-section .server:last-child{ border: none; }
 
 .servers-section .server .server-logo,
 .servers-section .server p,
 .servers-section .server .ip-address{	
 	padding: 1em;
 	float: left;
-	width: 33.33%;
 	font-size: 1em;
 }
 
 .servers-section .server .server-logo{
+	width: 30%;
 	text-indent: -9999px;
-	background: url('../img/minecraft.png') no-repeat 2px center;
-	background-size: 80%;
+	background: no-repeat 2px center;
+	background-size: 75%;
 }
+
+.servers-section .server .minecraft{ background-image: url('../img/minecraft.png'); }
+.servers-section .server .teamspeak{ background-image: url('../img/teamspeak.png'); }
 
 .servers-section .server .server-logo.online{
 	-webkit-filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
@@ -450,12 +458,30 @@ section h2{
 					drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
 }
 
-.servers-section .server .ip-address{
+.servers-section .server p{
+	width: 30%;
+}
+
+.servers-section .server .status{
+	width: 15%;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.servers-section .server .status.online{  color: $green;  }
+.servers-section .server .status.offline{ color: $red;  }
+.servers-section .server .status.unknown{ color: #666;  }
+
+.servers-section .server .ip-address {
+	width: 25%;
+	margin-top: .5em;
+	padding-bottom: 0;
 	background: $black;
 	border-radius: 2px;
 	color: $white;
 	font-family: monospace;
 	font-weight: 800;
+	font-size: .8em;
 	text-align: center;
 	resize: none;
 	overflow: hidden;

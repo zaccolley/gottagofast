@@ -228,6 +228,10 @@ section h2 {
   padding-bottom: .5em;
   font-family: "Fredoka One", Helvetica, Arial, sans-serif; }
 
+section h2 span {
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 500; }
+
 .info-section .desc, .info-section .social {
   float: left; }
 
@@ -316,10 +320,6 @@ section h2 {
 .games-section h2 {
   color: #f4f4f4; }
 
-.games-section h2 span {
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
-  font-weight: 500; }
-
 .games-section .more {
   border-radius: 2px;
   font-size: .8em;
@@ -338,7 +338,7 @@ section h2 {
   position: relative;
   float: left;
   width: 16.66%;
-  padding: 0 1%;
+  padding-right: 1%;
   list-style: none;
   color: #f4f4f4;
   font-size: .8em;
@@ -369,20 +369,32 @@ section h2 {
   filter: grayscale(1); }
 
 .servers-section .server {
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px; }
+
+.servers-section .server:last-child {
+  border: none; }
 
 .servers-section .server .server-logo,
 .servers-section .server p,
 .servers-section .server .ip-address {
   padding: 1em;
   float: left;
-  width: 33.33%;
   font-size: 1em; }
 
 .servers-section .server .server-logo {
+  width: 30%;
   text-indent: -9999px;
-  background: url("../img/minecraft.png") no-repeat 2px center;
-  background-size: 80%; }
+  background: no-repeat 2px center;
+  background-size: 75%; }
+
+.servers-section .server .minecraft {
+  background-image: url("../img/minecraft.png"); }
+
+.servers-section .server .teamspeak {
+  background-image: url("../img/teamspeak.png"); }
 
 .servers-section .server .server-logo.online {
   -webkit-filter: drop-shadow(0 2px 0 #babe66) drop-shadow(0 -2px 0 #babe66) drop-shadow(2px 0 0 #babe66) drop-shadow(-2px 0 0 #babe66); }
@@ -393,12 +405,33 @@ section h2 {
 .servers-section .server .server-logo.unknown {
   -webkit-filter: drop-shadow(0 2px 0 #8c8c8c) drop-shadow(0 -2px 0 #8c8c8c) drop-shadow(2px 0 0 #8c8c8c) drop-shadow(-2px 0 0 #8c8c8c); }
 
+.servers-section .server p {
+  width: 30%; }
+
+.servers-section .server .status {
+  width: 15%;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+.servers-section .server .status.online {
+  color: #939740; }
+
+.servers-section .server .status.offline {
+  color: #af4120; }
+
+.servers-section .server .status.unknown {
+  color: #666; }
+
 .servers-section .server .ip-address {
+  width: 25%;
+  margin-top: .5em;
+  padding-bottom: 0;
   background: #181818;
   border-radius: 2px;
   color: #f4f4f4;
   font-family: monospace;
   font-weight: 800;
+  font-size: .8em;
   text-align: center;
   resize: none;
   overflow: hidden; }
