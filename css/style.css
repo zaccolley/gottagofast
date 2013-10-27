@@ -333,6 +333,11 @@ section h2 span {
 .games-section .more:hover {
   background: #424242; }
 
+.games-section .games {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+
 .games-section .game {
   display: block;
   position: relative;
