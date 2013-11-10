@@ -21,10 +21,6 @@ input, textarea, button {
   border: none;
   outline: none; }
 
-.wrap {
-  width: 75%;
-  margin: 0 auto; }
-
 header {
   z-index: 9001;
   position: fixed;
@@ -129,7 +125,6 @@ header a {
   font-weight: 500;
   font-family: "Fredoka One", Helvetica, Arial, sans-serif;
   color: #181818;
-  text-align: center;
   white-space: nowrap;
   -webkit-transition: letter-spacing .5s .25s, color .15s .25s;
   transition: letter-spacing .5s .25s, color .15s .25s; }
@@ -203,16 +198,16 @@ nav li a:hover {
   border-top: 5px solid;
   color: rgba(50, 50, 50, 0.75); }
 
-nav li:nth-child(1) a:hover {
+nav li:nth-child(2) a:hover {
   color: #f2a216; }
 
-nav li:nth-child(2) a:hover {
+nav li:nth-child(3) a:hover {
   color: #af4120; }
 
-nav li:nth-child(3) a:hover {
+nav li:nth-child(4) a:hover {
   color: #4c79ba; }
 
-nav li:nth-child(4) a:hover {
+nav li:nth-child(5) a:hover {
   color: #939740; }
 
 section {
@@ -308,11 +303,11 @@ section h2 span {
   margin-top: 50px; }
 
 nav .join {
-  display: none;
   margin: 0;
   padding: 15px 0; }
 
 nav .join button {
+  display: none;
   width: 70%;
   font-size: 1em; }
 
@@ -493,26 +488,18 @@ nav .join button {
   margin-top: .25em;
   padding: .5em;
   color: #f4f4f4;
+  font-weight: 500;
   font-family: "Fredoka One", Helvetica, Arial, sans-serif;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 2px; }
-
-.cookie-banner-hide {
-  display: none; }
 
 .cookie-banner button.close:hover {
   background: rgba(255, 255, 255, 0.15);
   cursor: pointer; }
 
-@media all and (max-width: 1000px) {
-  .wrap {
-    width: 85%; } }
 @media all and (max-width: 700px) {
   body {
     padding: 0; }
-
-  .wrap {
-    width: 100%; }
 
   header {
     height: auto;

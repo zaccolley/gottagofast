@@ -26,7 +26,7 @@
 	});
 
 	$('.cookie-banner').find('button.close').click(function(){
-		$('.cookie-banner').addClass('cookie-banner-hide');
+		$('.cookie-banner').fadeOut();
 	});
 
 	$('.ip-address').click(function(){
@@ -42,9 +42,9 @@
 		var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
 
 		if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
-			$('nav .join').fadeIn($fadeSpeed);  // Show '.toTheTop' triangle
+			$('nav .join button').fadeIn($fadeSpeed);  // Show '.toTheTop' triangle
 		}else{ 								    // Above 100px
-			$('nav .join').fadeOut($fadeSpeed); // Hide '.toTheTop' triangle
+			$('nav .join button').fadeOut($fadeSpeed); // Hide '.toTheTop' triangle
 		}
 	});
 
