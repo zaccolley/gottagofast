@@ -32,7 +32,6 @@ $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 li{ list-style-position: inside; }
 
 body{
-	height: 10000px;
 	padding-top: $headerHeight;
 	font-family: $openSans;
 	background: $white;
@@ -223,7 +222,7 @@ nav li{
 	font-weight: 600;
 	font-size: 1em;
 	font-family: $openSansCon;
-	width: 25%;	
+	width: 20%;	
 	list-style: none;
 }
 
@@ -267,18 +266,21 @@ section h2 span{
 	font-weight: 500;
 }
 
-.info-section .desc, .info-section .social{ float: left; }
-.info-section .desc{ width: 60%; }
-.info-section .social{ width: 40%; }
+.info-section{ padding: 0; }
 
-.info-section .social li{
+.social{
+	float: left;
+	width: 40%;
+}
+
+.social li{
 	float: left;
 	width: 33.33%;
 	padding: 0 10px;
 	list-style: none;
 }
 
-.info-section .social li a{
+.social li a{
 	height: 50px;
 	display: block;
 	text-indent: -5432px;
@@ -290,34 +292,60 @@ section h2 span{
 	transition: opacity .15s;
 }
 
-.info-section .social li .facebook{
+.social li .facebook{
 	background-image: url('../img/facebook.svg');
 	background-color: #3B5998;
 }
 
-.info-section .social li .facebook:hover{
+.social li .facebook:hover{
 	background-color: lighten(#3B5998, 5%);
 }
 
-.info-section .social li .twitter{
+.social li .twitter{
 	background-image: url('../img/twitter.svg');
 	background-color: #4099FF;
 }
 
-.info-section .social li .twitter:hover{
+.social li .twitter:hover{
 	background-color: lighten(#4099FF, 5%);
 }
 
-.info-section .social li .steam{
+.social li .steam{
 	background-image: url('../img/steam.svg');
 	background-color: lighten($black, 5%);;
 }
 
-.info-section .social li .steam:hover{
+.social li .steam:hover{
 	background-color: lighten($black, 7%);
 }
 
-.info-section .desc p{
+
+
+.desc{
+	text-align: center;
+}
+
+.desc h1, .desc h2{
+	font-weight: 500;
+}
+
+.desc h1{
+	padding: .5em 5em;
+	text-transform: uppercase;
+	font-family: $fredoka;
+	color: #E4E4E4;
+	font-size: 3em;
+}
+
+.desc h2{
+	font-size: 1.25em;
+	padding: .5em 2.5em;
+	text-transform: none;
+	font-family: $openSans;
+	color: #CECECE;
+}
+
+.desc p{
 	padding-bottom: .25em;
 }
 
@@ -327,10 +355,19 @@ section h2 span{
 }
 
 .join{
-	float: left;
-	width: 40%;
 	text-align: center;
-	padding: 0 10px;
+	margin-top: 50px;
+}
+
+nav .join{
+	display: none;
+	margin: 0;
+	padding: 15px 0;
+}
+
+nav .join button{
+	width: 70%;
+	font-size: 1em;
 }
 
 .join p{
@@ -339,7 +376,8 @@ section h2 span{
 }
 
 .join button{
-	width: 100%;
+	width: 40%;
+	margin: 0 auto;
 	display: block;
 	background: saturate($green, 10%);
 	padding: .5em;
@@ -359,7 +397,7 @@ section h2 span{
 .info-section,
 .games-section{
 	color: $white;
-	background: $cross;
+	background: $black;
 }
 
 .games-section h2{

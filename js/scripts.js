@@ -36,4 +36,16 @@
 	// replace text with X
 	$('.cancel').text('X');
 
+	$(window).scroll(function(){ // When the page scrolls
+		$fadeSpeed = 250;
+
+		var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
+
+		if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
+			$('nav .join').fadeIn($fadeSpeed);  // Show '.toTheTop' triangle
+		}else{ 								    // Above 100px
+			$('nav .join').fadeOut($fadeSpeed); // Hide '.toTheTop' triangle
+		}
+	});
+
 })()
