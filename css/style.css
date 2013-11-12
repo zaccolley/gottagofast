@@ -235,12 +235,12 @@ section h2 span {
 
 .social li {
   float: left;
-  width: 33.33%;
+  margin-bottom: 10px;
   padding: 0 10px;
   list-style: none; }
 
 .social li a {
-  height: 50px;
+  height: 75px;
   display: block;
   text-indent: -5432px;
   text-align: center;
@@ -271,6 +271,13 @@ section h2 span {
 .social li .steam:hover {
   background-color: #2a2a2a; }
 
+.social li .google {
+  background-image: url("../img/google.svg");
+  background-color: #dd4b39; }
+
+.social li .google:hover {
+  background-color: #e15f4f; }
+
 .desc {
   text-align: center; }
 
@@ -297,6 +304,19 @@ section h2 span {
 .events {
   float: left;
   width: 30%; }
+
+.events p {
+  padding-bottom: .5em; }
+
+.current-event {
+  list-style: none; }
+
+.current-event li {
+  padding: .25em 0;
+  border-bottom: 2px solid #ddd; }
+
+.current-event li:last-child {
+  border: 0; }
 
 .join {
   text-align: center;
