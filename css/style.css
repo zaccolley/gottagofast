@@ -28,7 +28,7 @@ header {
   left: 0;
   right: 0;
   overflow: hidden;
-  background: rgba(244, 244, 244, 0.9);
+  background: rgba(244, 244, 244, 0.975);
   -webkit-transform: translateX(0);
   transform: translateX(0); }
 
