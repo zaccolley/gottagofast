@@ -1,0 +1,234 @@
+
+
+@import url('http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:400,800,700,600');
+
+*{	margin: 0; padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+   			box-sizing: border-box;
+}
+
+body{
+	background: #f3f3f3;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.logo {
+	margin-top: 50px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 10vw;
+	font-weight: 500;
+	line-height: 10vw;
+	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	color: #181818;
+	text-align: center;
+	white-space: nowrap;
+	-webkit-transition: letter-spacing .5s .25s, color .15s .25s;
+			transition: letter-spacing .5s .25s, color .15s .25s;
+
+	-webkit-animation: sway 3s infinite;
+		 -o-animation: sway 3s infinite;
+			animation: sway 3s infinite;
+}
+
+.logo::before,
+.logo::after {
+	content: '+';
+	display: inline-block;
+	width: 9vw;
+	height: 10vw;
+	color: transparent;
+	background: url("../img/logo.svg") no-repeat;
+	background-size: cover;
+
+	-webkit-transition: all .5s;
+			transition: all .5s;
+
+	-webkit-transform-origin: 50%;
+			transform-origin: 50%; /* ensures they spin from the center */
+}
+
+.logo::before {
+	background-position: left;
+	-webkit-animation: left-spin 3s infinite;
+		 -o-animation: left-spin 3s infinite;
+			animation: left-spin 3s infinite;
+}
+
+.logo::after {
+	background-position: right;
+	-webkit-animation: right-spin 3s infinite;
+		 -o-animation: right-spin 3s infinite;
+			animation: right-spin 3s infinite;
+}
+
+@-webkit-keyframes left-spin{
+	100%{ -webkit-transform: rotateZ(360deg); }
+}
+
+@-o-keyframes left-spin{
+	100%{ -o-transform: rotateZ(360deg); }
+}
+
+@keyframes left-spin{
+	100%{ transform: rotateZ(360deg); }
+}
+
+@-webkit-keyframes right-spin{
+	100%{ -webkit-transform: rotateZ(-360deg); }
+}
+
+@-o-keyframes right-spin{
+	100%{ -o-transform: rotateZ(-360deg); }
+}
+
+@keyframes right-spin{
+	100%{ transform: rotateZ(-360deg); }
+}
+
+@-webkit-keyframes sway{
+	50%{ -webkit-transform: rotateX(10deg) rotateY(-10deg);	}
+}
+
+.servers-section{
+	width: 30%;
+	margin: 50px auto;
+	background: #E7E7E7;
+	border-radius: 5px;
+	padding: 1em;
+}
+
+.servers-section .server{
+	overflow: hidden;
+}
+
+.servers-section .server .server-logo,
+.servers-section .server p,
+.servers-section .server .ip-address{	
+	padding: 1em;
+	font-size: 1em;
+	text-align: center;
+	width: 100%;
+}
+
+.servers-section .server .server-logo{
+	text-indent: -9999px;
+	background: no-repeat center;
+	background-size: 70%;
+}
+
+.servers-section .server .minecraft{ background-image: url('../img/minecraft.png'); }
+
+
+.servers-section .server .server-logo,
+.servers-section .server-unknown .server-logo{
+	-webkit-filter: drop-shadow(0 2px 0 #aaa) drop-shadow(0 -2px 0 #aaa)
+					drop-shadow(2px 0 0 #aaa) drop-shadow(-2px 0 0 #aaa);
+}
+
+.servers-section .server-online .server-logo{
+	-webkit-filter: drop-shadow(0 2px 0 #939740) drop-shadow(0 -2px 0 #939740)
+					drop-shadow(2px 0 0 #939740) drop-shadow(-2px 0 0 #939740);
+}
+
+.servers-section .server-offline .server-logo{
+	-webkit-filter: drop-shadow(0 2px 0 #AF4120) drop-shadow(0 -2px 0 #AF4120)
+					drop-shadow(2px 0 0 #AF4120) drop-shadow(-2px 0 0 #AF4120);
+}
+
+.servers-section .server .status{
+	color: #181818;
+	font-weight: 700;
+}
+
+.servers-section .server-online .status{  color: #939740;  }
+.servers-section .server-offline .status{ color: #AF4120;  }
+.servers-section .server-unknown .status{ color: #464646;  }
+
+.mc-heads{
+	text-align: center;
+	padding: .5em 0;
+	overflow: hidden;
+}
+
+.mc-heads li{
+	padding-bottom: 1em;
+	font-weight: bold;
+	font-size: .85em;
+	color: #333;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.mc-heads li span{ font-weight: normal; }
+
+.mc-heads .avatar{
+	display: inline-block;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 32px;
+	height: 32px;
+	background: url('../img/steve.png');
+	background-repeat: no-repeat;
+}
+
+.mc-heads .avatar:hover{
+	opacity: .8;
+}
+
+.servers-section .server .ip-address{
+	width: 90%;
+	margin: 0 auto 1em;
+	display: block;
+	padding: 1.5em 1em .5em;
+	resize: none;
+	outline: none;
+	border: none;
+	overflow: hidden;
+	font-family: monospace;
+	background: #181818;
+	text-align: center;
+	color: #F4F4F4;
+	border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px){
+	.servers-section{ width: 60%; }
+}
+
+@media screen and (max-width: 800px){
+	.servers-section{ width: 70%; }
+}
+
+@media screen and (max-width: 400px){
+	.servers-section{ width: 90%; }
+	.servers-section .server .ip-address{ font-size: .75em; }
+}
+
+.join a{
+	width: 40%;
+	margin: 25px auto;
+	display: block;
+	background: #9DA235;
+	padding: .5em;
+	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
+	font-size: 1.5em;
+	color: #F4F4F4;
+	border: none;
+	outline: none;
+	border-radius: 2px;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: opacity .1s;
+}
+
+.join a:hover{
+	opacity: .9;
+	cursor: pointer;
+}
