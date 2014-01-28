@@ -102,9 +102,133 @@
 			50%{ -webkit-transform: rotateX(10deg) rotateY(-10deg);	}
 		}
 
+
+		.servers-section .server {
+		  overflow: hidden;
+		  border-bottom: 2px solid #ddd;
+		  padding-bottom: 20px;
+		  margin-bottom: 20px; }
+
+		.servers-section .server:last-child {
+		  border: none; }
+
+		.servers-section .server .server-logo,
+		.servers-section .server p,
+		.servers-section .server .ip-address {
+		  padding: 1em;
+		  float: left;
+		  font-size: 1em; }
+
+		.servers-section .server .server-logo {
+		  text-indent: -9999px;
+		  background: no-repeat 2px center;
+		  background-size: 75%; }
+
+		.servers-section .server .minecraft {
+		  background-image: url("../img/minecraft.png"); }
+
+		.servers-section .server .teamspeak {
+		  background-image: url("../img/teamspeak.png"); }
+
+		.servers-section .server .server-logo.online {
+		  -webkit-filter: drop-shadow(0 2px 0 #babe66) drop-shadow(0 -2px 0 #babe66) drop-shadow(2px 0 0 #babe66) drop-shadow(-2px 0 0 #babe66); }
+
+		.servers-section .server .server-logo.offline {
+		  -webkit-filter: drop-shadow(0 2px 0 #dc6440) drop-shadow(0 -2px 0 #dc6440) drop-shadow(2px 0 0 #dc6440) drop-shadow(-2px 0 0 #dc6440); }
+
+		.servers-section .server .server-logo.unknown {
+		  -webkit-filter: drop-shadow(0 2px 0 #8c8c8c) drop-shadow(0 -2px 0 #8c8c8c) drop-shadow(2px 0 0 #8c8c8c) drop-shadow(-2px 0 0 #8c8c8c); }
+
+		.servers-section .server .status {
+		  text-transform: uppercase;
+		  font-weight: 700; }
+
+		.servers-section .server .status.online {
+		  color: #939740; }
+
+		.servers-section .server .status.offline {
+		  color: #af4120; }
+
+		.servers-section .server .status.unknown {
+		  color: #666; }
+
+		.mc-heads {
+		  padding: .5em 0;
+		  overflow: hidden; }
+
+		.mc-heads li {
+		  float: left;
+		  text-indent: -9999px;
+		  overflow: hidden;
+		  margin-right: 5px;
+		  margin-bottom: 5px;
+		  width: 32px;
+		  height: 32px;
+		  background-repeat: no-repeat; }
+
+		.mc-heads li:hover {
+		  opacity: .8; }
+
+		.servers-section .server .ip-address {
+		  margin-top: .5em;
+		  padding-bottom: 0;
+		  background: #181818;
+		  border-radius: 2px;
+		  color: #f4f4f4;
+		  font-family: monospace;
+		  font-weight: 800;
+		  font-size: .8em;
+		  text-align: center;
+		  resize: none;
+		  overflow: hidden; }
+
+
 	</style>
 </head>
 <body>
 	<h1 class="logo">UPGS</h1>
+	<div class="server">
+		<h3 class="server-logo minecraft">Minecraft</h3>
+		<p class="status"></p>
+		<ul class="mc-heads">
+			
+		</ul>
+		<textarea readonly class="ip-address">minecraft.thegamingsociety.co.uk</textarea>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script>
+
+		(function(){
+
+			$.ajax({
+				url: "data.php",
+				cache: false
+			}).done(function(data){
+				data = JSON.parse(data);
+
+				console.log(data);
+
+				var status = "Offline";
+
+				if(data.info){
+					status = "Online! "+ data.info.Players + "/" + data.info.MaxPlayers;
+				}
+
+				$('.server .status').html(status);
+
+				if(!data.players){
+					$('.mc-heads').html('<p>No players online!</p>');
+				}else{
+					console.log(data.players);
+					for(var i = 0; i < data.players.length; i++){
+						var player = data.players[i];
+						$('.mc-heads').append("<li style='background-image: url(http://minotar.net/avatar/"+player+"/32);' title='"+player+"''>"+player+"</li>");
+					}
+				}
+			});
+
+		})()
+
+	</script>
 </body>
 </html>
