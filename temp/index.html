@@ -6,30 +6,50 @@
 	<meta name="keywords" content="UPGS, University of Portsmouth Gaming Society, Gaming Society, university, society, portsmouth, gaming, computer games">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+	<!-- Open Graph details -->
+	<meta property='og:title' content="UPGS - University of Portsmouth Gaming Society" />	
+	<meta property='og:description' content="A place within Portsmouth where gamers of all types can meet. We are here to promote gaming to everyone." />
+	<meta property='og:url' content="http://thegamingsociety.co.uk" />
+	<meta property='og:site_name' content="UPGS - University of Portsmouth Gaming Society: A place within Portsmouth where gamers of all types can meet." />
+	<meta property='og:image' content='img/upgssquare.png'/>
+
 	<title>UPGS - University of Portsmouth Gaming Society</title>
 	<link rel="shortcut icon" href="img/favicon.ico" />
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<h1 class="logo">UPGS</h1>
+	<main>
+		<h1 class="logo">UPGS</h1>
 
-	<div class="join">
-		<a href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join our society!</a>
-	</div>
+		<section class="description">
+			<p>The University of Portsmouth's Gaming Society, a place within Portsmouth where gamers of all types can meet.</p>
+			<p>We are here to promote gaming to everyone.</p>
+		</section>
 
-	<section class="servers-section">
-		<div class="server">
-			<div>
-				<h3 class="server-logo minecraft">Minecraft</h3>
-				<p class="status">No status information</p>
+		<section class="servers-section">
+			<div class="server">
+				<div>
+					<h3 class="server-logo minecraft">Minecraft</h3>
+					<p class="status">No status information</p>
+				</div>
+				<div class="ip-address">
+					<p id="clipboard-text">mc.thegamingsociety.co.uk</p>
+					<button class="copy-button" data-clipboard-target="clipboard-text">Copy</button>
+				</div>
 			</div>
-			<div class="ip-address">
-				<textarea readonly id="clipboard-text">mc.thegamingsociety.co.uk</textarea>
-				<button class="copy-button" data-clipboard-target="clipboard-text">Copy</button>
-			</div>
+			<ul class="players"><li>No player information</li></ul>
+		</section>
+
+		<div class="join">
+			<a class="button" href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join our society!</a>
+			<ul class="social">
+				<li><a href="https://www.facebook.com/groups/gamingsoc/" class="facebook">Facebook</a></li>
+				<li><a href="https://twitter.com/uopgamingsoc" class="twitter">Twitter</a></li>
+				<li><a href="https://plus.google.com/u/0/communities/109710575313255821027" class="google">Google</a></li>
+				<li><a href="http://steamcommunity.com/groups/UPGS" class="steam">Steam</a></li>
+			</ul>
 		</div>
-		<ul class="players"><li>No player information</li></ul>
-	</section>
+	</main>
 
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<script type="text/javascript" src="js/ZeroClipboard.js"></script>

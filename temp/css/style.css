@@ -2,11 +2,28 @@
 
 @import url('http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:400,800,700,600');
 
-*{	margin: 0; padding: 0; box-sizing: border-box; }
+*{	margin: 0; padding: 0; box-sizing: border-box; border: none; outline: none; }
+
+li{ list-style: none; }
+
+main{
+	width: 50%;
+	margin: 0 auto;
+}
 
 body{
 	background: #f3f3f3;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+.description{
+	color: #181818;
+	padding: 1em;
+	line-height: 1.5;
+	font-size: .85em;
+	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 }
 
 .logo{
@@ -60,32 +77,8 @@ body{
 	50%{ transform: rotateX(10deg) rotateY(-10deg);	}
 }
 
-.join a{
-	width: 40%;
-	margin: 1.5em auto;
-	display: block;
-	background: #9DA235;
-	padding: .5em;
-	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
-	font-size: 1.5em;
-	color: #F4F4F4;
-	border: none;
-	outline: none;
-	border-radius: 2px;
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	transition: background .15s;
-}
-
-.join a:hover{
-	background: #B5BB3E;
-	cursor: pointer;
-}
-
 .servers-section{
-	width: 50%;
-	margin: .5em auto;
+	margin-bottom: .5em;
 }
 
 .server{
@@ -153,17 +146,19 @@ body{
 
 .ip-address{ margin: .5em 0; }
 
-.ip-address textarea,
+.ip-address p,
 .ip-address .copy-button,
 .ip-address .copy-button-copied{
 	float: left;
 	outline: none;
 	border: none;
+	padding: 1.5em 1em;
+	line-height: 1em;
+	font-size: 1em;
+	height: 4em;
 }
 
-.ip-address textarea{
-	padding: 1.5em 1em .5em;
-	line-height: 1em;
+.ip-address p{
 	display: block;
 	width: 80%;	
 	resize: none;
@@ -178,12 +173,10 @@ body{
 
 .ip-address .copy-button,
 .ip-address .copy-button-copied{
-	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
-	padding: 1.5em 1em;
-	line-height: 1em;
 	width: 20%;
 	color: #F3F3F3;
 	text-transform: uppercase;
+	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	transition: background .15s, color .15s;
@@ -194,6 +187,7 @@ body{
 .ip-address .copy-button-copied{
 	background: #60B440;
 	color: #ACE298;
+	cursor: default;
 }
 
 .ip-address .copy-button:hover,
@@ -241,7 +235,7 @@ body{
 	transform: scale(0) rotate(180deg);
 }
 
-.players .avatar:hover{ cursor: pointer; }
+.players .avatar:hover{ cursor: help; }
 
 .players .avatar::after{
 	z-index: 9999;
@@ -268,44 +262,96 @@ body{
 	opacity: 1;
 }
 
+.join a{
+	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
+	padding: .5em;
+	text-align: center;
+	color: #F4F4F4;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.join .button{
+	margin-top: .5em;
+	display: block;
+	background: #9DA235;
+	font-size: 1.5em;
+	border: none;
+	outline: none;
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	transition: background .15s;
+}
+
+.join .button:hover{
+	background: #B5BB3E;
+	cursor: pointer;
+}
+
+.social li a{
+	float: left;
+	width: 25%;
+	background: no-repeat;
+	background-size: 100%;
+	border-radius: 0;
+	font-size: .85em;
+	font-weight: 500;
+	transition: background .1s;
+}
+.social li:first-child a{
+	border-bottom-left-radius: 5px;
+}
+
+.social li:last-child a{
+	border-bottom-right-radius: 5px;
+}
+
+.social li .facebook{ background: #3B5998; }
+.social li .facebook:hover{ background: #496EBD; }
+.social li .twitter{ background: #4099FF; }
+.social li .twitter:hover{ background: #6FB2FF; }
+.social li .google{ background: #dd4b39; }
+.social li .google:hover{ background: #FC5944; }
+.social li .steam{ background: #181818; }
+.social li .steam:hover{ background: #333232; }
+
 @media screen and (max-width: 1000px){
 
-	.servers-section{ width: 70%; }
+	main{ width: 70%; }
 
 }
 
 @media screen and (max-width: 900px){
 
-	.servers-section{ width: 80%; }
+	main{ width: 80%; }
 
 }
 
 @media screen and (max-width: 700px){
 
-	.servers-section, .join a{ width: 90%; }
+	main{ width: 90%; }
 
 }
 
 @media screen and (max-width: 600px){
 
+	main{ width: 95%; }
+
+	.description{ width: 100%; }
 
 	.logo{ margin-top: .5em; }
-
-	.join a{ margin: .5em auto; }
-
-	.servers-section{ width: 95%; }
 
 	.server .server-logo{
 		background-position: center; 
 		background-size: 60%;
 	}
 	
-	.server .server-logo, .server .status{ float: none; width: 100%; }
+	.server .server-logo, .server .status{ padding: .75em; float: none; width: 100%; }
 	.server .status{ text-align: center; }
 
 	.ip-address{ font-size: .75em; }
 
-	.ip-address textarea{
+	.ip-address p{
 		width: 100%;
 		border-radius: 5px;
 	}

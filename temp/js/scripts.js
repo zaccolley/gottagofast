@@ -1,4 +1,11 @@
 (function(){
+	
+	updateDetails();
+	copyButtonSetup();
+
+})()
+
+function updateDetails(){
 
 	$.ajax({
 		url: "data.php",
@@ -22,11 +29,6 @@
 
 				$('.players').html('<li><span>'+ info.Players + " / " + info.MaxPlayers+'</span> players online</li>');
 
-				// players = ["Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho", 
-				// "Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho", 
-				// "Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho", 
-				// "Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho"];
-
 				for(var i = 0; i < players.length; i++){
 					var player = players[i];
 
@@ -34,14 +36,13 @@
 				
 				}
 
-				$('.players li').each(function(i, avatar){
-					var time = (i * 100);
+				$('.players').find('.avatar').each(function(i, avatar){
+					var time = (i + 1) * 100 + 250;
 
 					setTimeout(function(){
 						$(avatar).removeClass('avatar-hidden');
 					}, time);
 
-					console.log(time);
 				});
 
 			}
@@ -64,7 +65,9 @@
 
 	});
 
-	$('.ip-address').find('textarea').click(function(){ $(this).select(); });
+}
+
+function copyButtonSetup(){	
 
 	ZeroClipboard.config({ moviePath: './js/ZeroClipboard.swf' });
 	var client = new ZeroClipboard($('.copy-button'));
@@ -72,6 +75,11 @@
 	client.on('complete', function (client, args){
 		$('.copy-button').text('Copied!');
 		$('.copy-button').addClass('copy-button-copied').removeClass('copy-button');
+		ZeroClipboard.destroy();
 	});
 
-})()
+	client.on('wrongflash noflash', function() {
+		ZeroClipboard.destroy();
+	});
+
+}
