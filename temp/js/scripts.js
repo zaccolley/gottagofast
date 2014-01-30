@@ -74,8 +74,11 @@ function copyButtonSetup(){
 
 	client.on('complete', function (client, args){
 		$('.copy-button').text('Copied!');
-		$('.copy-button').addClass('copy-button-copied').removeClass('copy-button');
-		ZeroClipboard.destroy();
+		$('.copy-button').addClass('copy-button-copied');
+		setTimeout(function(){
+			$('.copy-button-copied').removeClass('copy-button-copied');
+			$('.copy-button').text('Copy');
+		}, 1500);
 	});
 
 	client.on('wrongflash noflash', function() {

@@ -179,14 +179,14 @@ body{
 	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
-	transition: background .15s, color .15s;
+	transition: background 1s;
 }
 
 .ip-address .copy-button{ background: #8D8D8D; }
 
 .ip-address .copy-button-copied{
+	transition: background .15s;
 	background: #60B440;
-	color: #ACE298;
 	cursor: default;
 }
 
@@ -194,6 +194,12 @@ body{
 .ip-address .copy-button.zeroclipboard-is-hover{
 	background: #ACACAC;
 	cursor: pointer;
+}
+
+.ip-address .copy-button-copied:hover,
+.ip-address .copy-button-copied.zeroclipboard-is-hover{
+	background: #60B440;
+	cursor: default;
 }
 
 .players{
