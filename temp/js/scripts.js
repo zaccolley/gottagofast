@@ -9,41 +9,69 @@
 		var info = data.info;
 		var players = data.players;
 
-		console.log(data);
+		var status = "offline";
+		var statusStr = "Server offline&hellip;";
 
-		var status = "unknown";
-		var statusStr = "Can't reach server.. :(";
-
-		if(!info){
-			status = "offline";
-			statusStr = "Server offline.. :(";
-		}else{
+		if(info){
 			status = "online";
-			statusStr = "Server online! :D";
-
-			$('.server .status').html(statusStr);
-			$('.server').addClass('server-'+status);
+			statusStr = "Server online!";
 
 			if(!players){
-				$('.mc-heads').html('<li>No players online!</li>');
+				$('.players').html('<li>No players online!</li>');
 			}else{
-				console.log(players);
 
-				$('.mc-heads').html('<li><span>'+ info.Players + " / " + info.MaxPlayers+'</span> players online</li>');
+				$('.players').html('<li><span>'+ info.Players + " / " + info.MaxPlayers+'</span> players online</li>');
+
+				// players = ["Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho", 
+				// "Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho", 
+				// "Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho", 
+				// "Notch", "ZacColley", "SethBling", "Kepha", "Dinnerbone", "Etho"];
 
 				for(var i = 0; i < players.length; i++){
 					var player = players[i];
-					$('.mc-heads').append("<li class='avatar' style='background-image: url(http://minotar.net/avatar/"+player+"/32);' title='"+player+"''>"+player+"</li>");
+
+					$('.players').append("<li class='avatar avatar-hidden' style='background-image: url(http://minotar.net/avatar/"+player+"/32);' data-name='"+player+"''>"+player+"</li>");
+				
 				}
+
+				$('.players li').each(function(i, avatar){
+					var time = (i * 100);
+
+					setTimeout(function(){
+						$(avatar).removeClass('avatar-hidden');
+					}, time);
+
+					console.log(time);
+				});
+
 			}
+
+			$('.players').addClass('players-shown');
 
 		}
 
+		$('.status').html(statusStr);
+		$('.server').addClass('server-'+status);
+
+	}).fail(function(){
+
+		var status = "unknown";
+		var statusStr = "Can't reach server&hellip;";
+
+
+		$('.status').html(statusStr);
+		$('.server').addClass('server-'+status);
+
 	});
 
+	$('.ip-address').find('textarea').click(function(){ $(this).select(); });
 
-	$('.ip-address').click(function(){
-		$(this).select();
+	ZeroClipboard.config({ moviePath: './js/ZeroClipboard.swf' });
+	var client = new ZeroClipboard($('.copy-button'));
+
+	client.on('complete', function (client, args){
+		$('.copy-button').text('Copied!');
+		$('.copy-button').addClass('copy-button-copied').removeClass('copy-button');
 	});
 
 })()

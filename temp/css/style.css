@@ -2,19 +2,15 @@
 
 @import url('http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:400,800,700,600');
 
-*{	margin: 0; padding: 0;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-   			box-sizing: border-box;
-}
+*{	margin: 0; padding: 0; box-sizing: border-box; }
 
 body{
 	background: #f3f3f3;
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-.logo {
-	margin-top: 50px;
+.logo{
+	margin-top: .25em;
 	display: block;
 	width: 100%;
 	text-align: center;
@@ -26,193 +22,47 @@ body{
 	color: #181818;
 	text-align: center;
 	white-space: nowrap;
-	-webkit-transition: letter-spacing .5s .25s, color .15s .25s;
-			transition: letter-spacing .5s .25s, color .15s .25s;
-
-	-webkit-animation: sway 3s infinite;
-		 -o-animation: sway 3s infinite;
-			animation: sway 3s infinite;
+	transition: letter-spacing .5s .25s, color .15s .25s;
+	animation: sway 3s infinite;
 }
 
-.logo::before,
-.logo::after {
+.logo::before, .logo::after{
 	content: '+';
 	display: inline-block;
 	width: 9vw;
 	height: 10vw;
+	margin: 0 1vw;
 	color: transparent;
 	background: url("../img/logo.svg") no-repeat;
 	background-size: cover;
-
-	-webkit-transition: all .5s;
-			transition: all .5s;
-
-	-webkit-transform-origin: 50%;
-			transform-origin: 50%; /* ensures they spin from the center */
+	transition: all .5s;
+	transform-origin: 50%; /* ensures they spin from the center */
 }
 
-.logo::before {
-	background-position: left;
-	-webkit-animation: left-spin 3s infinite;
-		 -o-animation: left-spin 3s infinite;
-			animation: left-spin 3s infinite;
+.logo::before{
+	animation: left-spin 3s infinite;
 }
 
-.logo::after {
+.logo::after{
 	background-position: right;
-	-webkit-animation: right-spin 3s infinite;
-		 -o-animation: right-spin 3s infinite;
-			animation: right-spin 3s infinite;
-}
-
-@-webkit-keyframes left-spin{
-	100%{ -webkit-transform: rotateZ(360deg); }
-}
-
-@-o-keyframes left-spin{
-	100%{ -o-transform: rotateZ(360deg); }
+	animation: right-spin 3s infinite;
 }
 
 @keyframes left-spin{
 	100%{ transform: rotateZ(360deg); }
 }
 
-@-webkit-keyframes right-spin{
-	100%{ -webkit-transform: rotateZ(-360deg); }
-}
-
-@-o-keyframes right-spin{
-	100%{ -o-transform: rotateZ(-360deg); }
-}
-
 @keyframes right-spin{
 	100%{ transform: rotateZ(-360deg); }
 }
 
-@-webkit-keyframes sway{
-	50%{ -webkit-transform: rotateX(10deg) rotateY(-10deg);	}
-}
-
-.servers-section{
-	width: 30%;
-	margin: 50px auto;
-	background: #E7E7E7;
-	border-radius: 5px;
-	padding: 1em;
-}
-
-.servers-section .server{
-	overflow: hidden;
-}
-
-.servers-section .server .server-logo,
-.servers-section .server p,
-.servers-section .server .ip-address{	
-	padding: 1em;
-	font-size: 1em;
-	text-align: center;
-	width: 100%;
-}
-
-.servers-section .server .server-logo{
-	text-indent: -9999px;
-	background: no-repeat center;
-	background-size: 70%;
-}
-
-.servers-section .server .minecraft{ background-image: url('../img/minecraft.png'); }
-
-
-.servers-section .server .server-logo,
-.servers-section .server-unknown .server-logo{
-	-webkit-filter: drop-shadow(0 2px 0 #aaa) drop-shadow(0 -2px 0 #aaa)
-					drop-shadow(2px 0 0 #aaa) drop-shadow(-2px 0 0 #aaa);
-}
-
-.servers-section .server-online .server-logo{
-	-webkit-filter: drop-shadow(0 2px 0 #939740) drop-shadow(0 -2px 0 #939740)
-					drop-shadow(2px 0 0 #939740) drop-shadow(-2px 0 0 #939740);
-}
-
-.servers-section .server-offline .server-logo{
-	-webkit-filter: drop-shadow(0 2px 0 #AF4120) drop-shadow(0 -2px 0 #AF4120)
-					drop-shadow(2px 0 0 #AF4120) drop-shadow(-2px 0 0 #AF4120);
-}
-
-.servers-section .server .status{
-	color: #181818;
-	font-weight: 700;
-}
-
-.servers-section .server-online .status{  color: #939740;  }
-.servers-section .server-offline .status{ color: #AF4120;  }
-.servers-section .server-unknown .status{ color: #464646;  }
-
-.mc-heads{
-	text-align: center;
-	padding: .5em 0;
-	overflow: hidden;
-}
-
-.mc-heads li{
-	padding-bottom: 1em;
-	font-weight: bold;
-	font-size: .85em;
-	color: #333;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-.mc-heads li span{ font-weight: normal; }
-
-.mc-heads .avatar{
-	display: inline-block;
-	text-indent: -9999px;
-	overflow: hidden;
-	margin-right: 5px;
-	margin-bottom: 5px;
-	width: 32px;
-	height: 32px;
-	background: url('../img/steve.png');
-	background-repeat: no-repeat;
-}
-
-.mc-heads .avatar:hover{
-	opacity: .8;
-}
-
-.servers-section .server .ip-address{
-	width: 90%;
-	margin: 0 auto 1em;
-	display: block;
-	padding: 1.5em 1em .5em;
-	resize: none;
-	outline: none;
-	border: none;
-	overflow: hidden;
-	font-family: monospace;
-	background: #181818;
-	text-align: center;
-	color: #F4F4F4;
-	border-radius: 5px;
-}
-
-@media screen and (max-width: 1000px){
-	.servers-section{ width: 60%; }
-}
-
-@media screen and (max-width: 800px){
-	.servers-section{ width: 70%; }
-}
-
-@media screen and (max-width: 400px){
-	.servers-section{ width: 90%; }
-	.servers-section .server .ip-address{ font-size: .75em; }
+@keyframes sway{
+	50%{ transform: rotateX(10deg) rotateY(-10deg);	}
 }
 
 .join a{
 	width: 40%;
-	margin: 25px auto;
+	margin: 1.5em auto;
 	display: block;
 	background: #9DA235;
 	padding: .5em;
@@ -225,10 +75,242 @@ body{
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
-	transition: opacity .1s;
+	transition: background .15s;
 }
 
 .join a:hover{
-	opacity: .9;
+	background: #B5BB3E;
 	cursor: pointer;
+}
+
+.servers-section{
+	width: 50%;
+	margin: .5em auto;
+}
+
+.server{
+	padding: 1em;
+	border-radius: 5px;
+	background: #E7E7E7;
+	overflow: hidden;
+}
+
+.server div{ overflow: hidden; }
+
+.server .server-logo, .server .status{
+	padding: 1em;
+	font-size: 1em;
+	text-align: center;
+	float: left;
+	width: 50%;
+}
+
+.server .server-logo{
+	display: block;
+	text-indent: -9999px;
+	background: no-repeat 5px center;
+	transition: filter .5s;
+	transition: -webkit-filter .5s;
+}
+
+.server .minecraft{ background-image: url('../img/minecraft.png'); }
+
+.server .server-logo,
+.server-unknown .server-logo{
+	-webkit-filter: drop-shadow(0 2px 0 #aaa) drop-shadow(0 -2px 0 #aaa)
+					drop-shadow(2px 0 0 #aaa) drop-shadow(-2px 0 0 #aaa);
+			filter: drop-shadow(0 2px 0 #aaa) drop-shadow(0 -2px 0 #aaa)
+					drop-shadow(2px 0 0 #aaa) drop-shadow(-2px 0 0 #aaa);
+}
+
+.server-online .server-logo{
+	-webkit-filter: drop-shadow(0 2px 0 #939740) drop-shadow(0 -2px 0 #939740)
+					drop-shadow(2px 0 0 #939740) drop-shadow(-2px 0 0 #939740);
+			filter: drop-shadow(0 2px 0 #939740) drop-shadow(0 -2px 0 #939740)
+					drop-shadow(2px 0 0 #939740) drop-shadow(-2px 0 0 #939740);
+}
+
+.server-offline .server-logo{
+	-webkit-filter: drop-shadow(0 2px 0 #AF4120) drop-shadow(0 -2px 0 #AF4120)
+					drop-shadow(2px 0 0 #AF4120) drop-shadow(-2px 0 0 #AF4120);
+			filter: drop-shadow(0 2px 0 #AF4120) drop-shadow(0 -2px 0 #AF4120)
+					drop-shadow(2px 0 0 #AF4120) drop-shadow(-2px 0 0 #AF4120);
+}
+
+.server .status{
+	opacity: 0;
+	color: #181818;
+	font-weight: 700;
+	transition: opacity .5s;
+	text-align: right;
+}
+
+.server-online .status, .server-offline .status, .server-unknown .status{ opacity: 1; }
+
+.server-online .status{  color: #939740; }
+.server-offline .status{ color: #AF4120; }
+.server-unknown .status{ color: #464646; }
+
+.ip-address{ margin: .5em 0; }
+
+.ip-address textarea,
+.ip-address .copy-button,
+.ip-address .copy-button-copied{
+	float: left;
+	outline: none;
+	border: none;
+}
+
+.ip-address textarea{
+	padding: 1.5em 1em .5em;
+	line-height: 1em;
+	display: block;
+	width: 80%;	
+	resize: none;
+	font-family: monospace;
+	text-align: center;
+	background: #181818;
+	color: #F4F4F4;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.ip-address .copy-button,
+.ip-address .copy-button-copied{
+	font-family: "Fredoka One", Helvetica, Arial, sans-serif;
+	padding: 1.5em 1em;
+	line-height: 1em;
+	width: 20%;
+	color: #F3F3F3;
+	text-transform: uppercase;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	transition: background .15s, color .15s;
+}
+
+.ip-address .copy-button{ background: #8D8D8D; }
+
+.ip-address .copy-button-copied{
+	background: #60B440;
+	color: #ACE298;
+}
+
+.ip-address .copy-button:hover,
+.ip-address .copy-button.zeroclipboard-is-hover{
+	background: #ACACAC;
+	cursor: pointer;
+}
+
+.players{
+	opacity: 0;
+	text-align: center;
+	padding: .5em 0;
+	overflow: hidden;
+	transition: opacity .5s;
+}
+
+.players-shown{ opacity: 1; }
+
+.players li{
+	padding: 1em;
+	font-weight: bold;
+	font-size: .85em;
+	color: #333;d
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.players li span{ font-weight: normal; }
+
+.players .avatar{
+	display: inline-block;
+	text-indent: -9999px;
+	overflow: hidden;
+	margin: 4px;
+	width: 32px;
+	height: 32px;
+	background: url('../img/steve.png');
+	background-repeat: no-repeat;
+	transition: opacity .15s, transform .25s, background .15s;
+	transform-origin: center;
+}
+
+.players .avatar-hidden{
+	opacity: 0;
+	transform: scale(0) rotate(180deg);
+}
+
+.players .avatar:hover{ cursor: pointer; }
+
+.players .avatar::after{
+	z-index: 9999;
+	content: attr(data-name);
+	position: absolute;
+	display: block;
+	padding: 10px;
+	line-height: 10px;
+	text-indent: 0;
+	text-align: center;
+	color: #E4E4E4;
+	font-weight: 500;
+	background: #1D1D1D;
+	transform: translateY(-5px);
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	opacity: 0;
+	transition: opacity .25s, transform .5s;
+}
+
+.players .avatar:hover::after{
+	transition: opacity .15s, transform .25s;
+	transform: translateY(5px);
+	opacity: 1;
+}
+
+@media screen and (max-width: 1000px){
+
+	.servers-section{ width: 70%; }
+
+}
+
+@media screen and (max-width: 900px){
+
+	.servers-section{ width: 80%; }
+
+}
+
+@media screen and (max-width: 700px){
+
+	.servers-section, .join a{ width: 90%; }
+
+}
+
+@media screen and (max-width: 600px){
+
+
+	.logo{ margin-top: .5em; }
+
+	.join a{ margin: .5em auto; }
+
+	.servers-section{ width: 95%; }
+
+	.server .server-logo{
+		background-position: center; 
+		background-size: 60%;
+	}
+	
+	.server .server-logo, .server .status{ float: none; width: 100%; }
+	.server .status{ text-align: center; }
+
+	.ip-address{ font-size: .75em; }
+
+	.ip-address textarea{
+		width: 100%;
+		border-radius: 5px;
+	}
+
+	.ip-address .copy-button, .ip-address .copy-button-copied{
+		display: none;
+	}
+
 }

@@ -13,20 +13,27 @@
 <body>
 	<h1 class="logo">UPGS</h1>
 
-	<section class="servers-section">
-		<div class="server">
-			<h3 class="server-logo minecraft">Minecraft</h3>
-			<p class="status">Loading server status...</p>
-			<textarea readonly class="ip-address">mc.thegamingsociety.co.uk</textarea>
-		</div>
-		<ul class="mc-heads"></ul>
-	</section>
-	
 	<div class="join">
 		<a href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join our society!</a>
 	</div>
 
+	<section class="servers-section">
+		<div class="server">
+			<div>
+				<h3 class="server-logo minecraft">Minecraft</h3>
+				<p class="status">No status information</p>
+			</div>
+			<div class="ip-address">
+				<textarea readonly id="clipboard-text">mc.thegamingsociety.co.uk</textarea>
+				<button class="copy-button" data-clipboard-target="clipboard-text">Copy</button>
+			</div>
+		</div>
+		<ul class="players"><li>No player information</li></ul>
+	</section>
+
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/ZeroClipboard.js"></script>
+	<script type="text/javascript" src="js/prefixfree.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
