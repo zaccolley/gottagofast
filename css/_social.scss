@@ -1,0 +1,61 @@
+/* _social.scss */
+
+.social{
+	overflow: hidden;
+	float: left;
+	width: 40%;
+	border-radius: 2px;
+}
+
+.social li{
+	float: left;
+	width: 50%;
+	list-style: none;
+}
+
+.social li a{
+	height: 75px;
+	display: block;
+	text-indent: -5432px;
+	text-align: center;
+	padding: .25em 0;
+	background: center no-repeat;
+	background-size: auto 80%;
+	transition: opacity .15s;
+}
+
+.social li .facebook{
+	background-image: url('../../img/facebook.svg');
+	background-color: #3B5998;
+}
+
+.social li .facebook:hover{
+	background-color: lighten(#3B5998, 5%);
+}
+
+.social li .twitter{
+	background-image: url('../../img/twitter.svg');
+	background-color: #4099FF;
+}
+
+.social li .twitter:hover{
+	background-color: lighten(#4099FF, 5%);
+}
+
+.social li .steam{
+	background-image: url('../../img/steam.svg');
+	background-color: lighten($black, 5%);;
+}
+
+.social li .steam:hover{
+	background-color: lighten($black, 7%);
+}
+
+.social li .google{
+	background-image: url('../../img/google.svg');
+	background-color: #dd4b39;
+}
+
+.social li .google:hover{
+	background-color: lighten(#dd4b39, 5%);
+}

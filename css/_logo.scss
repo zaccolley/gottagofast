@@ -1,0 +1,61 @@
+/* _logo.scss */
+
+.logo{
+	width: 30%;
+	padding: 10px 0;
+	font-size: 45px;
+	font-weight: 500;
+	line-height: 45px;
+	font-weight: 500;
+	font-family: $fredoka;
+	color: $black;
+	white-space: nowrap;
+	transition: letter-spacing .5s .25s, color .15s .25s;
+}
+
+/* old normal background version of logo
+
+.logo{
+	width: 35%;
+	padding: 20px;
+	text-indent: -54321px;
+	background: url('../img/logo.svg') no-repeat center left;
+	background-origin: content-box;
+	background-size: 70%;
+}
+
+*/
+
+.logo::before,
+.logo::after{
+	content: '+';
+	display: inline-block;
+	width: 43px;
+	height: 45px;
+	color: transparent;
+	background: url('../../img/logo.svg') no-repeat;
+	background-size: cover;
+
+	transition: transform .5s;
+	transform-origin: 50%; /* ensures they spin from the center */
+}
+
+.logo::before{ background-position: left; }
+.logo::after{ background-position: right; }
+
+.logo-animation,
+.logo:hover{
+	letter-spacing: -.75em;
+	color: transparent;
+}
+
+.logo-animation::before, .logo:hover::before{
+	transform: rotateZ(180deg);
+}
+
+.logo-animation::after, .logo:hover::after{
+	transform: rotateZ(-180deg);
+}
+
+.logo:active::before{ transform: rotateZ(360deg); }
+.logo:active::after{  transform: rotateZ(-360deg); }

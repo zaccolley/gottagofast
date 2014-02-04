@@ -1,0 +1,77 @@
+/* _nav.scss */
+
+nav{
+	width: 70%;
+	padding-left: 5%;
+}
+
+nav li{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 1em;
+	font-family: $openSansCon;
+	width: 20%;	
+	list-style: none;
+}
+
+nav li a{
+	color: rgba(50,50,50,.5);
+	padding: 20px 0;
+	text-decoration: none;
+	display: block;
+	transition: padding .1s, border .1s, color .1s;
+	
+	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
+}
+
+nav li a:hover{
+	border-top: 5px solid;
+	color: rgba(50,50,50,.75);
+}
+
+nav li:nth-child(2) a:hover{ color: $yellow; }
+nav li:nth-child(3) a:hover{ color: $red; }
+nav li:nth-child(4) a:hover{ color: $blue; }
+nav li:nth-child(5) a:hover{ color: $green; }
+
+nav .nav-button{
+	float: right;
+	display: none;
+	margin-top: .5em;
+	padding: .25em .5em;
+	text-align: center;
+	background: rgba(129, 129, 129, 0.65);
+	color: #FFF;
+	border-radius: 3px;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-family: $openSansCon;
+	cursor: pointer;
+	transition: opacity .15s;
+}
+
+nav .nav-button:hover{
+	opacity: .8;
+}
+
+nav .join{
+	margin: 0;
+	padding: .75em 0;
+}
+
+nav .join a{
+	width: 70%;
+	font-size: 1em;
+	transition: opacity .25s, transform .25s;
+}
+
+nav .join a.hidden{
+	opacity: 0;
+	transform: scale(0);
+}
+
+nav .join a:hover{
+	border-top: none;
+	color: $white;
+}

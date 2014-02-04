@@ -1,15 +1,5 @@
-// logo colours
-
-$cross: #323232;
-$red: #AF4120;
-$green: #939740;
-$blue: #4C79BA;
-$yellow: #F2A216;
-
-// standard colours
-
-$white: #F4F4F4;
-$black: #181818;
+@import "reset";
+@import "colours";
 
 $headerHeight: 70px;
 
@@ -22,22 +12,18 @@ $fredoka: 'Fredoka One', Helvetica, Arial, sans-serif;
 $openSans: 'Open Sans', Helvetica, Arial, sans-serif;
 $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 
-*{
-	margin: 0; padding: 0;
-	box-sizing: border-box; /* box sizes including both padding and borders */
-}
-
-li{ list-style-position: inside; }
-
 body{
 	padding-top: $headerHeight;
 	font-family: $openSans;
 	background: $white;
 }
 
-input, textarea, button{
-	border: none;
-	outline: none;
+li{ list-style-position: inside; }
+
+.wrapper{
+	padding: 0 .5em;
+	width: 70%;
+	margin: 0 auto;
 }
 
 header{
@@ -55,218 +41,9 @@ header{
 	min-height: $headerHeight;
 }
 
-/* old normal background version of logo
-
-.logo{
-	width: 35%;
-	padding: 20px;
-	text-indent: -54321px;
-	background: url('../img/logo.svg') no-repeat center left;
-	background-origin: content-box;
-	background-size: 70%;
-}
-
-*/
-
-header a{ color: $black; }
-
-.account{
-	position: fixed;
-	overflow: hidden;
-	background: #E7E7E7;
-	padding: 1em;
-	color: #F4F4F4;
-	left: 0;
-	right: 0;
-	z-index: 1337;
-	transition: transform .5s;
-}
-
-.account--hidden{
-	transform: translateY(-100%);
-}
-
-.account form .row {
-	overflow: hidden;
-	margin-bottom: 20px;
-}
-
-.account form label,
-.account form input,
-.account form button{
-	float: left;
-	font-size: 1.5em;
-	padding: .5em;
-	color: lighten($black, 10%);
-}
-
-.account form input,
-.account form button{
-	font-family: $openSans;
-}
-
-.account form label{
-	width: 20%;
-	text-transform: uppercase;
-	font-family: $openSansCon;
-	font-weight: 800;
-}
-
-.account form input{
-	width: 80%;
-	border-radius: 2px;
-	background: rgba(0,0,0,.1);
-}
-
-.account form input[type="password"]{
-	letter-spacing: .25em;
-	font-weight: 900;
-}
-
-.account .buttons{
-	overflow: hidden;
-	width: 80%;
-	float: right;
-}
-
-.account form button{
-	text-transform: uppercase;
-	color: $white;
-	font-family: $fredoka;	
-	transition: opacity .1s;
-}
-
-.account form button:hover{
-	opacity: .9;
-	cursor: pointer;
-}
-
-.account form button[type="submit"]{
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
-	background: $green;
-	width: 75%;
-}
-
-.account form button[type="reset"]{
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
-	background: $red;
-	width: 25%;
-}
-
-.logo{
-	width: 30%;
-	padding: 10px 0;
-	font-size: 45px;
-	font-weight: 500;
-	line-height: 45px;
-	font-weight: 500;
-	font-family: $fredoka;
-	color: $black;
-	white-space: nowrap;
-	transition: letter-spacing .5s .25s, color .15s .25s;
-}
-
-.logo::before,
-.logo::after{
-	content: '+';
-	display: inline-block;
-	width: 43px;
-	height: 45px;
-	color: transparent;
-	background: url('../img/logo.svg') no-repeat;
-	background-size: cover;
-
-	transition: transform .5s;
-	transform-origin: 50%; /* ensures they spin from the center */
-}
-
-.logo::before{ background-position: left; }
-.logo::after{ background-position: right; }
-
-.logo-animation,
-.logo:hover{
-	letter-spacing: -.75em;
-	color: transparent;
-}
-
-.logo-animation::before, .logo:hover::before{
-	transform: rotateZ(180deg);
-}
-
-.logo-animation::after, .logo:hover::after{
-	transform: rotateZ(-180deg);
-}
-
-.logo:active::before{ transform: rotateZ(360deg); }
-.logo:active::after{  transform: rotateZ(-360deg); }
-
-nav{
-	width: 70%;
-	padding-left: 5%;
-}
-
-nav li{
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 1em;
-	font-family: $openSansCon;
-	width: 20%;	
-	list-style: none;
-}
-
-nav li a{
-	color: rgba(50,50,50,.5);
-	padding: 20px 0;
-	text-decoration: none;
-	display: block;
-	transition: padding .1s, border .1s, color .1s;
-	
-	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
-}
-
-nav li a:hover{
-	border-top: 5px solid;
-	color: rgba(50,50,50,.75);
-}
-
-nav .join a:hover{
-	border-top: none;
-	color: $white;
-}
-
-nav li:nth-child(2) a:hover{ color: $yellow; }
-nav li:nth-child(3) a:hover{ color: $red; }
-nav li:nth-child(4) a:hover{ color: $blue; }
-nav li:nth-child(5) a:hover{ color: $green; }
-
-nav .nav-button{
-	float: right;
-	display: none;
-	margin-top: .5em;
-	padding: .25em .5em;
-	text-align: center;
-	background: rgba(129, 129, 129, 0.65);
-	color: #FFF;
-	border-radius: 3px;
-	text-transform: uppercase;
-	font-weight: 800;
-	font-family: $openSansCon;
-	cursor: pointer;
-	transition: opacity .15s;
-}
-
-nav .nav-button:hover{
-	opacity: .8;
-}
-
-.wrapper{
-	padding: 0 .5em;
-	width: 70%;
-	margin: 0 auto;
-}
+@import "account";
+@import "logo";
+@import "nav";
 
 section{
 	overflow: hidden;
@@ -287,64 +64,87 @@ section h2 span{
 	font-weight: 500;
 }
 
-.social{
-	overflow: hidden;
-	float: left;
-	width: 40%;
-	border-radius: 2px;
+.info-section,
+.games-section{
+	color: $white;
+	background: $black;
 }
 
-.social li{
-	float: left;
-	width: 50%;
-	list-style: none;
-}
-
-.social li a{
-	height: 75px;
+.join a{
 	display: block;
-	text-indent: -5432px;
+	padding: .5em;
+	font-family: $fredoka;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 1.5em;
+	color: $white;
+	background: saturate($green, 10%);
+	border-radius: 2px;
+	transition: background .1s;
+}
+
+.join a:hover{
+	background: lighten(saturate($green, 10%), 5%);
+	cursor: pointer;
+}
+
+.info-section{
+	position: relative;
+	overflow: hidden;
+	background: rgba(24,24,24,.95);
+}
+
+.info-section .join{
 	text-align: center;
-	padding: .25em 0;
-	background: center no-repeat;
-	background-size: auto 80%;
-	transition: opacity .15s;
+	margin-top: 50px;
 }
 
-.social li .facebook{
-	background-image: url('../img/facebook.svg');
-	background-color: #3B5998;
+.info-section .join p{
+	font-size: .8em;
+	padding: 1em;
 }
 
-.social li .facebook:hover{
-	background-color: lighten(#3B5998, 5%);
+.info-section .join a{
+	width: 40%;
+	margin: 0 auto;
 }
 
-.social li .twitter{
-	background-image: url('../img/twitter.svg');
-	background-color: #4099FF;
+.info-section .shapes{
+	z-index: -1;
+	position: absolute;
+	top:0; right:0; bottom:0; left:0;
 }
 
-.social li .twitter:hover{
-	background-color: lighten(#4099FF, 5%);
+.info-section .shapes div{
+	width: 90px;
+	height: 90px;
+	background: url("../../img/logo.svg") no-repeat;
+	position: absolute;
 }
 
-.social li .steam{
-	background-image: url('../img/steam.svg');
-	background-color: lighten($black, 5%);;
+@for $i from 1 through 12{
+
+	.info-section .shapes div:nth-child(#{$i}){
+		@if $i % 3 == 0{ animation: fall-1 3s linear infinite; }
+		@if $i % 3 == 1{ animation: fall-2 4s linear infinite; }
+		@if $i % 3 == 2{ animation: fall-3 5s linear infinite; }
+	}
+
 }
 
-.social li .steam:hover{
-	background-color: lighten($black, 7%);
+@keyframes fall-1{
+	0%{ transform: translateX(600px) translateY(-150px); }
+	100%{ transform: translateX(600px) translateY(400px) ; }
 }
 
-.social li .google{
-	background-image: url('../img/google.svg');
-	background-color: #dd4b39;
+@keyframes fall-2{
+	0%{ transform: translateX(350px) translateY(-150px) rotate(20deg); }
+	100%{ transform: translateX(550px) translateY(400px) rotate(120deg); }
 }
 
-.social li .google:hover{
-	background-color: lighten(#dd4b39, 5%);
+@keyframes fall-3{
+	0%{ transform: translateX(850px) translateY(-150px) rotate(15deg); }
+	100%{ transform: translateX(650px) translateY(400px) rotate(-115deg); }
 }
 
 .desc{
@@ -388,6 +188,9 @@ section h2 span{
 	padding-bottom: .5em;
 }
 
+.events p em{ font-style: italic; }
+.events p strong{ font-weight: 600; }
+
 .current-event{
 	list-style: none;
 }
@@ -399,102 +202,7 @@ section h2 span{
 
 .current-event li:last-child{ border: 0; }
 
-.join{
-	text-align: center;
-	margin-top: 50px;
-}
-
-nav .join{
-	margin: 0;
-	padding: 15px 0;
-}
-
-nav .join .join__button{
-	width: 70%;
-	font-size: 1em;
-	transition: opacity .25s, 		  transform .25s;
-}
-
-nav .join .join__button--hidden{
-	opacity: 0;
-	transform: scale(0);
-}
-
-.join p{
-	font-size: .8em;
-	padding: 1em;
-}
-
-.join a{
-	width: 40%;
-	margin: 0 auto;
-	display: block;
-	background: saturate($green, 10%);
-	padding: .5em;
-	font-family: $fredoka;
-	text-transform: uppercase;
-	text-decoration: none;
-	font-size: 1.5em;
-	color: $white;
-	border-radius: 2px;
-	transition: background .1s;
-}
-
-.join a:hover{
-	background: lighten(saturate($green, 10%), 5%);
-	cursor: pointer;
-}
-
-.info-section,
-.games-section{
-	color: $white;
-	background: $black;
-}
-
-.info-section{
-	position: relative;
-	padding: 0;
-	overflow: hidden;
-	background: rgba(24,24,24,.95);
-}
-
-.shapes{
-	top:0; right:0; bottom:0; left:0;
-	z-index: -1;
-	position: absolute;
-}
-
-.shapes div{
-	width: 90px;
-	height: 90px;
-	background: url("../img/logo.svg") no-repeat;
-	position: absolute;
-}
-
-@for $i from 1 through 12{
-
-	.shapes div:nth-child(#{$i}){
-		@if $i % 3 == 0{ animation: fall-1 3s linear infinite; }
-		@if $i % 3 == 1{ animation: fall-2 4s linear infinite; }
-		@if $i % 3 == 2{ animation: fall-3 5s linear infinite; }
-	}
-
-}
-
-@keyframes fall-1{
-	0%{ transform: translateX(600px) translateY(-150px); }
-	100%{ transform: translateX(600px) translateY(400px) ; }
-}
-
-@keyframes fall-2{
-	0%{ transform: translateX(350px) translateY(-150px) rotate(20deg); }
-	100%{ transform: translateX(550px) translateY(400px) rotate(120deg); }
-}
-
-@keyframes fall-3{
-	0%{ transform: translateX(850px) translateY(-150px) rotate(15deg); }
-	100%{ transform: translateX(650px) translateY(400px) rotate(-115deg); }
-}
+@import "social";
 
 .games-section h2{
 	color: $white;
@@ -583,8 +291,8 @@ nav .join .join__button--hidden{
 	background-size: 75%;
 }
 
-.servers-section .server .minecraft{ background-image: url('../img/minecraft.png'); }
-.servers-section .server .teamspeak{ background-image: url('../img/teamspeak.png'); }
+.servers-section .server .minecraft{ background-image: url('../../img/minecraft.png'); }
+.servers-section .server .teamspeak{ background-image: url('../../img/teamspeak.png'); }
 
 .servers-section .server .server-logo.online{
 	-webkit-filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
@@ -596,7 +304,7 @@ nav .join .join__button--hidden{
 .servers-section .server .server-logo.offline{
 	-webkit-filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
 					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
-		filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
+			filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
 					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
 }
 
@@ -621,7 +329,7 @@ nav .join .join__button--hidden{
 	overflow: hidden;
 }
 
-.players li{
+.servers-section .players li{
 	padding: 1em;
 	font-weight: bold;
 	font-size: .85em;
@@ -629,9 +337,9 @@ nav .join .join__button--hidden{
 	text-align: center;
 }
 
-.players li span{ font-weight: normal; }
+.servers-section .players li span{ font-weight: normal; }
 
-.players .avatar{
+.servers-section .players .avatar{
 	display: inline-block;
 	text-indent: -9999px;
 	overflow: hidden;
@@ -644,14 +352,14 @@ nav .join .join__button--hidden{
 	transform-origin: center;
 }
 
-.players .avatar-hidden{
+.servers-section .players .avatar-hidden{
 	opacity: 0;
 	transform: scale(0) rotate(180deg);
 }
 
-.players .avatar:hover{ cursor: help; }
+.servers-section .players .avatar:hover{ cursor: help; }
 
-.players .avatar::after{
+.servers-section .players .avatar::after{
 	z-index: 9999;
 	content: attr(data-name);
 	position: absolute;
@@ -670,13 +378,13 @@ nav .join .join__button--hidden{
 	transition: opacity .25s, transform .5s;
 }
 
-.players .avatar:hover::after{
+.servers-section .players .avatar:hover::after{
 	transition: opacity .15s, transform .25s;
 	transform: translateY(5px);
 	opacity: 1;
 }
 
-.servers-section .server .ip-address {
+.servers-section .server .ip-address{
 	margin-top: .5em;
 	padding-bottom: 0;
 	background: $black;
@@ -690,7 +398,7 @@ nav .join .join__button--hidden{
 	overflow: hidden;
 }
 
-.cookie-banner {
+.cookie-banner{
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -742,21 +450,11 @@ nav .join .join__button--hidden{
 
 @media all and (max-width: 700px){
 
-	body{ padding: 0; }
+	body{ padding-top: 0; }
 
 	header{
-		height: auto;
 		position: relative;
-	}
-
-	.account .buttons,
-	.account form label, .account form input{
-		width: 100%;
-		float: none;
-	}
-
-	.account form label{
-		padding: 0;
+		height: auto;
 	}
 	
 	.logo{
@@ -789,7 +487,7 @@ nav .join .join__button--hidden{
 		transform: translateX(-100%);
 	}
 
-	nav li:first-child{ display: none; }
+	nav li.join{ display: none; }
 
 	nav li{
 		background: #F4F4F4;
@@ -797,18 +495,31 @@ nav .join .join__button--hidden{
 	}
 
 	nav li a{
-		padding: 10px 0;
+		padding: 15px 0;
 	}
 
 	nav .nav-button{
 		display: inline-block;
 	}
 
+	.account{
+		position: absolute;
+	}
+
+	.account .buttons, .account form label, .account form input{
+		width: 100%;
+		float: none;
+	}
+
+	.account form label{
+		padding: 0;
+	}
+
+	.info-section .join{ margin-top: 10px; }
+
+	.info-section .join a{ width: 80%; }
+
 	.desc{ width: 100%; }
-
-	.join{ margin-top: 10px; }
-
-	.join a{ width: 80%; }
 
 	.events{
 		margin-bottom: 25px;
@@ -836,8 +547,8 @@ nav .join .join__button--hidden{
 
 @media all and (max-width: 400px){
 
-	nav li{
-		font-size: 1em;
+	section h2 span{
+		font-size: .65em;
 	}
 
 	.games-section .game{
@@ -846,10 +557,6 @@ nav .join .join__button--hidden{
 
 	.games-section .game:nth-child(n+4){
 		display: none;
-	}
-
-	section h2 span{
-		font-size: .65em;
 	}
 
 }

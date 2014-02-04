@@ -40,7 +40,6 @@
 	});
 
 	// replace text with X
-	$('.cancel').text('X');
 	$('.close').text('X');
 
 	$(window).scroll(function(){ // When the page scrolls
@@ -49,10 +48,10 @@
 		var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
 
 		if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
-			$('.join__button').removeClass('join__button--hidden');  // Show '.toTheTop' triangle
+			$('nav .join a').removeClass('hidden');  // Show '.toTheTop' triangle
 		}else{
 			// Above 100px
-			$('.join__button').addClass('join__button--hidden');  // Show '.toTheTop' triangle
+			$('nav .join a').addClass('hidden');  // Show '.toTheTop' triangle
 		}
 	});
 
