@@ -14,8 +14,7 @@ li {
 body {
   padding-top: 70px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  background: #f4f4f4;
-  transition: height 1s; }
+  background: #f4f4f4; }
 
 input, textarea, button {
   border: none;
@@ -52,11 +51,20 @@ header a {
   color: #181818; }
 
 .account {
+  position: fixed;
   overflow: hidden;
-  display: none;
-  background: #e7e7e7;
-  padding: 1em 0;
-  color: #f4f4f4; }
+  background: #E7E7E7;
+  padding: 1em;
+  color: #F4F4F4;
+  left: 0;
+  right: 0;
+  z-index: 1337;
+  -webkit-transition: -webkit-transform .5s;
+  transition: transform .5s; }
+
+.account--hidden {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%); }
 
 .account form .row {
   overflow: hidden;
@@ -118,7 +126,7 @@ header a {
 
 .logo {
   width: 30%;
-  padding: 10px 20px;
+  padding: 10px 0;
   font-size: 45px;
   font-weight: 500;
   line-height: 45px;
@@ -138,8 +146,8 @@ header a {
   color: transparent;
   background: url("../img/logo.svg") no-repeat;
   background-size: cover;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: -webkit-transform .5s;
+  transition: transform .5s;
   -webkit-transform-origin: 50%;
   /* ensures they spin from the center */
   transform-origin: 50%; }
@@ -210,9 +218,32 @@ nav li:nth-child(4) a:hover {
 nav li:nth-child(5) a:hover {
   color: #939740; }
 
+nav .nav-button {
+  float: right;
+  display: none;
+  margin-top: .5em;
+  padding: .25em .5em;
+  text-align: center;
+  background: rgba(129, 129, 129, 0.65);
+  color: #FFF;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  transition: opacity .15s; }
+
+nav .nav-button:hover {
+  opacity: .8; }
+
+.wrapper {
+  padding: 0 .5em;
+  width: 70%;
+  margin: 0 auto; }
+
 section {
   overflow: hidden;
-  padding: 1em 0 25px; }
+  padding: .75em 0; }
 
 section h2 {
   color: #131313;
@@ -227,13 +258,14 @@ section h2 span {
   font-weight: 500; }
 
 .social {
+  overflow: hidden;
   float: left;
-  width: 40%; }
+  width: 40%;
+  border-radius: 2px; }
 
 .social li {
   float: left;
-  margin-bottom: 10px;
-  padding: 0 10px;
+  width: 50%;
   list-style: none; }
 
 .social li a {
@@ -242,9 +274,8 @@ section h2 span {
   text-indent: -5432px;
   text-align: center;
   padding: .25em 0;
-  border-radius: 2px;
   background: center no-repeat;
-  background-size: 50%;
+  background-size: auto 80%;
   transition: opacity .15s; }
 
 .social li .facebook {
@@ -276,13 +307,16 @@ section h2 span {
   background-color: #e15f4f; }
 
 .desc {
+  padding: 0 1em;
+  width: 80%;
+  margin: 0 auto;
   text-align: center; }
 
 .desc h1, .desc h2 {
   font-weight: 500; }
 
 .desc h1 {
-  padding: .5em 5em;
+  padding: .5em 0;
   text-transform: uppercase;
   font-family: "Fredoka One", Helvetica, Arial, sans-serif;
   color: #F1F1F1;
@@ -300,7 +334,8 @@ section h2 span {
 
 .events {
   float: left;
-  width: 30%; }
+  width: 30%;
+  padding-right: 1em; }
 
 .events p {
   padding-bottom: .5em; }
@@ -323,10 +358,16 @@ nav .join {
   margin: 0;
   padding: 15px 0; }
 
-nav .join button {
-  display: none;
+nav .join .join__button {
   width: 70%;
-  font-size: 1em; }
+  font-size: 1em;
+  -webkit-transition: opacity .25s, -webkit-transform .25s;
+  transition: opacity .25s, 		  transform .25s; }
+
+nav .join .join__button--hidden {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0); }
 
 .join p {
   font-size: .8em;
@@ -438,6 +479,7 @@ nav .join button {
   border-radius: 2px;
   font-size: .8em;
   padding: .25em .5em;
+  margin-right: 1%;
   color: #f4f4f4;
   text-align: center;
   text-decoration: none;
@@ -499,8 +541,9 @@ nav .join button {
 .servers-section .server .server-logo,
 .servers-section .server p,
 .servers-section .server .ip-address {
-  padding: 1em;
   float: left;
+  width: 25%;
+  padding: 1em;
   font-size: 1em; }
 
 .servers-section .server .server-logo {
@@ -571,7 +614,8 @@ nav .join button {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(124, 88, 63, 0.95); }
+  background: rgba(124, 88, 63, 0.95);
+  padding: 0 1em; }
 
 .cookie-banner p {
   padding: .75em;
@@ -602,6 +646,15 @@ nav .join button {
   background: rgba(255, 255, 255, 0.15);
   cursor: pointer; }
 
+@media all and (max-width: 1200px) {
+  .wrapper {
+    width: 80%; } }
+@media all and (max-width: 1000px) {
+  .wrapper {
+    width: 90%; } }
+@media all and (max-width: 800px) {
+  .wrapper {
+    width: 100%; } }
 @media all and (max-width: 700px) {
   body {
     padding: 0; }
@@ -610,22 +663,90 @@ nav .join button {
     height: auto;
     position: relative; }
 
-  .logo {
-    background: rgba(50, 50, 50, 0.01); }
+  .account .buttons,
+  .account form label, .account form input {
+    width: 100%;
+    float: none; }
 
-  .logo, nav {
-    width: 100%; }
-
-  nav {
+  .account form label {
     padding: 0; }
 
-  section {
-    padding: 1em; }
+  .logo {
+    width: 40%;
+    font-size: 2em;
+    line-height: 30px; }
 
-  .info-section .social li {
-    width: 100%;
+  .logo, nav, nav li {
+    min-height: 30px; }
+
+  .logo::before, .logo::after {
+    width: 30px;
+    height: 30px; }
+
+  nav {
+    padding: 0;
+    width: 60%; }
+
+  nav ul {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: -webkit-transform .5s;
+    transition: transform .5s; }
+
+  nav ul.hidden {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+
+  nav li:first-child {
+    display: none; }
+
+  nav li {
+    background: #F4F4F4;
+    width: 20%; }
+
+  nav li a {
+    padding: 10px 0; }
+
+  nav .nav-button {
+    display: inline-block; }
+
+  .desc {
+    width: 100%; }
+
+  .join {
+    margin-top: 10px; }
+
+  .join button {
+    width: 80%; }
+
+  .events {
+    margin-bottom: 25px;
+    width: 50%; }
+
+  .social {
     float: none;
-    margin-bottom: 10px; } }
+    width: 100%; }
+
+  .social li {
+    width: 25%; }
+
+  .games-section .game {
+    width: 20%; }
+
+  .games-section .game:nth-child(n+6) {
+    display: none; } }
 @media all and (max-width: 400px) {
   nav li {
-    font-size: 1em; } }
+    font-size: 1em; }
+
+  .games-section .game {
+    width: 33.33333%; }
+
+  .games-section .game:nth-child(n+4) {
+    display: none; }
+
+  section h2 span {
+    font-size: .65em; } }

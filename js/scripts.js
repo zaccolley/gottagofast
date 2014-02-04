@@ -13,16 +13,22 @@
 		$(this).removeClass('game-unselected');
 	});
 
-	$('.log-in a').click(function(){
-		$('.account').slideToggle(function(){
-			$('.account').find('input[type="submit"]').focus();
-		});
+	$('.nav-button').click(function(){
+		$('nav ul').toggleClass('hidden');
+		
+		$('.account').addClass('account--hidden');
+		$('.account').attr('type', 'submit').focus();
+	});
+
+	$('.log-in a').click(function(e){
+		$('.account').toggleClass('account--hidden');
+		$('.account').find('input[type="submit"]').focus();
+		return false;
 	});
 
 	$('.account').find('button[type="reset"]').click(function(){
-		$('.account').slideToggle(function(){
-			$('.account').attr('type', 'submit').focus();
-		});
+		$('.account').addClass('account--hidden');
+		$('.account').attr('type', 'submit').focus();
 	});
 
 	$('.cookie-banner').find('button.close').click(function(){
@@ -35,6 +41,7 @@
 
 	// replace text with X
 	$('.cancel').text('X');
+	$('.close').text('X');
 
 	$(window).scroll(function(){ // When the page scrolls
 		$fadeSpeed = 250;
@@ -42,9 +49,9 @@
 		var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
 
 		if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
-			$('nav .join button').fadeIn($fadeSpeed);  // Show '.toTheTop' triangle
+			$('.join__button').removeClass('join__button--hidden');  // Show '.toTheTop' triangle
 		}else{ 								    // Above 100px
-			$('nav .join button').fadeOut($fadeSpeed); // Hide '.toTheTop' triangle
+			$('.join__button').addClass('join__button--hidden');  // Show '.toTheTop' triangle
 		}
 	});
 

@@ -13,14 +13,14 @@ $black: #181818;
 
 $headerHeight: 70px;
 
+/* fonts */
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,800,300,600|Open+Sans+Condensed:300,300italic,700);
+
 // fonts
 
 $fredoka: 'Fredoka One', Helvetica, Arial, sans-serif;
 $openSans: 'Open Sans', Helvetica, Arial, sans-serif;
 $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
-
-/* fonts */
-@import url(http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,800,300,600|Open+Sans+Condensed:300,300italic,700);
 
 *{
 	margin: 0; padding: 0;
@@ -35,7 +35,6 @@ body{
 	padding-top: $headerHeight;
 	font-family: $openSans;
 	background: $white;
-	transition: height 1s;
 }
 
 input, textarea, button{
@@ -75,11 +74,21 @@ header{
 header a{ color: $black; }
 
 .account{
+	position: fixed;
 	overflow: hidden;
-	display: none;
-	background: darken($white, 5%);
-	padding: 1em 0;
-	color: $white;
+	background: #E7E7E7;
+	padding: 1em;
+	color: #F4F4F4;
+	left: 0;
+	right: 0;
+	z-index: 1337;
+	-webkit-transition: -webkit-transform .5s;
+			transition: 		transform .5s;
+}
+
+.account--hidden{
+	-webkit-transform: translateY(-100%);
+			transform: translateY(-100%);
 }
 
 .account form .row {
@@ -153,7 +162,7 @@ header a{ color: $black; }
 
 .logo{
 	width: 30%;
-	padding: 10px 20px;
+	padding: 10px 0;
 	font-size: 45px;
 	font-weight: 500;
 	line-height: 45px;
@@ -175,8 +184,8 @@ header a{ color: $black; }
 	background: url('../img/logo.svg') no-repeat;
 	background-size: cover;
 
-	-webkit-transition: all .5s;
-			transition: all .5s;
+	-webkit-transition: -webkit-transform .5s;
+			transition: transform .5s;
 
 	-webkit-transform-origin: 50%;  /* ensures they spin from the center */
 			transform-origin: 50%;
@@ -240,9 +249,35 @@ nav li:nth-child(3) a:hover{ color: $red; }
 nav li:nth-child(4) a:hover{ color: $blue; }
 nav li:nth-child(5) a:hover{ color: $green; }
 
+nav .nav-button{
+	float: right;
+	display: none;
+	margin-top: .5em;
+	padding: .25em .5em;
+	text-align: center;
+	background: rgba(129, 129, 129, 0.65);
+	color: #FFF;
+	border-radius: 3px;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-family: $openSansCon;
+	cursor: pointer;
+	transition: opacity .15s;
+}
+
+nav .nav-button:hover{
+	opacity: .8;
+}
+
+.wrapper{
+	padding: 0 .5em;
+	width: 70%;
+	margin: 0 auto;
+}
+
 section{
 	overflow: hidden;
-	padding: 1em 0 25px;
+	padding: .75em 0;
 }
 
 section h2{
@@ -260,14 +295,15 @@ section h2 span{
 }
 
 .social{
+	overflow: hidden;
 	float: left;
 	width: 40%;
+	border-radius: 2px;
 }
 
 .social li{
 	float: left;
-	margin-bottom: 10px;
-	padding: 0 10px;
+	width: 50%;
 	list-style: none;
 }
 
@@ -277,9 +313,8 @@ section h2 span{
 	text-indent: -5432px;
 	text-align: center;
 	padding: .25em 0;
-	border-radius: 2px;
 	background: center no-repeat;
-	background-size: 50%;
+	background-size: auto 80%;
 	transition: opacity .15s;
 }
 
@@ -320,6 +355,9 @@ section h2 span{
 }
 
 .desc{
+	padding: 0 1em;
+	width: 80%;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -328,7 +366,7 @@ section h2 span{
 }
 
 .desc h1{
-	padding: .5em 5em;
+	padding: .5em 0;
 	text-transform: uppercase;
 	font-family: $fredoka;
 	color: #F1F1F1;
@@ -349,7 +387,8 @@ section h2 span{
 
 .events{
 	float: left;
-	width: 30%
+	width: 30%;
+	padding-right: 1em;
 }
 
 .events p{
@@ -377,10 +416,17 @@ nav .join{
 	padding: 15px 0;
 }
 
-nav .join button{
-	display: none;
+nav .join .join__button{
 	width: 70%;
 	font-size: 1em;
+	-webkit-transition: opacity .25s, -webkit-transform .25s;
+			transition: opacity .25s, 		  transform .25s;
+}
+
+nav .join .join__button--hidden{
+	opacity: 0;
+	-webkit-transform: scale(0);
+			transform: scale(0);
 }
 
 .join p{
@@ -466,6 +512,7 @@ nav .join button{
 	border-radius: 2px;
 	font-size: .8em;
 	padding: .25em .5em;
+	margin-right: 1%;
 	color: $white;
 	text-align: center;
 	text-decoration: none;
@@ -530,8 +577,9 @@ nav .join button{
 .servers-section .server .server-logo,
 .servers-section .server p,
 .servers-section .server .ip-address{	
-	padding: 1em;
 	float: left;
+	width: 25%;
+	padding: 1em;
 	font-size: 1em;
 }
 
@@ -608,6 +656,7 @@ nav .join button{
 	left: 0;
 	right: 0;
 	background: rgba(124,88,63,.95);
+	padding: 0 1em;
 }
 
 .cookie-banner p{
@@ -639,26 +688,110 @@ nav .join button{
 
 .cookie-banner button.close:hover{ background: rgba(255,255,255,.15); cursor: pointer; }
 
+@media all and (max-width: 1200px){
+	.wrapper{ width: 80%; }
+}
+
+@media all and (max-width: 1000px){
+	.wrapper{ width: 90%; }
+}
+
+@media all and (max-width: 800px){
+	.wrapper{ width: 100%; }
+}
+
 @media all and (max-width: 700px){
 
 	body{ padding: 0; }
 
-	header{ height: auto; position: relative; }
+	header{
+		height: auto;
+		position: relative;
+	}
+
+	.account .buttons,
+	.account form label, .account form input{
+		width: 100%;
+		float: none;
+	}
+
+	.account form label{
+		padding: 0;
+	}
 	
-	.logo{ background: rgba(50,50,50,.01);	}
+	.logo{
+		width: 40%;
+		font-size: 2em;
+		line-height: 30px;
+	}
+
+	.logo, nav, nav li{
+		min-height: 30px;
+	}
+
+	.logo::before, .logo::after{
+		width: 30px;
+		height: 30px;
+	}
 	
-	.logo, nav{
+	nav{
+		padding: 0;
+		width: 60%;
+	}
+
+	nav ul{
+		position: absolute;
+		top: 0; right: 10%; bottom: 0; left: 0;
+		-webkit-transition: -webkit-transform .5s;
+				transition: 		transform .5s;
+	}
+
+	nav ul.hidden{
+		-webkit-transform: translateX(-100%);
+				transform: translateX(-100%);
+	}
+
+	nav li:first-child{ display: none; }
+
+	nav li{
+		background: #F4F4F4;
+		width: (100%/5);
+	}
+
+	nav li a{
+		padding: 10px 0;
+	}
+
+	nav .nav-button{
+		display: inline-block;
+	}
+
+	.desc{ width: 100%; }
+
+	.join{ margin-top: 10px; }
+
+	.join button{ width: 80%; }
+
+	.events{
+		margin-bottom: 25px;
+		width: 50%;
+	}
+
+	.social{
+		float: none;
 		width: 100%;
 	}
 
-	nav{ padding: 0; }
+	.social li{
+		width: 25%;
+	}
 
-	section{ padding: 1em; }
+	.games-section .game{
+		width: (100%/5);
+	}
 
-	.info-section .social li{
-		width: 100%;
-		float: none;
-		margin-bottom: 10px;
+	.games-section .game:nth-child(n+6){
+		display: none;
 	}
 
 }
@@ -667,6 +800,18 @@ nav .join button{
 
 	nav li{
 		font-size: 1em;
+	}
+
+	.games-section .game{
+		width: (100%/3);
+	}
+
+	.games-section .game:nth-child(n+4){
+		display: none;
+	}
+
+	section h2 span{
+		font-size: .65em;
 	}
 
 }
