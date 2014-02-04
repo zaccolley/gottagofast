@@ -244,6 +244,11 @@ nav li a:hover{
 	color: rgba(50,50,50,.75);
 }
 
+nav .join a:hover{
+	border-top: none;
+	color: $white;
+}
+
 nav li:nth-child(2) a:hover{ color: $yellow; }
 nav li:nth-child(3) a:hover{ color: $red; }
 nav li:nth-child(4) a:hover{ color: $blue; }
@@ -434,7 +439,7 @@ nav .join .join__button--hidden{
 	padding: 1em;
 }
 
-.join button{
+.join a{
 	width: 40%;
 	margin: 0 auto;
 	display: block;
@@ -442,13 +447,14 @@ nav .join .join__button--hidden{
 	padding: .5em;
 	font-family: $fredoka;
 	text-transform: uppercase;
+	text-decoration: none;
 	font-size: 1.5em;
 	color: $white;
 	border-radius: 2px;
 	transition: background .1s;
 }
 
-.join button:hover{
+.join a:hover{
 	background: lighten(saturate($green, 10%), 5%);
 	cursor: pointer;
 }
@@ -576,6 +582,7 @@ nav .join .join__button--hidden{
 
 .servers-section .server .server-logo,
 .servers-section .server p,
+.servers-section .server .players,
 .servers-section .server .ip-address{	
 	float: left;
 	width: 25%;
@@ -616,24 +623,64 @@ nav .join .join__button--hidden{
 .servers-section .server .status.offline{ color: $red;  }
 .servers-section .server .status.unknown{ color: #666;  }
 
-.mc-heads{
-	padding: .5em 0;
+.servers-section .server .players{
+	padding: 0 1em;
 	overflow: hidden;
 }
 
-.mc-heads li{
-	float: left;
+.players li{
+	padding: 1em;
+	font-weight: bold;
+	font-size: .85em;
+	color: #333;
+	text-align: center;
+}
+
+.players li span{ font-weight: normal; }
+
+.players .avatar{
+	display: inline-block;
 	text-indent: -9999px;
 	overflow: hidden;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin: 4px;
 	width: 32px;
 	height: 32px;
+	background: url('../img/steve.png');
 	background-repeat: no-repeat;
+	transition: opacity .15s, transform .25s, background .15s;
+	transform-origin: center;
 }
 
-.mc-heads li:hover{
-	opacity: .8;
+.players .avatar-hidden{
+	opacity: 0;
+	transform: scale(0) rotate(180deg);
+}
+
+.players .avatar:hover{ cursor: help; }
+
+.players .avatar::after{
+	z-index: 9999;
+	content: attr(data-name);
+	position: absolute;
+	display: block;
+	padding: 10px;
+	line-height: 10px;
+	text-indent: 0;
+	text-align: center;
+	color: #E4E4E4;
+	font-weight: 500;
+	background: #1D1D1D;
+	transform: translateY(-5px);
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	opacity: 0;
+	transition: opacity .25s, transform .5s;
+}
+
+.players .avatar:hover::after{
+	transition: opacity .15s, transform .25s;
+	transform: translateY(5px);
+	opacity: 1;
 }
 
 .servers-section .server .ip-address {
@@ -770,7 +817,7 @@ nav .join .join__button--hidden{
 
 	.join{ margin-top: 10px; }
 
-	.join button{ width: 80%; }
+	.join a{ width: 80%; }
 
 	.events{
 		margin-bottom: 25px;
