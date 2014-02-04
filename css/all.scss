@@ -24,9 +24,7 @@ $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 
 *{
 	margin: 0; padding: 0;
-	-webkit-box-sizing: border-box; /* box sizes including both padding and borders */
-	   -moz-box-sizing: border-box;
-	   		box-sizing: border-box;
+	box-sizing: border-box; /* box sizes including both padding and borders */
 }
 
 li{ list-style-position: inside; }
@@ -49,8 +47,7 @@ header{
 	overflow: hidden;
 	background: transparentize($white, .025);
 
-	-webkit-transform: translateX(0);
-			transform: translateX(0);
+	transform: translateX(0);
 }
 
 .logo, nav, nav li{
@@ -82,13 +79,11 @@ header a{ color: $black; }
 	left: 0;
 	right: 0;
 	z-index: 1337;
-	-webkit-transition: -webkit-transform .5s;
-			transition: 		transform .5s;
+	transition: transform .5s;
 }
 
 .account--hidden{
-	-webkit-transform: translateY(-100%);
-			transform: translateY(-100%);
+	transform: translateY(-100%);
 }
 
 .account form .row {
@@ -170,8 +165,7 @@ header a{ color: $black; }
 	font-family: $fredoka;
 	color: $black;
 	white-space: nowrap;
-	-webkit-transition: letter-spacing .5s .25s, color .15s .25s;
-			transition: letter-spacing .5s .25s, color .15s .25s;
+	transition: letter-spacing .5s .25s, color .15s .25s;
 }
 
 .logo::before,
@@ -184,11 +178,8 @@ header a{ color: $black; }
 	background: url('../img/logo.svg') no-repeat;
 	background-size: cover;
 
-	-webkit-transition: -webkit-transform .5s;
-			transition: transform .5s;
-
-	-webkit-transform-origin: 50%;  /* ensures they spin from the center */
-			transform-origin: 50%;
+	transition: transform .5s;
+	transform-origin: 50%; /* ensures they spin from the center */
 }
 
 .logo::before{ background-position: left; }
@@ -201,17 +192,15 @@ header a{ color: $black; }
 }
 
 .logo-animation::before, .logo:hover::before{
-	-webkit-transform: rotateZ(180deg);
-			transform: rotateZ(180deg);
+	transform: rotateZ(180deg);
 }
 
 .logo-animation::after, .logo:hover::after{
-	-webkit-transform: rotateZ(-180deg);
-			transform: rotateZ(-180deg);
+	transform: rotateZ(-180deg);
 }
 
-.logo:active::before{ -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); }
-.logo:active::after{ -webkit-transform: rotateZ(-360deg); transform: rotateZ(-360deg); }
+.logo:active::before{ transform: rotateZ(360deg); }
+.logo:active::after{  transform: rotateZ(-360deg); }
 
 nav{
 	width: 70%;
@@ -233,10 +222,9 @@ nav li a{
 	padding: 20px 0;
 	text-decoration: none;
 	display: block;
+	transition: padding .1s, border .1s, color .1s;
+	
 	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
-
-	-webkit-transition: padding .1s, border .1s, color .1s;
-			transition: padding .1s, border .1s, color .1s;
 }
 
 nav li a:hover{
@@ -424,14 +412,12 @@ nav .join{
 nav .join .join__button{
 	width: 70%;
 	font-size: 1em;
-	-webkit-transition: opacity .25s, -webkit-transform .25s;
-			transition: opacity .25s, 		  transform .25s;
+	transition: opacity .25s, 		  transform .25s;
 }
 
 nav .join .join__button--hidden{
 	opacity: 0;
-	-webkit-transform: scale(0);
-			transform: scale(0);
+	transform: scale(0);
 }
 
 .join p{
@@ -488,26 +474,26 @@ nav .join .join__button--hidden{
 @for $i from 1 through 12{
 
 	.shapes div:nth-child(#{$i}){
-		@if $i % 3 == 0{ -webkit-animation: fall-1 3s linear infinite; }
-		@if $i % 3 == 1{ -webkit-animation: fall-2 4s linear infinite; }
-		@if $i % 3 == 2{ -webkit-animation: fall-3 5s linear infinite; }
+		@if $i % 3 == 0{ animation: fall-1 3s linear infinite; }
+		@if $i % 3 == 1{ animation: fall-2 4s linear infinite; }
+		@if $i % 3 == 2{ animation: fall-3 5s linear infinite; }
 	}
 
 }
 
-@-webkit-keyframes fall-1{
-	0%{ -webkit-transform: translateX(600px) translateY(-150px); }
-	100%{ -webkit-transform: translateX(600px) translateY(400px) ; }
+@keyframes fall-1{
+	0%{ transform: translateX(600px) translateY(-150px); }
+	100%{ transform: translateX(600px) translateY(400px) ; }
 }
 
-@-webkit-keyframes fall-2{
-	0%{ -webkit-transform: translateX(350px) translateY(-150px) rotate(20deg); }
-	100%{ -webkit-transform: translateX(550px) translateY(400px) rotate(120deg); }
+@keyframes fall-2{
+	0%{ transform: translateX(350px) translateY(-150px) rotate(20deg); }
+	100%{ transform: translateX(550px) translateY(400px) rotate(120deg); }
 }
 
-@-webkit-keyframes fall-3{
-	0%{ -webkit-transform: translateX(850px) translateY(-150px) rotate(15deg); }
-	100%{ -webkit-transform: translateX(650px) translateY(400px) rotate(-115deg); }
+@keyframes fall-3{
+	0%{ transform: translateX(850px) translateY(-150px) rotate(15deg); }
+	100%{ transform: translateX(650px) translateY(400px) rotate(-115deg); }
 }
 
 .games-section h2{
@@ -561,15 +547,16 @@ nav .join .join__button--hidden{
 
 .games-section .game:hover .boxart{ opacity: .75; }
 
-.game-selected:hover{ opacity: 1; cursor: default; }
+.game-selected:hover{
+	opacity: 1;
+	cursor: default;
+}
 
 .game-unselected{
 	opacity: .5; 
 	-webkit-filter: grayscale(1);
 			filter: grayscale(1);
 }
-
-.servers-section{}
 
 .servers-section .server{
 	overflow: hidden;
@@ -602,15 +589,21 @@ nav .join .join__button--hidden{
 .servers-section .server .server-logo.online{
 	-webkit-filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
 					drop-shadow(2px 0 0 lighten($green, 15%)) drop-shadow(-2px 0 0 lighten($green, 15%));
+			filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
+					drop-shadow(2px 0 0 lighten($green, 15%)) drop-shadow(-2px 0 0 lighten($green, 15%));
 }
 
 .servers-section .server .server-logo.offline{
 	-webkit-filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
 					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
+		filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
+					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
 }
 
 .servers-section .server .server-logo.unknown{
 	-webkit-filter: drop-shadow(0 2px 0 lighten(#666, 15%)) drop-shadow(0 -2px 0 lighten(#666, 15%))
+					drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
+			filter: drop-shadow(0 2px 0 lighten(#666, 15%)) drop-shadow(0 -2px 0 lighten(#666, 15%))
 					drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
 }
 
@@ -789,13 +782,11 @@ nav .join .join__button--hidden{
 	nav ul{
 		position: absolute;
 		top: 0; right: 10%; bottom: 0; left: 0;
-		-webkit-transition: -webkit-transform .5s;
-				transition: 		transform .5s;
+		transition: transform .5s;
 	}
 
 	nav ul.hidden{
-		-webkit-transform: translateX(-100%);
-				transform: translateX(-100%);
+		transform: translateX(-100%);
 	}
 
 	nav li:first-child{ display: none; }
