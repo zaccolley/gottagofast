@@ -530,6 +530,8 @@ $shapeAmount: 6;
 		padding: 0;
 	}
 
+	.info-section .desc{ width: 100%; }
+	
 	.info-section .join{ margin-top: 10px; }
 
 	.info-section .join a{ width: 80%; }
@@ -561,6 +563,20 @@ $shapeAmount: 6;
 }
 
 @media all and (max-width: 400px){
+
+	.info-section .desc h1{
+		font-size: 1.5em;
+	}
+
+	.info-section .desc h2{
+		padding: .5em 1em;
+		font-size: 1em;
+	}
+
+	.info-section .join a {
+		width: 90%;
+		font-size: 1.35em;
+	}
 
 	section h2 span{
 		font-size: .65em;
