@@ -457,6 +457,8 @@ $shapeAmount: 6;
 
 .cookie-banner button.close:hover{ background: rgba(255,255,255,.15); cursor: pointer; }
 
+@import 'footer';
+
 @media all and (max-width: 1200px){
 	.wrapper{ width: 80%; }
 }
@@ -628,6 +630,17 @@ $shapeAmount: 6;
 
 	.games-section .game:nth-child(n+4){
 		display: none;
+	}
+
+	footer .copyright{
+		width: 100%;
+		text-align: center;
+	}
+
+	footer .upsu, footer .upgs{
+		margin-bottom: 10px; 
+		width: 50%;
+		background-position: center;
 	}
 
 }

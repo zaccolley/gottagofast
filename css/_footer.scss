@@ -1,0 +1,35 @@
+/* _footer.scss */
+
+footer{
+	overflow: hidden;
+	padding: .5em 0;
+	background:lighten($black, 5%);
+	color: darken($white, 15%);
+}
+
+footer .copyright, footer .upsu, footer .upgs{
+	float: left;
+	width: 33.33%;
+}
+
+footer .copyright{
+	font-size: .7em;
+	padding: 0 .5em;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+footer .upsu, footer .upgs{
+	height: 1.75em;
+	text-indent: -9999px;
+	background: no-repeat;
+	background-size: auto 100%;
+	background-position: left center;
+}
+
+footer .upsu:hover, footer .upgs:hover{
+	opacity: .8;
+}
+
+footer .upsu{ background-image: url('../../img/upsu-logo.png'); }
+footer .upgs{ background-image: url('../../img/logo-white.svg'); }
