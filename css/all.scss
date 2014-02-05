@@ -473,6 +473,10 @@ $shapeAmount: 6;
 	.servers-section .players .avatar:hover{ cursor: default; }
 
 	.servers-section .players .avatar::after{ display: none; }
+
+	footer .copyright{ width: 60%; }
+
+	footer .upsu, footer .upgs{ width: 20%; }
 }
 
 @media all and (max-width: 700px){
@@ -592,6 +596,10 @@ $shapeAmount: 6;
 	.servers-section .server p{
 		text-align: center;
 	}
+
+	footer .copyright{ width: 40%; }
+
+	footer .upsu, footer .upgs{ width: 30%; }
 
 }
 
