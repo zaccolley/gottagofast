@@ -290,17 +290,16 @@ $shapeAmount: 6;
 
 .servers-section .server:last-child{ border: none; }
 
-.servers-section .server .server-logo,
-.servers-section .server p,
-.servers-section .server .players,
-.servers-section .server .ip-address{	
+.servers-section .server .server-logo, .servers-section .server .status,
+.servers-section .server p, .servers-section .server .players,
+.servers-section .server .ip-address{
 	float: left;
-	width: 25%;
 	padding: 1em;
 	font-size: 1em;
 }
 
 .servers-section .server .server-logo{
+	width: 20%;
 	text-indent: -9999px;
 	background: no-repeat 2px center;
 	background-size: 75%;
@@ -331,6 +330,7 @@ $shapeAmount: 6;
 }
 
 .servers-section .server .status{
+	width: 15%;
 	text-transform: uppercase;
 	font-weight: 700;
 }
@@ -339,8 +339,12 @@ $shapeAmount: 6;
 .servers-section .server .status.offline{ color: $red;  }
 .servers-section .server .status.unknown{ color: #666;  }
 
+.servers-section .server p, .servers-section .server .players{
+	width: 30%;
+}
+
 .servers-section .server .players{
-	padding: 0 1em;
+	padding: 0 .5em;
 	overflow: hidden;
 }
 
@@ -400,34 +404,33 @@ $shapeAmount: 6;
 }
 
 .servers-section .server .ip-address{
-	margin-top: .5em;
-	padding-bottom: 0;
+	width: 35%;
 	background: $black;
 	border-radius: 2px;
 	color: $white;
-	font-family: monospace;
-	font-weight: 800;
-	font-size: .8em;
+	font-family: 'Courier New', monospace;
+	font-weight: 500;
+	font-size: .85em;
 	text-align: center;
-	resize: none;
 	overflow: hidden;
 }
 
 .cookie-banner{
+	z-index: 9999;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	background: rgba(124,88,63,.95);
-	padding: 0 1em;
+	padding: .5em 1em;
 }
 
 .cookie-banner p{
-	padding: .75em;
+	padding: .5em;
 	padding-left: 2.5em;
 	font-size: .8em;
 	color: $white;
-	background: url('../img/info.png') no-repeat left;
+	background: url('../../img/info.png') no-repeat left;
 }
 
 .cookie-banner a{
@@ -439,13 +442,16 @@ $shapeAmount: 6;
 .cookie-banner a:hover{ opacity: .9; }
 
 .cookie-banner button.close{
-	float: right;
-	margin-top: .25em;
+	position: absolute;
+	top: .5em; right: .5em;
 	padding: .5em;
+	line-height: 1em;
+	font-size: .75em;
 	color: $white;
+	text-align: center;
 	font-weight: 500;
-	font-family: $fredoka;
-	background: rgba(255,255,255,.2);
+	font-family: $openSans;
+	background: transparentize($white, .9);
 	border-radius: 2px;
 }
 
@@ -461,6 +467,10 @@ $shapeAmount: 6;
 
 @media all and (max-width: 800px){
 	.wrapper{ width: 100%; }
+
+	.servers-section .players .avatar:hover{ cursor: default; }
+
+	.servers-section .players .avatar::after{ display: none; }
 }
 
 @media all and (max-width: 700px){
@@ -560,6 +570,27 @@ $shapeAmount: 6;
 		display: none;
 	}
 
+	.servers-section .server{
+		padding: 10px 0;
+		margin: 0;
+	} 
+
+	.servers-section .server .server-logo, .servers-section .server .status{
+		width: 50%;
+	}
+
+	.servers-section .server .status{ text-align: right; }
+
+	.servers-section .server p, .servers-section .server .players,
+	.servers-section .server .ip-address{
+		width: 100%;
+		padding: .75em 0;
+	}
+
+	.servers-section .server p{
+		text-align: center;
+	}
+
 }
 
 @media all and (max-width: 400px){
@@ -578,8 +609,17 @@ $shapeAmount: 6;
 		font-size: 1.35em;
 	}
 
+	section h2{
+		font-size: 1.25em;
+	}
+
 	section h2 span{
-		font-size: .65em;
+		font-size: .8em;
+	}
+
+	.events{
+		margin-bottom: 10px;
+		width: 100%;
 	}
 
 	.games-section .game{

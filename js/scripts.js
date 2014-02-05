@@ -35,13 +35,6 @@
 		$('.cookie-banner').fadeOut();
 	});
 
-	$('.ip-address').click(function(){
-		$(this).select();
-	});
-
-	// replace text with X
-	$('.close').text('X');
-
 	$(window).scroll(function(){ // When the page scrolls
 		$fadeSpeed = 250;
 
