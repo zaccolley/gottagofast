@@ -46,6 +46,7 @@ header{
 @import "nav";
 
 section{
+	z-index: 1;
 	overflow: hidden;
 	padding: .75em 0;
 }
@@ -89,9 +90,47 @@ section h2 span{
 }
 
 .info-section{
-	position: relative;
 	overflow: hidden;
-	background: rgba(24,24,24,.95);
+	background: none;
+	position: relative;
+}
+
+.info-section .desc{
+	padding: 0 1em;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.info-section .desc h1, .info-section .desc h2{
+	font-weight: 500;
+}
+
+.info-section .desc h1{
+	padding: .5em 0;
+	text-transform: uppercase;
+	font-family: $fredoka;
+	color: #F1F1F1;
+	font-size: 2.5em;
+	color: darken($white, 5%);
+}
+
+.info-section .desc h1 span{
+	font-size: .75em;
+	display: block;
+	color: darken($white, 10%);
+}
+
+.info-section .desc h2{
+	font-size: 1.25em;
+	padding: .5em 2.5em;
+	text-transform: none;
+	font-family: $openSans;
+	color: #E9E9E9;
+}
+
+.info-section .desc p{
+	padding-bottom: .25em;
 }
 
 .info-section .join{
@@ -112,70 +151,46 @@ section h2 span{
 .info-section .shapes{
 	z-index: -1;
 	position: absolute;
-	top:0; right:0; bottom:0; left:0;
+	top:0; bottom:0;
+	width: 100%;
+	overflow: hidden;
+	background: darken($black, .075%);
 }
 
 .info-section .shapes div{
-	width: 90px;
-	height: 90px;
-	background: url("../../img/logo.svg") no-repeat;
 	position: absolute;
+	left: 0; top: 0;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 200px;
 }
 
-@for $i from 1 through 12{
+$shapeAmount: 6;
+
+@for $i from 1 through $shapeAmount{
+
+	$count: $i - 1;
 
 	.info-section .shapes div:nth-child(#{$i}){
-		@if $i % 3 == 0{ animation: fall-1 3s linear infinite; }
-		@if $i % 3 == 1{ animation: fall-2 4s linear infinite; }
-		@if $i % 3 == 2{ animation: fall-3 5s linear infinite; }
+		animation: fall-#{$i} 5s -#{$i}s linear infinite alternate;
+		transform-origin: center;
+		opacity: 0;
+
+		background-image: url("../../img/cross.png");
+		@if($i % 2 == 0){
+			background-image: url("../../img/buttons.png")
+		}
+
+	}	
+
+	@keyframes fall-#{$i}{
+		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
+		50%{ opacity: 1; }
+		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
 	}
 
-}
-
-@keyframes fall-1{
-	0%{ transform: translateX(600px) translateY(-150px); }
-	100%{ transform: translateX(600px) translateY(400px) ; }
-}
-
-@keyframes fall-2{
-	0%{ transform: translateX(350px) translateY(-150px) rotate(20deg); }
-	100%{ transform: translateX(550px) translateY(400px) rotate(120deg); }
-}
-
-@keyframes fall-3{
-	0%{ transform: translateX(850px) translateY(-150px) rotate(15deg); }
-	100%{ transform: translateX(650px) translateY(400px) rotate(-115deg); }
-}
-
-.desc{
-	padding: 0 1em;
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.desc h1, .desc h2{
-	font-weight: 500;
-}
-
-.desc h1{
-	padding: .5em 0;
-	text-transform: uppercase;
-	font-family: $fredoka;
-	color: #F1F1F1;
-	font-size: 3em;
-}
-
-.desc h2{
-	font-size: 1.25em;
-	padding: .5em 2.5em;
-	text-transform: none;
-	font-family: $openSans;
-	color: #E9E9E9;
-}
-
-.desc p{
-	padding-bottom: .25em;
 }
 
 .events{
