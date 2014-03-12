@@ -6,16 +6,16 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: ['js/*.js'],
-                dest: 'public/javascripts/script.js'
+                dest: 'public/js/script.js'
             }
         },
 
         uglify: {
             build: {
-                src:  'public/javascripts/script.js',
-                dest: 'public/javascripts/script.min.js',
+                src:  'public/js/script.js',
+                dest: 'public/js/script.min.js',
                 options: {
-                    sourceMap: 'public/javascripts/script.map.js',
+                    sourceMap: 'public/js/script.map.js',
                     sourceMapPrefix: 2,
                     sourceMappingURL: 'script.map.js',
                     banner: '/*! <%= pkg.name %> ~ <%= grunt.template.today("yyyy-mm-dd") %> */'
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'public/stylesheets/style.css': 'css/all.scss'
+                    'public/css/style.css': 'css/all.scss'
                 }
             } 
         },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'public/stylesheets/style.css': 'public/stylesheets/style.css'
+                    'public/css/style.css': 'public/css/style.css'
                 }
             }
         },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         csso: {
             dist: {
                 files: {
-                    'public/stylesheets/style.min.css': 'public/stylesheets/style.css'
+                    'public/css/style.min.css': 'public/css/style.css'
                 }
             }
         },
@@ -62,9 +62,9 @@ module.exports = function(grunt) {
             dynamic: {
                 files: [{
                     expand: true,
-                    cwd: 'images/',
+                    cwd: 'img/',
                     src: ['*.{png,jpg,gif}'],
-                    dest: 'images/build/'
+                    dest: 'img/build/'
                 }]
             }   
         },
@@ -92,14 +92,14 @@ module.exports = function(grunt) {
             },
 
             html: {
-                files: ['**/*.html', '**/*.jade'],
+                files: ['**/*.html', '**/*.hbs'],
                 options: {
                     spawn: false
                 }
             },
 
             images: {
-                files: ['images/*.{png,jpg,gif}'],
+                files: ['img/*.{png,jpg,gif}'],
                 tasks: ['imagemin'],
                 options: {
                     spawn: false

@@ -178,9 +178,9 @@ $shapeAmount: 6;
 
 	.info-section .shapes div:nth-child(#{$i}){
 		animation: fall-#{$i} 5s -#{$i}s linear infinite alternate;
-		background-image: url("../../images/cross.png");
+		background-image: url("../../img/cross.png");
 		@if($i % 2 == 0){
-			background-image: url("../../images/buttons.png")
+			background-image: url("../../img/buttons.png")
 		}
 
 	}	
@@ -305,8 +305,8 @@ $shapeAmount: 6;
 	background-size: 75%;
 }
 
-.servers-section .server .minecraft{ background-image: url('../../images/minecraft.png'); }
-.servers-section .server .teamspeak{ background-image: url('../../images/teamspeak.png'); }
+.servers-section .server .minecraft{ background-image: url('../../img/minecraft.png'); }
+.servers-section .server .teamspeak{ background-image: url('../../img/teamspeak.png'); }
 
 .servers-section .server .server-logo.online{
 	-webkit-filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
@@ -430,7 +430,7 @@ $shapeAmount: 6;
 	padding-left: 2.5em;
 	font-size: .8em;
 	color: $white;
-	background: url('../../images/info.png') no-repeat left;
+	background: url('../../img/info.png') no-repeat left;
 }
 
 .cookie-banner a{

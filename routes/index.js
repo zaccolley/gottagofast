@@ -4,5 +4,5 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'UPGS - University of Portsmouth Gaming Society' });
+  res.render('home', { title: 'UPGS - University of Portsmouth Gaming Society' });
 };
