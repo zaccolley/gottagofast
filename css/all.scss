@@ -17,7 +17,6 @@ body{
 	font-family: $openSans;
 	background: $white;
 
-
 	@media (max-width: 700px){ padding-top: 0; }
 }
 
@@ -38,6 +37,7 @@ header{
 	position: fixed;
 	top: 0; left: 0; right: 0;
 	overflow: hidden;
+
 	background: transparentize($white, .025);
 
 	transform: translateX(0);
@@ -64,12 +64,13 @@ section{
 }
 
 section h2{
-	color: #131313;
-	text-transform: uppercase;
+	padding-bottom: .5em;
+	
+	font-family: $fredoka;
 	font-weight: 500;
 	font-size: 1.5em;
-	padding-bottom: .5em;
-	font-family: $fredoka;
+	text-transform: uppercase;
+	color: #131313;
 
 	@media (max-width: 400px){ font-size: 1.25em; }
 }
@@ -90,142 +91,26 @@ section h2 span{
 .join a{
 	display: block;
 	padding: .5em;
+	
 	font-family: $fredoka;
+	font-size: 1.5em;
 	text-transform: uppercase;
 	text-decoration: none;
-	font-size: 1.5em;
 	color: $white;
+	
 	background: saturate($green, 10%);
 	border-radius: 2px;
+	
 	transition: background .1s;
 }
 
 .join a:hover{
 	background: lighten(saturate($green, 10%), 5%);
+	
 	cursor: pointer;
 }
 
-.info-section{
-	overflow: hidden;
-	background: none;
-	position: relative;
-}
-
-.info-section .desc{
-	padding: 0 1em;
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
-
-	@media (max-width: 700px){ width: 100%; }
-}
-
-.info-section .desc h1, .info-section .desc h2{
-	font-weight: 500;
-}
-
-.info-section .desc h1{
-	padding: .5em 0;
-	text-transform: uppercase;
-	font-family: $fredoka;
-	color: #F1F1F1;
-	font-size: 2.5em;
-	color: darken($white, 5%);
-
-
-	@media (max-width: 400px){ font-size: 1.5em; }
-}
-
-.info-section .desc h1 span{
-	font-size: .75em;
-	display: block;
-	color: darken($white, 10%);
-}
-
-.info-section .desc h2{
-	font-size: 1.25em;
-	padding: .5em 2.5em;
-	text-transform: none;
-	font-family: $openSans;
-	color: #E9E9E9;
-
-	@media (max-width: 400px){
-		padding: .5em 1em;
-		font-size: 1em;
-	}
-}
-
-.info-section .desc p{
-	padding-bottom: .25em;
-}
-
-.info-section .join{
-	text-align: center;
-	margin-top: 50px;
-
-	@media (max-width: 700px){ margin-top: 10px; }
-}
-
-.info-section .join p{
-	font-size: .8em;
-	padding: 1em;
-}
-
-.info-section .join a{
-	width: 40%;
-	margin: 0 auto;
-
-	@media (max-width: 700px){ width: 80%; }
-	@media (max-width: 400px){
-		width: 90%;
-		font-size: 1.35em;
-	}
-}
-
-.info-section .shapes{
-	z-index: -1;
-	position: absolute;
-	top:0; bottom:0;
-	width: 100%;
-	overflow: hidden;
-	background: darken($black, .075%);
-}
-
-.info-section .shapes div{
-	position: absolute;
-	left: 0; top: 0;
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 200px;
-	opacity: 0;
-	filter: grayscale(1);
-	transform-origin: center;
-}
-
-$shapeAmount: 6;
-
-@for $i from 1 through $shapeAmount{
-
-	$count: $i - 1;
-
-	.info-section .shapes div:nth-child(#{$i}){
-		animation: fall-#{$i} 5s -#{$i}s linear infinite alternate;
-		background-image: url("../../img/cross.png");
-		@if($i % 2 == 0){
-			background-image: url("../../img/buttons.png")
-		}
-
-	}	
-
-	@keyframes fall-#{$i}{
-		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
-		50%{ opacity: 1; }
-		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
-	}
-
-}
+@import 'info';
 
 .events{
 	float: left;
@@ -236,6 +121,7 @@ $shapeAmount: 6;
 		margin-bottom: 25px;
 		width: 50%;
 	}
+	
 	@media (max-width: 400px){
 		margin-bottom: 10px;
 		width: 100%;
@@ -260,305 +146,9 @@ $shapeAmount: 6;
 
 .current-event li:last-child{ border: 0; }
 
-@import "social";
-
-.games-section h2{
-	color: $white;
-}
-
-.games-section .more{
-	border-radius: 2px;
-	font-size: .8em;
-	padding: .25em .5em;
-	margin-right: 1%;
-	color: $white;
-	text-align: center;
-	text-decoration: none;
-	float: right;
-	background: #353535;
-}
-
-.games-section .more:hover{ background: #424242; }
-
-.games-section .games{
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
-}
-
-.games-section .game{
-	display: block;
-	position: relative;
-	float: left;
-	width: 16.66%;
-	padding-right: 1%;
-	list-style: none;
-	color: $white;
-	font-size: .8em;
-	text-transform: uppercase;
-	text-align: center;
-
-	@media (max-width: 700px){ width: (100%/5);	}
-	@media (max-width: 550px){ width: (100%/4);	}
-	@media (max-width: 400px){ width: (100%/3);	}
-	@media (max-width: 350px){ width: (100%/2);	}
-}
-
-.games-section .game:nth-child(n+6){
-	@media (max-width: 700px){ display: none; }
-}
-
-.games-section .game:nth-child(n+5){
-	@media (max-width: 550px){ display: none; }
-}
-
-.games-section .game:nth-child(n+4){
-	@media (max-width: 400px){ display: none; }
-}
-
-.games-section .game:nth-child(n+3){
-	@media (max-width: 350px){ display: none; }
-}
-
-.games-section .game h3{
-	font-family: $openSansCon;
-	font-weight: 700;
-}
-
-.games-section .game:hover{ cursor: pointer; }
-
-.games-section .game .boxart{
-	width: 100%;
-	border-radius: 2px;
-}
-
-.games-section .game:hover .boxart{ opacity: .75; }
-
-.game-selected:hover{
-	opacity: 1;
-	cursor: default;
-}
-
-.game-unselected{
-	opacity: .5; 
-	-webkit-filter: grayscale(1);
-			filter: grayscale(1);
-}
-
-.servers-section .server{
-	overflow: hidden;
-	border-bottom: 2px solid #ddd;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-
-	@media (max-width: 700px){
-		padding: 10px 0;
-		margin: 0;
-	} 
-}
-
-.servers-section .server:last-child{ border: none; }
-
-.servers-section .server .server-logo, .servers-section .server .status,
-.servers-section .server p, .servers-section .server .players,
-.servers-section .server .ip-address{
-	float: left;
-	padding: 1em;
-	font-size: 1em;
-}
-
-.servers-section .server p, .servers-section .server .players,
-.servers-section .server .ip-address{
-	@media (max-width: 700px){
-		width: 100%;
-		padding: .75em 0;
-	}
-}
-
-.servers-section .server .server-logo{
-	width: 20%;
-	text-indent: -9999px;
-	background: no-repeat 2px center;
-	background-size: 75%;
-
-	@media (max-width: 700px){ width: 50%; }
-}
-
-.servers-section .server .minecraft{ background-image: url('../../img/minecraft.png'); }
-.servers-section .server .teamspeak{ background-image: url('../../img/teamspeak.png'); }
-
-.servers-section .server .server-logo.online{
-	-webkit-filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
-					drop-shadow(2px 0 0 lighten($green, 15%)) drop-shadow(-2px 0 0 lighten($green, 15%));
-			filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
-					drop-shadow(2px 0 0 lighten($green, 15%)) drop-shadow(-2px 0 0 lighten($green, 15%));
-}
-
-.servers-section .server .server-logo.offline{
-	-webkit-filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
-					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
-			filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
-					drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
-}
-
-.servers-section .server .server-logo.unknown{
-	-webkit-filter: drop-shadow(0 2px 0 lighten(#666, 15%)) drop-shadow(0 -2px 0 lighten(#666, 15%))
-					drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
-			filter: drop-shadow(0 2px 0 lighten(#666, 15%)) drop-shadow(0 -2px 0 lighten(#666, 15%))
-					drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
-}
-
-.servers-section .server .status{
-	width: 15%;
-	text-transform: uppercase;
-	font-weight: 700;
-
-	@media (max-width: 700px){
-		text-align: right;
-		width: 50%;
-	}
-}
-
-.servers-section .server .status.online{  color: $green;  }
-.servers-section .server .status.offline{ color: $red;  }
-.servers-section .server .status.unknown{ color: #666;  }
-
-.servers-section .server p, .servers-section .server .players{
-	width: 30%;
-}
-
-.servers-section .server p{
-	@media (max-width: 700px){
-		width: 50%;
-		text-align: center;
-	}
-	@media (max-width: 400px){ width: 100%; }
-}
-
-.servers-section .server .players{
-	padding: 0 .5em;
-	overflow: hidden;
-
-	@media (max-width: 700px){ width: 50%; }
-	@media (max-width: 400px){ width: 100%; }
-}
-
-.servers-section .players li{
-	padding: 1em;
-	font-weight: bold;
-	font-size: .85em;
-	color: #333;
-	text-align: center;
-}
-
-.servers-section .players li span{ font-weight: normal; }
-
-.servers-section .players .avatar{
-	display: inline-block;
-	text-indent: -9999px;
-	overflow: hidden;
-	margin: 4px;
-	width: 32px;
-	height: 32px;
-	background: url('../../images/steve.png');
-	background-repeat: no-repeat;
-	transition: opacity .15s, transform .25s, background .15s;
-	transform-origin: center;
-}
-
-.servers-section .players .avatar-hidden{
-	opacity: 0;
-	transform: scale(0) rotate(180deg);
-}
-
-.servers-section .players .avatar:hover{
-	cursor: help;
-	
-	@media (max-width: 800px){ cursor: default; }
-}
-
-.servers-section .players .avatar::after{
-	z-index: 9999;
-	content: attr(data-name);
-	position: absolute;
-	display: block;
-	padding: 10px;
-	line-height: 10px;
-	text-indent: 0;
-	text-align: center;
-	color: #E4E4E4;
-	font-weight: 500;
-	background: #1D1D1D;
-	transform: translateY(-5px);
-	border-radius: 5px;
-	border-top-left-radius: 0;
-	opacity: 0;
-	transition: opacity .25s, transform .5s;
-
-	@media (max-width: 800px){ display: none; }
-}
-
-.servers-section .players .avatar:hover::after{
-	transition: opacity .15s, transform .25s;
-	transform: translateY(5px);
-	opacity: 1;
-}
-
-.servers-section .server .ip-address{
-	width: 35%;
-	background: $black;
-	border-radius: 2px;
-	color: $white;
-	font-family: 'Courier New', monospace;
-	font-weight: 500;
-	font-size: .85em;
-	text-align: center;
-	overflow: hidden;
-	
-	@media (max-width: 700px){ width: 50%; }
-	@media (max-width: 400px){ width: 100%; }
-}
-
-.cookie-banner{
-	z-index: 9999;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(124,88,63,.95);
-	padding: .5em 1em;
-}
-
-.cookie-banner p{
-	padding: .5em;
-	padding-left: 2.5em;
-	font-size: .8em;
-	color: $white;
-	background: url('../../img/info.png') no-repeat left;
-}
-
-.cookie-banner a{
-	color: lighten($green, 10%);
-	text-decoration: none;
-	font-weight: 700;
-}
-
-.cookie-banner a:hover{ opacity: .9; }
-
-.cookie-banner button.close{
-	position: absolute;
-	top: .5em; right: .5em;
-	padding: .5em;
-	line-height: 1em;
-	font-size: .75em;
-	color: $white;
-	text-align: center;
-	font-weight: 500;
-	font-family: $openSans;
-	background: transparentize($white, .9);
-	border-radius: 2px;
-}
-
-.cookie-banner button.close:hover{ background: rgba(255,255,255,.15); cursor: pointer; }
+@import 'social';
+@import 'games';
+@import 'servers';
 
 @import 'footer';
+@import 'cookie-banner';

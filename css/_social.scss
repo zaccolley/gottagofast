@@ -4,6 +4,7 @@
 	overflow: hidden;
 	float: left;
 	width: 40%;
+	
 	border-radius: 2px;
 
 	@media (max-width: 700px){
@@ -15,19 +16,23 @@
 .social li{
 	float: left;
 	width: 50%;
+	
 	list-style: none;
 	
 	@media (max-width: 700px){ width: 25%; }
 }
 
 .social li a{
-	height: 75px;
 	display: block;
+	height: 75px;
+	padding: .25em 0;
+	
 	text-indent: -5432px;
 	text-align: center;
-	padding: .25em 0;
+	
 	background: center no-repeat;
 	background-size: auto 80%;
+	
 	transition: opacity .15s;
 }
 

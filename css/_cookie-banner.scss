@@ -1,0 +1,49 @@
+/* _cookie-banner.scss */
+
+.cookie-banner{
+	z-index: 9999;
+	position: fixed;
+	bottom: 0; left: 0; right: 0;
+	padding: .5em 1em;
+	
+	background: rgba(125,90,64,.95);
+}
+
+.cookie-banner p{
+	padding: .5em 2.5em;
+	
+	font-size: .8em;
+	color: $white;
+	
+	background: url('../../img/info.png') no-repeat left;
+}
+
+.cookie-banner a{
+	font-weight: 700;
+	color: lighten($green, 10%);
+	text-decoration: none;
+}
+
+.cookie-banner a:hover{ opacity: .9; }
+
+.cookie-banner button.close{
+	position: absolute;
+	top: .5em; right: .5em;
+	padding: .5em;
+	line-height: 1em;
+	
+	font-family: $openSans;
+	font-weight: 500;
+	font-size: .75em;
+	text-align: center;
+	color: $white;
+
+	background: transparentize($white, .9);
+	border-radius: 2px;
+}
+
+.cookie-banner button.close:hover{
+	background: transparentize($white, .95);
+
+	cursor: pointer;
+}

@@ -1,0 +1,192 @@
+/* _servers.scss */
+
+.servers-section .server{
+	overflow: hidden;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	
+	border-bottom: 2px solid lighten($black, 80%);
+
+	@media (max-width: 700px){
+		padding: 10px 0;
+		margin: 0;
+	} 
+}
+
+.servers-section .server:last-child{ border: none; }
+
+.servers-section .server .server-logo,
+.servers-section .server .status,
+.servers-section .server p,
+.servers-section .server .players,
+.servers-section .server .ip-address{
+	float: left;
+	padding: 1em;
+	
+	font-size: 1em;
+}
+
+.servers-section .server p,
+.servers-section .server .players,
+.servers-section .server .ip-address{
+	@media (max-width: 700px){
+		width: 100%;
+		padding: .75em 0;
+	}
+}
+
+.servers-section .server .server-logo{
+	width: 20%;
+	
+	text-indent: -9999px;
+	
+	background: no-repeat 2px center;
+	background-size: 75%;
+
+	@media (max-width: 700px){ width: 50%; }
+}
+
+.servers-section .server .minecraft{ background-image: url('../../img/minecraft.png'); }
+.servers-section .server .teamspeak{ background-image: url('../../img/teamspeak.png'); }
+
+.servers-section .server .server-logo.online{
+	filter: drop-shadow(0 2px 0 lighten($green, 15%)) drop-shadow(0 -2px 0 lighten($green, 15%))
+			drop-shadow(2px 0 0 lighten($green, 15%)) drop-shadow(-2px 0 0 lighten($green, 15%));
+}
+
+.servers-section .server .server-logo.offline{
+	filter: drop-shadow(0 2px 0 lighten($red, 15%)) drop-shadow(0 -2px 0 lighten($red, 15%))
+			drop-shadow(2px 0 0 lighten($red, 15%)) drop-shadow(-2px 0 0 lighten($red, 15%));
+}
+
+.servers-section .server .server-logo.unknown{
+	filter: drop-shadow(0 2px 0 lighten(#666, 15%)) drop-shadow(0 -2px 0 lighten(#666, 15%))
+			drop-shadow(2px 0 0 lighten(#666, 15%)) drop-shadow(-2px 0 0 lighten(#666, 15%));
+}
+
+.servers-section .server .status{
+	width: 15%;
+	
+	font-weight: 700;
+	text-transform: uppercase;
+
+	@media (max-width: 700px){
+		width: 50%;
+	
+		text-align: right;
+	}
+}
+
+.servers-section .server .status.online{  color: $green;  }
+.servers-section .server .status.offline{ color: $red;  }
+.servers-section .server .status.unknown{ color: #666;  }
+
+.servers-section .server p, .servers-section .server .players{
+	width: 30%;
+}
+
+.servers-section .server p{
+	@media (max-width: 700px){
+		width: 50%;
+		
+		text-align: center;
+	}
+
+	@media (max-width: 400px){ width: 100%; }
+}
+
+.servers-section .server .players{
+	padding: 0 .5em;
+	overflow: hidden;
+
+	@media (max-width: 700px){ width: 50%; }
+	@media (max-width: 400px){ width: 100%; }
+}
+
+.servers-section .players li{
+	padding: 1em;
+	
+	font-weight: bold;
+	font-size: .85em;
+	color: #333;
+	text-align: center;
+}
+
+.servers-section .players li span{ font-weight: normal; }
+
+.servers-section .players .avatar{
+	display: inline-block;
+	overflow: hidden;
+	margin: 4px;
+	width: 32px; height: 32px;
+	
+	text-indent: -9999px;
+
+	background: url('../../images/steve.png');
+	background-repeat: no-repeat;
+	
+	transition: opacity .15s, transform .25s, background .15s;
+	transform-origin: center;
+}
+
+.servers-section .players .avatar-hidden{
+	opacity: 0;
+	
+	transform: scale(0) rotate(180deg);
+}
+
+.servers-section .players .avatar:hover{
+	cursor: help;
+	
+	@media (max-width: 800px){ cursor: default; }
+}
+
+.servers-section .players .avatar::after{
+	content: attr(data-name);
+	
+	z-index: 9999;
+	position: absolute;
+	display: block;
+	padding: 10px;
+	line-height: 10px;
+	
+	font-weight: 500;
+	color: #E4E4E4;
+	text-indent: 0;
+	text-align: center;
+	
+	background: #1D1D1D;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	
+	opacity: 0;
+	
+	transform: translateY(-5px);
+	transition: opacity .25s, transform .5s;
+
+	@media (max-width: 800px){ display: none; }
+}
+
+.servers-section .players .avatar:hover::after{
+	opacity: 1;
+	
+	transition: opacity .15s, transform .25s;
+	transform: translateY(5px);
+}
+
+.servers-section .server .ip-address{
+	width: 35%;
+	overflow: hidden;
+	
+	font-family: 'Courier New', monospace;
+	font-weight: 500;
+	font-size: .85em;
+	color: $white;
+	text-align: center;
+	
+	background: $black;
+	border-radius: 2px;
+	
+	@media (max-width: 700px){ width: 50%; }
+	@media (max-width: 400px){ width: 100%; }
+}

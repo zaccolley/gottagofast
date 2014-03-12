@@ -1,0 +1,136 @@
+/* _info.scss */
+
+.info-section{
+	position: relative;
+	overflow: hidden;
+	
+	background: none;
+}
+
+.info-section .desc{
+	padding: 0 1em;
+	width: 80%;
+	margin: 0 auto;
+	
+	text-align: center;
+
+	@media (max-width: 700px){ width: 100%; }
+}
+
+.info-section .desc h1, .info-section .desc h2{
+	font-weight: 500;
+}
+
+.info-section .desc h1{
+	padding: .5em 0;
+	
+	font-family: $fredoka;
+	font-size: 2.5em;
+	color: darken($white, 5%);
+	text-transform: uppercase;
+
+	@media (max-width: 400px){ font-size: 1.5em; }
+}
+
+.info-section .desc h1 span{
+	display: block;
+	
+	font-size: .75em;
+	color: darken($white, 10%);
+}
+
+.info-section .desc h2{
+	padding: .5em 2.5em;
+	
+	font-family: $openSans;
+	font-size: 1.25em;
+	color: darken($white, 10%);
+	text-transform: none;
+
+	@media (max-width: 400px){
+		padding: .5em 1em;
+		
+		font-size: 1em;
+	}
+}
+
+.info-section .desc p{
+	padding-bottom: .25em;
+}
+
+.info-section .join{
+	margin-top: 50px;
+	
+	text-align: center;
+
+	@media (max-width: 700px){ margin-top: 10px; }
+}
+
+.info-section .join p{
+	padding: 1em;
+	
+	font-size: .8em;
+}
+
+.info-section .join a{
+	width: 40%;
+	margin: 0 auto;
+
+	@media (max-width: 700px){ width: 80%; }
+	
+	@media (max-width: 400px){
+		width: 90%;
+		
+		font-size: 1.35em;
+	}
+}
+
+.info-section .shapes{
+	z-index: -1;
+	position: absolute;
+	top:0; bottom:0;
+	width: 100%;
+	overflow: hidden;
+	
+	background: darken($black, .075%);
+}
+
+.info-section .shapes div{
+	position: absolute;
+	left: 0; top: 0;
+	height: 100%; width: 100%;
+	
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 200px;
+	
+	opacity: 0;
+	
+	filter: grayscale(1);
+	
+	transform-origin: center;
+}
+
+$shapeAmount: 6;
+
+@for $i from 1 through $shapeAmount{
+
+	$count: $i - 1;
+
+	.info-section .shapes div:nth-child(#{$i}){
+		animation: fall-#{$i} 5s -#{$i}s linear infinite alternate;
+		
+		background-image: url("../../img/cross.png");
+		@if($i % 2 == 0){
+			background-image: url("../../img/buttons.png")
+		}
+
+	}	
+
+	@keyframes fall-#{$i}{
+		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
+		50%{ opacity: 1; }
+		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
+	}
+
+}

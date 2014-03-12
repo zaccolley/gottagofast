@@ -15,6 +15,7 @@ nav ul{
 	@media (max-width: 700px){
 		position: absolute;
 		top: 0; right: 10%; bottom: 0; left: 0;
+		
 		transition: transform .5s;
 	}
 }
@@ -24,26 +25,31 @@ nav ul.hidden{
 }
 
 nav li{
-	text-align: center;
-	text-transform: uppercase;
+	width: 20%;	
+	
 	font-weight: 600;
 	font-size: 1em;
 	font-family: $openSansCon;
-	width: 20%;	
+	text-align: center;
+	text-transform: uppercase;
+
 	list-style: none;
 	
 	@media (max-width: 700px){
-		background: #F4F4F4;
 		width: (100%/5);
 		min-height: 30px;
+		
+		background: $white;
 	}
 }
 
 nav li a{
-	color: rgba(50,50,50,.5);
-	padding: 20px 0;
-	text-decoration: none;
 	display: block;
+	padding: 20px 0;
+	
+	color: lighten($black, 50%);
+	text-decoration: none;
+	
 	transition: padding .1s, border .1s, color .1s;
 	
 	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
@@ -52,8 +58,9 @@ nav li a{
 }
 
 nav li a:hover{
+	color: lighten($black, 60%);
+	
 	border-top: 5px solid;
-	color: rgba(50,50,50,.75);
 }
 
 nav li:nth-child(2) a:hover{ color: $yellow; }
@@ -66,14 +73,19 @@ nav .nav-button{
 	display: none;
 	margin-top: .75em;
 	padding: .25em .5em;
-	text-align: center;
-	background: rgba(129, 129, 129, 0.65);
-	color: #FFF;
-	border-radius: 3px;
-	text-transform: uppercase;
+	
+	
 	font-weight: 800;
 	font-family: $openSansCon;
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+
+	background: lighten($black, 25%);
+	border-radius: 3px;
+	
 	cursor: pointer;
+	
 	transition: opacity .15s;
 
 	@media (max-width: 700px){ display: inline-block; }
@@ -92,16 +104,20 @@ nav .join{
 
 nav .join a{
 	width: 70%;
+	
 	font-size: 1em;
+	
 	transition: opacity .25s, transform .25s;
 }
 
 nav .join a.hidden{
 	opacity: 0;
+	
 	transform: scale(0);
 }
 
 nav .join a:hover{
-	border-top: none;
 	color: $white;
+	
+	border-top: none;
 }

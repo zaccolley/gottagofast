@@ -1,0 +1,86 @@
+/* _games.scss */
+
+.games-section h2{
+	color: $white;
+}
+
+.games-section .more{
+	float: right;
+	padding: .25em .5em;
+	margin-right: 1%;
+	
+	font-size: .8em;
+	color: $white;
+	text-align: center;
+	text-decoration: none;
+	
+	background: lighten($black, 10%);
+	border-radius: 2px;
+}
+
+.games-section .more:hover{ background: lighten($black, 15%); }
+
+.games-section .games{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+.games-section .game{
+	float: left;
+	position: relative;
+	width: 16.66%;
+	padding-right: 1%;
+	
+	list-style: none;
+	
+	font-size: .8em;
+	color: $white;
+	text-transform: uppercase;
+	text-align: center;
+
+	@media (max-width: 700px){ width: (100%/5);	}
+	@media (max-width: 550px){ width: (100%/4);	}
+	@media (max-width: 400px){ width: (100%/3);	}
+	@media (max-width: 350px){ width: (100%/2);	}
+}
+
+.games-section .game:nth-child(n+6){
+	@media (max-width: 700px){ display: none; }
+}
+
+.games-section .game:nth-child(n+5){
+	@media (max-width: 550px){ display: none; }
+}
+
+.games-section .game:nth-child(n+4){
+	@media (max-width: 400px){ display: none; }
+}
+
+.games-section .game:nth-child(n+3){
+	@media (max-width: 350px){ display: none; }
+}
+
+.games-section .game h3{
+	font-family: $openSansCon;
+	font-weight: 700;
+}
+
+.games-section .game:hover{ cursor: pointer; }
+
+.games-section .game .boxart{
+	width: 100%;
+	border-radius: 2px;
+}
+
+.games-section .game:hover .boxart{ opacity: .75; }
+
+.game-selected:hover{
+	opacity: 1;
+	cursor: default;
+}
+
+.game-unselected{
+	opacity: .5; 
+	filter: grayscale(1);
+}

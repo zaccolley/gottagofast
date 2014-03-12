@@ -3,7 +3,7 @@
 footer{
 	overflow: hidden;
 	padding: .5em 0;
-	background:lighten($black, 5%);
+	background: lighten($black, 5%);
 	color: darken($white, 50%);
 }
 
@@ -18,10 +18,11 @@ footer .copyright{
 	text-align: right;
 	text-transform: uppercase;
 
-	@media all and (max-width: 800px){ width: 60%; }
-	@media all and (max-width: 700px){ width: 40%; }
-	@media all and (max-width: 400px){
+	@media (max-width: 800px){ width: 60%; }
+	@media (max-width: 700px){ width: 40%; }
+	@media (max-width: 400px){
 		width: 100%;
+		
 		text-align: center;
 	}
 }
@@ -29,15 +30,18 @@ footer .copyright{
 footer .upsu, footer .upgs{
 	width: 15%;
 	height: 1.75em;
+	
 	text-indent: -9999px;
+	
 	background: no-repeat;
 	background-size: auto 100%;
 	background-position: left center;
+	
 	opacity: .25;
 
-	@media all and (max-width: 800px){ width: 20%; }
-	@media all and (max-width: 700px){ width: 30%; }
-	@media all and (max-width: 400px){
+	@media (max-width: 800px){ width: 20%; }
+	@media (max-width: 700px){ width: 30%; }
+	@media (max-width: 400px){
 		margin-bottom: 10px; 
 		width: 50%;
 		background-position: center;

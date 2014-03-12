@@ -1,14 +1,16 @@
 /* _account.scss */
 
 .account{
-	position: fixed;
-	overflow: hidden;
-	background: #E7E7E7;
-	padding: 1em;
-	color: #F4F4F4;
-	left: 0;
-	right: 0;
 	z-index: 1337;
+	position: fixed;
+	padding: 1em;
+	left: 0; right: 0;
+	overflow: hidden;
+	
+	color: lighten($black, 15%);
+	
+	background: darken($white, 15%);
+	
 	transition: transform .5s;
 
 	@media (max-width: 700px){
@@ -30,8 +32,9 @@
 .account form input,
 .account form button{
 	float: left;
-	font-size: 1.5em;
 	padding: .5em;
+	
+	font-size: 1.5em;
 	color: lighten($black, 10%);
 
 	@media (max-width: 700px){
@@ -46,15 +49,18 @@
 
 .account form label{
 	width: 20%;
-	text-transform: uppercase;
+	
 	font-family: $openSansCon;
 	font-weight: 800;
+	text-transform: uppercase;
 }
 
 .account form input{
 	width: 80%;
+	
+	background: transparentize($black, .9);
+	
 	border-radius: 2px;
-	background: rgba(0,0,0,.1);
 }
 
 .account form input[type="password"]{
@@ -63,9 +69,9 @@
 }
 
 .account .buttons{
-	overflow: hidden;
 	width: 80%;
 	float: right;
+	overflow: hidden;
 
 	@media (max-width: 700px){
 		width: 100%;
@@ -74,27 +80,31 @@
 }
 
 .account form button{
-	text-transform: uppercase;
-	color: $white;
 	font-family: $fredoka;	
+	color: $white;
+	text-transform: uppercase;
+	
 	transition: opacity .1s;
 }
 
 .account form button:hover{
 	opacity: .9;
+	
 	cursor: pointer;
 }
 
 .account form button[type="submit"]{
+	width: 75%;
+	
+	background: $green;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
-	background: $green;
-	width: 75%;
 }
 
 .account form button[type="reset"]{
+	width: 25%;
+	
 	border-top-right-radius: 2px;
 	border-bottom-right-radius: 2px;
 	background: $red;
-	width: 25%;
 }
