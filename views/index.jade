@@ -1,0 +1,144 @@
+extends layout
+
+block content
+  header
+      .wrapper
+        a(href='/')
+          h1.logo.logo-animation UPGS
+        nav
+          ul.hidden
+            li.join
+              a.hidden(href='http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/') Join&excl;
+            li
+              a(href='#events') Events
+            li
+              a(href='#games') Games
+            li
+              a(href='#servers') Servers
+            li.log-in
+              a(href='#') Log-in
+          .nav-button Nav
+    .account.account--hidden
+      .wrapper
+        form
+          .row
+            label Username
+            input(type='text', name='user')
+          .row
+            label Password
+            input(type='password', name='pass')
+          .buttons
+            button(type='submit') Ok log me in&excl;
+            button(type='reset') Nah
+    main
+      section.info-section
+        .shapes
+          div
+          div
+          div
+          div
+          div
+          div
+        .wrapper
+          .desc
+            h1
+              span University of Portsmouth
+              | Gaming Society
+            h2 A place within Portsmouth where gamers of all types can meet&period;
+          .join
+            a(href='http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/') Join the society&excl;
+            p Get access to this site and entry to tournaments&excl;
+      section#events
+        .wrapper
+          .events
+            h2 Socials
+            p Come play games and converse about your favourite Tingle moment&period;
+            p
+              | We have socials every
+              em Thursday 19&colon;00 til late
+              | at
+              strong The Trafalgar
+              | &period;
+          .events
+            h2 Events
+            ul.current-event
+              li Super Smash Bros&period; Brawl Tournament
+              li 11&sol;10&sol;13 - 13&colon;00
+              li The Union
+          .social
+            ul
+              li
+                a.facebook(href='https://www.facebook.com/groups/gamingsoc/') Facebook
+              li
+                a.twitter(href='https://twitter.com/uopgamingsoc') Twitter
+              li
+                a.google(href='https://plus.google.com/u/0/communities/109710575313255821027') Google
+              li
+                a.steam(href='http://steamcommunity.com/groups/UPGS') Steam
+      section#games.games-section
+        .wrapper
+          a.more(href='#') More games&mldr;
+          h2
+            | Games
+            span people are playing
+          ol.games
+            li.game
+              img.boxart(alt='Minecraft', src='images/games/minecraft.jpg')
+              h3 Minecraft
+              p 35 players
+            li.game
+              img.boxart(alt='League of Legends', src='images/games/league_of_legends.jpg')
+              h3 League of Legends
+              p 21 players
+            li.game
+              img.boxart(alt='Starcraft II', src='images/games/starcraft2.jpg')
+              h3 Starcraft II
+              p 18 players
+            li.game
+              img.boxart(alt='World of Warcraft', src='images/games/world_of_warcraft.jpg')
+              h3 World of Warcraft
+              p 15 players
+            li.game
+              img.boxart(alt='Grand Theft Auto V', src='images/games/grand_theft_auto_v.jpg')
+              h3 Grand Theft Auto V
+              p 11 players
+            li.game
+              img.boxart(alt='Counter Strike', src='images/games/counter_strike.jpg')
+              h3 Counter Strike
+              p 5 players
+      section#servers.servers-section
+        .wrapper
+          h2
+            | Servers
+            span 24&sol;7 Coverage&excl;
+          .server
+            h3.server-logo.minecraft.online Minecraft
+            p.status.online Online&excl;
+            ul.players
+              li.avatar(style='background-image: url("http://minotar.net/avatar/Notch/32");', data-name='Notch') Notch
+              li.avatar(style='background-image: url("http://minotar.net/avatar/Dinnerbone/32");', data-name='Dinnerbone') Dinnerbone
+              li.avatar(style='background-image: url("http://minotar.net/avatar/ZacColley/32");', data-name='ZacColley') ZacColley
+              li.avatar(style='background-image: url("http://minotar.net/avatar/Etho/32");', data-name='Etho') Etho
+              li.avatar(style='background-image: url("http://minotar.net/avatar/SethBling/32");', data-name='SethBling') SethBling
+              li.avatar(style='background-image: url("http://minotar.net/avatar/clone1018/32");', data-name='clone1018') clone1018
+              li.avatar(style='background-image: url("http://minotar.net/avatar/citricsquid/32");', data-name='citricsquid') citricsquid
+              li.avatar(style='background-image: url("http://minotar.net/avatar/Kepha/32");', data-name='Kepha') Kepha
+            p.ip-address mc&period;thegamingsociety&period;co&period;uk
+          .server
+            h3.server-logo.teamspeak.offline Teamspeak
+            p.status.offline.col-1-6 Offline
+            p.col-1-3 0 people connected&mldr;
+            p.ip-address teamspeak&period;thegamingsociety&period;co&period;uk
+    footer
+      .wrapper
+        a.upgs(href='./') UPGS
+        a.upsu(href='http://upsu.net/') UPSU
+        p.copyright &copy; 2014 University of Portsmouth Gaming Society
+    .cookie-banner
+      p
+        | This page uses
+        a(href='http://en.wikipedia.org/wiki/HTTP_cookie') cookies
+        | &period;
+      button.close Go away&mldr;
+  script(src='http://code.jquery.com/jquery-1.10.1.min.js')
+  script(type='text/javascript' src='javascripts/script.min.js')

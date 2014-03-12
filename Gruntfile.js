@@ -6,16 +6,16 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: ['js/*.js'],
-                dest: 'js/build/script.js'
+                dest: 'public/javascripts/script.js'
             }
         },
 
         uglify: {
             build: {
-                src:  'js/build/script.js',
-                dest: 'js/build/script.min.js',
+                src:  'public/javascripts/script.js',
+                dest: 'public/javascripts/script.min.js',
                 options: {
-                    sourceMap: 'js/build/script.map.js',
+                    sourceMap: 'public/javascripts/script.map.js',
                     sourceMapPrefix: 2,
                     sourceMappingURL: 'script.map.js',
                     banner: '/*! <%= pkg.name %> ~ <%= grunt.template.today("yyyy-mm-dd") %> */'
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'css/build/style.css': 'css/all.scss'
+                    'public/stylesheets/style.css': 'css/all.scss'
                 }
             } 
         },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 files: {
-                    'css/build/style.css': 'css/build/style.css'
+                    'public/stylesheets/style.css': 'public/stylesheets/style.css'
                 }
             }
         },
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
         csso: {
             dist: {
                 files: {
-                    'css/build/style.min.css': 'css/build/style.css'
+                    'public/stylesheets/style.min.css': 'public/stylesheets/style.css'
                 }
             }
         },
