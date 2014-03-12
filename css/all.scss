@@ -63,23 +63,33 @@ section{
 	padding: .75em 0;
 }
 
+section h1,
 section h2{
+	display: inline-block;
+	font-size: 1.5em;
+	font-weight: 500;
+}
+
+section h1{
 	padding-bottom: .5em;
 	
 	font-family: $fredoka;
-	font-weight: 500;
-	font-size: 1.5em;
 	text-transform: uppercase;
 	color: #131313;
 
 	@media (max-width: 400px){ font-size: 1.25em; }
 }
 
-section h2 span{
+section h2{
 	font-family: $openSansCon;
-	font-weight: 500;
 
 	@media (max-width: 400px){ font-size: .8em;	}
+}
+
+section p{
+	padding-bottom: 1em;
+
+	line-height: 1.25;
 }
 
 .info-section,
