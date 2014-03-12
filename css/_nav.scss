@@ -3,6 +3,24 @@
 nav{
 	width: 70%;
 	padding-left: 5%;
+	
+	@media (max-width: 700px){
+		padding: 0;
+		width: 60%;
+		min-height: 30px;
+	}
+}
+
+nav ul{
+	@media (max-width: 700px){
+		position: absolute;
+		top: 0; right: 10%; bottom: 0; left: 0;
+		transition: transform .5s;
+	}
+}
+
+nav ul.hidden{
+	@media (max-width: 700px){ transform: translateX(-100%); }
 }
 
 nav li{
@@ -13,6 +31,12 @@ nav li{
 	font-family: $openSansCon;
 	width: 20%;	
 	list-style: none;
+	
+	@media (max-width: 700px){
+		background: #F4F4F4;
+		width: (100%/5);
+		min-height: 30px;
+	}
 }
 
 nav li a{
@@ -23,6 +47,8 @@ nav li a{
 	transition: padding .1s, border .1s, color .1s;
 	
 	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
+
+	@media (max-width: 700px){ padding: 15px 0; }
 }
 
 nav li a:hover{
@@ -49,6 +75,8 @@ nav .nav-button{
 	font-family: $openSansCon;
 	cursor: pointer;
 	transition: opacity .15s;
+
+	@media (max-width: 700px){ display: inline-block; }
 }
 
 nav .nav-button:hover{
@@ -58,6 +86,8 @@ nav .nav-button:hover{
 nav .join{
 	margin: 0;
 	padding: .75em 0;
+
+	@media (max-width: 700px){ display: none; }
 }
 
 nav .join a{

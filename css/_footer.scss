@@ -17,6 +17,13 @@ footer .copyright{
 	padding: .75em 0;
 	text-align: right;
 	text-transform: uppercase;
+
+	@media all and (max-width: 800px){ width: 60%; }
+	@media all and (max-width: 700px){ width: 40%; }
+	@media all and (max-width: 400px){
+		width: 100%;
+		text-align: center;
+	}
 }
 
 footer .upsu, footer .upgs{
@@ -27,6 +34,14 @@ footer .upsu, footer .upgs{
 	background-size: auto 100%;
 	background-position: left center;
 	opacity: .25;
+
+	@media all and (max-width: 800px){ width: 20%; }
+	@media all and (max-width: 700px){ width: 30%; }
+	@media all and (max-width: 400px){
+		margin-bottom: 10px; 
+		width: 50%;
+		background-position: center;
+	}
 }
 
 footer .upsu:hover, footer .upgs:hover{

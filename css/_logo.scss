@@ -11,6 +11,13 @@
 	color: $black;
 	white-space: nowrap;
 	transition: letter-spacing .5s .25s, color .15s .25s;
+
+	@media (max-width: 700px){
+		width: 40%;
+		font-size: 2em;
+		line-height: 30px;
+		min-height: 30px;
+	}
 }
 
 /* old normal background version of logo
@@ -38,6 +45,12 @@
 
 	transition: transform .5s;
 	transform-origin: 50%; /* ensures they spin from the center */
+
+	@media (max-width: 700px){
+		width: 30px;
+		height: 30px;
+	}
+	
 }
 
 .logo::before{ background-position: left; }

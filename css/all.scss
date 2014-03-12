@@ -16,6 +16,9 @@ body{
 	padding-top: $headerHeight;
 	font-family: $openSans;
 	background: $white;
+
+
+	@media (max-width: 700px){ padding-top: 0; }
 }
 
 li{ list-style-position: inside; }
@@ -24,6 +27,10 @@ li{ list-style-position: inside; }
 	padding: 0 .5em;
 	width: 70%;
 	margin: 0 auto;
+
+	@media (max-width: 1200px){ width: 80%; }
+	@media (max-width: 1000px){ width: 90%;	}
+	@media (max-width:  800px){ width: 100%; }
 }
 
 header{
@@ -34,6 +41,11 @@ header{
 	background: transparentize($white, .025);
 
 	transform: translateX(0);
+
+	@media (max-width: 700px){
+		position: relative;
+		height: auto;
+	}
 }
 
 .logo, nav, nav li{
@@ -58,11 +70,15 @@ section h2{
 	font-size: 1.5em;
 	padding-bottom: .5em;
 	font-family: $fredoka;
+
+	@media (max-width: 400px){ font-size: 1.25em; }
 }
 
 section h2 span{
 	font-family: $openSansCon;
 	font-weight: 500;
+
+	@media (max-width: 400px){ font-size: .8em;	}
 }
 
 .info-section,
@@ -100,6 +116,8 @@ section h2 span{
 	width: 80%;
 	margin: 0 auto;
 	text-align: center;
+
+	@media (max-width: 700px){ width: 100%; }
 }
 
 .info-section .desc h1, .info-section .desc h2{
@@ -113,6 +131,9 @@ section h2 span{
 	color: #F1F1F1;
 	font-size: 2.5em;
 	color: darken($white, 5%);
+
+
+	@media (max-width: 400px){ font-size: 1.5em; }
 }
 
 .info-section .desc h1 span{
@@ -127,6 +148,11 @@ section h2 span{
 	text-transform: none;
 	font-family: $openSans;
 	color: #E9E9E9;
+
+	@media (max-width: 400px){
+		padding: .5em 1em;
+		font-size: 1em;
+	}
 }
 
 .info-section .desc p{
@@ -136,6 +162,8 @@ section h2 span{
 .info-section .join{
 	text-align: center;
 	margin-top: 50px;
+
+	@media (max-width: 700px){ margin-top: 10px; }
 }
 
 .info-section .join p{
@@ -146,6 +174,12 @@ section h2 span{
 .info-section .join a{
 	width: 40%;
 	margin: 0 auto;
+
+	@media (max-width: 700px){ width: 80%; }
+	@media (max-width: 400px){
+		width: 90%;
+		font-size: 1.35em;
+	}
 }
 
 .info-section .shapes{
@@ -197,6 +231,15 @@ $shapeAmount: 6;
 	float: left;
 	width: 30%;
 	padding-right: 1em;
+
+	@media (max-width: 700px){
+		margin-bottom: 25px;
+		width: 50%;
+	}
+	@media (max-width: 400px){
+		margin-bottom: 10px;
+		width: 100%;
+	}
 }
 
 .events p{
@@ -254,6 +297,27 @@ $shapeAmount: 6;
 	font-size: .8em;
 	text-transform: uppercase;
 	text-align: center;
+
+	@media (max-width: 700px){ width: (100%/5);	}
+	@media (max-width: 550px){ width: (100%/4);	}
+	@media (max-width: 400px){ width: (100%/3);	}
+	@media (max-width: 350px){ width: (100%/2);	}
+}
+
+.games-section .game:nth-child(n+6){
+	@media (max-width: 700px){ display: none; }
+}
+
+.games-section .game:nth-child(n+5){
+	@media (max-width: 550px){ display: none; }
+}
+
+.games-section .game:nth-child(n+4){
+	@media (max-width: 400px){ display: none; }
+}
+
+.games-section .game:nth-child(n+3){
+	@media (max-width: 350px){ display: none; }
 }
 
 .games-section .game h3{
@@ -286,6 +350,11 @@ $shapeAmount: 6;
 	border-bottom: 2px solid #ddd;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
+
+	@media (max-width: 700px){
+		padding: 10px 0;
+		margin: 0;
+	} 
 }
 
 .servers-section .server:last-child{ border: none; }
@@ -298,11 +367,21 @@ $shapeAmount: 6;
 	font-size: 1em;
 }
 
+.servers-section .server p, .servers-section .server .players,
+.servers-section .server .ip-address{
+	@media (max-width: 700px){
+		width: 100%;
+		padding: .75em 0;
+	}
+}
+
 .servers-section .server .server-logo{
 	width: 20%;
 	text-indent: -9999px;
 	background: no-repeat 2px center;
 	background-size: 75%;
+
+	@media (max-width: 700px){ width: 50%; }
 }
 
 .servers-section .server .minecraft{ background-image: url('../../img/minecraft.png'); }
@@ -333,6 +412,11 @@ $shapeAmount: 6;
 	width: 15%;
 	text-transform: uppercase;
 	font-weight: 700;
+
+	@media (max-width: 700px){
+		text-align: right;
+		width: 50%;
+	}
 }
 
 .servers-section .server .status.online{  color: $green;  }
@@ -343,9 +427,20 @@ $shapeAmount: 6;
 	width: 30%;
 }
 
+.servers-section .server p{
+	@media (max-width: 700px){
+		width: 50%;
+		text-align: center;
+	}
+	@media (max-width: 400px){ width: 100%; }
+}
+
 .servers-section .server .players{
 	padding: 0 .5em;
 	overflow: hidden;
+
+	@media (max-width: 700px){ width: 50%; }
+	@media (max-width: 400px){ width: 100%; }
 }
 
 .servers-section .players li{
@@ -376,7 +471,11 @@ $shapeAmount: 6;
 	transform: scale(0) rotate(180deg);
 }
 
-.servers-section .players .avatar:hover{ cursor: help; }
+.servers-section .players .avatar:hover{
+	cursor: help;
+	
+	@media (max-width: 800px){ cursor: default; }
+}
 
 .servers-section .players .avatar::after{
 	z-index: 9999;
@@ -395,6 +494,8 @@ $shapeAmount: 6;
 	border-top-left-radius: 0;
 	opacity: 0;
 	transition: opacity .25s, transform .5s;
+
+	@media (max-width: 800px){ display: none; }
 }
 
 .servers-section .players .avatar:hover::after{
@@ -413,6 +514,9 @@ $shapeAmount: 6;
 	font-size: .85em;
 	text-align: center;
 	overflow: hidden;
+	
+	@media (max-width: 700px){ width: 50%; }
+	@media (max-width: 400px){ width: 100%; }
 }
 
 .cookie-banner{
@@ -458,197 +562,3 @@ $shapeAmount: 6;
 .cookie-banner button.close:hover{ background: rgba(255,255,255,.15); cursor: pointer; }
 
 @import 'footer';
-
-@media all and (max-width: 1200px){
-	.wrapper{ width: 80%; }
-}
-
-@media all and (max-width: 1000px){
-	.wrapper{ width: 90%; }
-}
-
-@media all and (max-width: 800px){
-	.wrapper{ width: 100%; }
-
-	.servers-section .players .avatar:hover{ cursor: default; }
-
-	.servers-section .players .avatar::after{ display: none; }
-
-	footer .copyright{ width: 60%; }
-
-	footer .upsu, footer .upgs{ width: 20%; }
-}
-
-@media all and (max-width: 700px){
-
-	body{ padding-top: 0; }
-
-	header{
-		position: relative;
-		height: auto;
-	}
-	
-	.logo{
-		width: 40%;
-		font-size: 2em;
-		line-height: 30px;
-	}
-
-	.logo, nav, nav li{
-		min-height: 30px;
-	}
-
-	.logo::before, .logo::after{
-		width: 30px;
-		height: 30px;
-	}
-	
-	nav{
-		padding: 0;
-		width: 60%;
-	}
-
-	nav ul{
-		position: absolute;
-		top: 0; right: 10%; bottom: 0; left: 0;
-		transition: transform .5s;
-	}
-
-	nav ul.hidden{
-		transform: translateX(-100%);
-	}
-
-	nav li.join{ display: none; }
-
-	nav li{
-		background: #F4F4F4;
-		width: (100%/5);
-	}
-
-	nav li a{
-		padding: 15px 0;
-	}
-
-	nav .nav-button{
-		display: inline-block;
-	}
-
-	.account{
-		position: absolute;
-	}
-
-	.account .buttons, .account form label, .account form input{
-		width: 100%;
-		float: none;
-	}
-
-	.account form label{
-		padding: 0;
-	}
-
-	.info-section .desc{ width: 100%; }
-	
-	.info-section .join{ margin-top: 10px; }
-
-	.info-section .join a{ width: 80%; }
-
-	.desc{ width: 100%; }
-
-	.events{
-		margin-bottom: 25px;
-		width: 50%;
-	}
-
-	.social{
-		float: none;
-		width: 100%;
-	}
-
-	.social li{
-		width: 25%;
-	}
-
-	.games-section .game{
-		width: (100%/5);
-	}
-
-	.games-section .game:nth-child(n+6){
-		display: none;
-	}
-
-	.servers-section .server{
-		padding: 10px 0;
-		margin: 0;
-	} 
-
-	.servers-section .server .server-logo, .servers-section .server .status{
-		width: 50%;
-	}
-
-	.servers-section .server .status{ text-align: right; }
-
-	.servers-section .server p, .servers-section .server .players,
-	.servers-section .server .ip-address{
-		width: 100%;
-		padding: .75em 0;
-	}
-
-	.servers-section .server p{
-		text-align: center;
-	}
-
-	footer .copyright{ width: 40%; }
-
-	footer .upsu, footer .upgs{ width: 30%; }
-
-}
-
-@media all and (max-width: 400px){
-
-	.info-section .desc h1{
-		font-size: 1.5em;
-	}
-
-	.info-section .desc h2{
-		padding: .5em 1em;
-		font-size: 1em;
-	}
-
-	.info-section .join a {
-		width: 90%;
-		font-size: 1.35em;
-	}
-
-	section h2{
-		font-size: 1.25em;
-	}
-
-	section h2 span{
-		font-size: .8em;
-	}
-
-	.events{
-		margin-bottom: 10px;
-		width: 100%;
-	}
-
-	.games-section .game{
-		width: (100%/3);
-	}
-
-	.games-section .game:nth-child(n+4){
-		display: none;
-	}
-
-	footer .copyright{
-		width: 100%;
-		text-align: center;
-	}
-
-	footer .upsu, footer .upgs{
-		margin-bottom: 10px; 
-		width: 50%;
-		background-position: center;
-	}
-
-}

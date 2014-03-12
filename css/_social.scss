@@ -5,12 +5,19 @@
 	float: left;
 	width: 40%;
 	border-radius: 2px;
+
+	@media (max-width: 700px){
+		float: none;
+		width: 100%;
+	}
 }
 
 .social li{
 	float: left;
 	width: 50%;
 	list-style: none;
+	
+	@media (max-width: 700px){ width: 25%; }
 }
 
 .social li a{

@@ -10,6 +10,11 @@
 	right: 0;
 	z-index: 1337;
 	transition: transform .5s;
+
+	@media (max-width: 700px){
+		position: absolute;
+		padding: .5em 0;
+	}
 }
 
 .account--hidden{
@@ -28,6 +33,10 @@
 	font-size: 1.5em;
 	padding: .5em;
 	color: lighten($black, 10%);
+
+	@media (max-width: 700px){
+		width: 100%;
+	}
 }
 
 .account form input,
@@ -57,6 +66,11 @@
 	overflow: hidden;
 	width: 80%;
 	float: right;
+
+	@media (max-width: 700px){
+		width: 100%;
+		float: none;
+	}
 }
 
 .account form button{
