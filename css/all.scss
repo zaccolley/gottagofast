@@ -68,23 +68,16 @@ section h2{
 	display: inline-block;
 	font-size: 1.5em;
 	font-weight: 500;
-}
-
-section h1{
-	padding-bottom: .5em;
-	
-	font-family: $fredoka;
 	text-transform: uppercase;
 	color: #131313;
-
+	padding-bottom: .5em;
+	
 	@media (max-width: 400px){ font-size: 1.25em; }
 }
 
-section h2{
-	font-family: $openSansCon;
+section h1{ font-family: $fredoka; }
 
-	@media (max-width: 400px){ font-size: .8em;	}
-}
+section h2{ font-family: $openSansCon; }
 
 section p{
 	padding-bottom: 1em;
