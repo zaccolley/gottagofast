@@ -2,9 +2,15 @@
 
 footer{
 	overflow: hidden;
-	padding: .5em 0;
+	padding: 1em 0;
+
 	background: lighten($black, 5%);
 	color: darken($white, 50%);
+}
+
+footer .details{
+	overflow: hidden;
+	padding: 5px 0;
 }
 
 footer .copyright,

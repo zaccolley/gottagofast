@@ -1,9 +1,12 @@
 /* _servers.scss */
 
+.servers-section{
+	background: darken($white, 2.5%)
+}
+
 .servers-section .server{
 	overflow: hidden;
-	padding-bottom: 20px;
-	margin-bottom: 20px;
+	padding: 20px 0;
 	
 	border-bottom: 2px solid lighten($black, 80%);
 

@@ -33,6 +33,7 @@ li{ list-style-position: inside; }
 }
 
 header{
+	backface-visibility: hidden;
 	z-index: 9001;
 	position: fixed;
 	top: 0; left: 0; right: 0;
@@ -46,6 +47,61 @@ header{
 		position: relative;
 		height: auto;
 	}
+}
+
+main{
+	position: relative;
+}
+
+
+.shapes{
+	z-index: -1;
+	position: absolute;
+	top:0; bottom:0;
+	width: 100%;
+	overflow: hidden;
+	
+	background: darken($black, .075%);
+}
+
+.shapes div{
+	position: absolute;
+	left: 0; top: 0;
+	height: 100%; width: 100%;
+	
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 200px;
+	
+	opacity: 0;
+	
+	filter: grayscale(1);
+	
+	transform-origin: center;
+}
+
+$shapeAmount: 6;
+
+@for $i from 1 through $shapeAmount{
+
+	$count: $i - 1;
+
+	.shapes div:nth-child(#{$i}){
+		animation: fall-#{$i} 10s -#{$i}s linear infinite alternate;
+		
+		background-image: url("../../img/cross.png");
+		@if($i % 2 == 0){
+			background-image: url("../../img/buttons.png")
+		}
+
+	}	
+
+	@keyframes fall-#{$i}{
+		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
+		50%{ opacity: 1; }
+		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
+	}
+
 }
 
 .logo, nav, nav li{
@@ -88,7 +144,6 @@ section p{
 .info-section,
 .games-section{
 	color: $white;
-	background: $black;
 }
 
 .join a{
@@ -115,15 +170,15 @@ section p{
 
 @import 'info';
 
+.events-section{
+	background: darken($white, 2.5%)
+}
+
 .events{
 	float: left;
-	width: 30%;
+	width: 50%;
 	padding-right: 1em;
 
-	@media (max-width: 700px){
-		margin-bottom: 25px;
-		width: 50%;
-	}
 	
 	@media (max-width: 400px){
 		margin-bottom: 10px;

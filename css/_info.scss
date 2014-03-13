@@ -1,10 +1,7 @@
 /* _info.scss */
 
 .info-section{
-	position: relative;
 	overflow: hidden;
-	
-	background: none;
 }
 
 .info-section .desc{
@@ -84,54 +81,4 @@
 		
 		font-size: 1.35em;
 	}
-}
-
-.info-section .shapes{
-	z-index: -1;
-	position: absolute;
-	top:0; bottom:0;
-	width: 100%;
-	overflow: hidden;
-	
-	background: darken($black, .075%);
-}
-
-.info-section .shapes div{
-	position: absolute;
-	left: 0; top: 0;
-	height: 100%; width: 100%;
-	
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 200px;
-	
-	opacity: 0;
-	
-	filter: grayscale(1);
-	
-	transform-origin: center;
-}
-
-$shapeAmount: 6;
-
-@for $i from 1 through $shapeAmount{
-
-	$count: $i - 1;
-
-	.info-section .shapes div:nth-child(#{$i}){
-		animation: fall-#{$i} 5s -#{$i}s linear infinite alternate;
-		
-		background-image: url("../../img/cross.png");
-		@if($i % 2 == 0){
-			background-image: url("../../img/buttons.png")
-		}
-
-	}	
-
-	@keyframes fall-#{$i}{
-		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
-		50%{ opacity: 1; }
-		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
-	}
-
 }

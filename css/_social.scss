@@ -1,30 +1,22 @@
 /* _social.scss */
 
 .social{
+	margin-bottom: 20px;
 	overflow: hidden;
-	float: left;
-	width: 40%;
 	
 	border-radius: 2px;
-
-	@media (max-width: 700px){
-		float: none;
-		width: 100%;
-	}
 }
 
 .social li{
 	float: left;
-	width: 50%;
+	width: 25%;
 	
 	list-style: none;
-	
-	@media (max-width: 700px){ width: 25%; }
 }
 
 .social li a{
 	display: block;
-	height: 75px;
+	height: 50px;
 	padding: .25em 0;
 	
 	text-indent: -5432px;
@@ -56,11 +48,11 @@
 
 .social li .steam{
 	background-image: url('../../img/steam.svg');
-	background-color: lighten($black, 5%);;
+	background-color: lighten($black, 8%);
 }
 
 .social li .steam:hover{
-	background-color: lighten($black, 7%);
+	background-color: lighten($black, 10%);
 }
 
 .social li .google{

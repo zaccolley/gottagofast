@@ -1,6 +1,7 @@
 /* _account.scss */
 
 .account{
+	backface-visibility: hidden;
 	z-index: 1337;
 	position: fixed;
 	padding: 1em;
@@ -9,7 +10,7 @@
 	
 	color: lighten($black, 15%);
 	
-	background: darken($white, 15%);
+	background: darken($white, 5%);
 	
 	transition: transform .5s;
 
