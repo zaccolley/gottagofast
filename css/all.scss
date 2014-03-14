@@ -34,7 +34,7 @@ li{ list-style-position: inside; }
 
 header{
 	backface-visibility: hidden;
-	z-index: 9001;
+	z-index: 1337;
 	position: fixed;
 	top: 0; left: 0; right: 0;
 	overflow: hidden;
@@ -152,6 +152,7 @@ section p{
 	
 	font-family: $fredoka;
 	font-size: 1.5em;
+	font-weight: 500;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: $white;

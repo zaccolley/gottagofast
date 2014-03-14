@@ -2,17 +2,20 @@
 
 .account{
 	backface-visibility: hidden;
-	z-index: 1337;
+	z-index: 9001;
 	position: fixed;
 	padding: 1em;
-	left: 0; right: 0;
+	top: 25%; right: 25%; left: 25%;
 	overflow: hidden;
 	
 	color: lighten($black, 15%);
 	
 	background: darken($white, 5%);
+	border-radius: 5px;
+	box-shadow: 0 0 100px 500px rgba(0,0,0,.75);
 	
-	transition: transform .5s;
+	transform-origin: top;
+	transition: transform .5s, opacity .5s, box-shadow .5s .25s;
 
 	@media (max-width: 700px){
 		position: absolute;
@@ -21,7 +24,11 @@
 }
 
 .account--hidden{
-	transform: translateY(-150%);
+	opacity: 0;
+	box-shadow: 0 0 100px -100px transparent;
+	
+	transform: scale(.75) rotateX(90deg) translateY(-25%);
+	transition: transform .25s .25s, opacity .25s, box-shadow .25s;
 }
 
 .account form .row {
@@ -70,14 +77,8 @@
 }
 
 .account .buttons{
-	width: 80%;
-	float: right;
+	width: 100%;
 	overflow: hidden;
-
-	@media (max-width: 700px){
-		width: 100%;
-		float: none;
-	}
 }
 
 .account form button{
