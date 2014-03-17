@@ -12,14 +12,21 @@
 	
 	background: darken($white, 5%);
 	border-radius: 5px;
-	box-shadow: 0 0 100px 500px rgba(0,0,0,.75);
+	box-shadow: 0 0 50px  rgba(0,0,0,.25);
 	
-	transform-origin: top;
-	transition: transform .5s, opacity .5s, box-shadow .5s .25s;
+	transform-origin: center;
+	transition: transform .5s, opacity .5s, box-shadow .5s;
 
-	@media (max-width: 700px){
-		position: absolute;
-		padding: .5em 0;
+	@media (max-width: 1200px){
+		right: 15%; left: 15%;
+	}
+
+	@media (max-width: 1000px){
+		right: 10%; left: 10%;
+	}
+
+	@media (max-width: 800px){
+		right: 5%; left: 5%;
 	}
 }
 
@@ -27,8 +34,18 @@
 	opacity: 0;
 	box-shadow: 0 0 100px -100px transparent;
 	
+	transform-origin: top;
 	transform: scale(.75) rotateX(90deg) translateY(-25%);
 	transition: transform .25s .25s, opacity .25s, box-shadow .25s;
+}
+
+.account--nope{
+	animation: shake .25s;
+}
+
+@keyframes shake{
+	25%{ transform: rotateZ(2.5deg); }
+	75%{ transform: rotateZ(-2.5deg); }
 }
 
 .account form .row {
@@ -44,10 +61,6 @@
 	
 	font-size: 1.5em;
 	color: lighten($black, 10%);
-
-	@media (max-width: 700px){
-		width: 100%;
-	}
 }
 
 .account form input,
@@ -61,6 +74,11 @@
 	font-family: $openSansCon;
 	font-weight: 800;
 	text-transform: uppercase;
+
+	@media (max-width: 700px){
+		width: 100%;
+		padding: .25em 0;
+	}
 }
 
 .account form input{
@@ -69,6 +87,10 @@
 	background: transparentize($black, .9);
 	
 	border-radius: 2px;
+
+	@media (max-width: 700px){
+		width: 100%;
+	}
 }
 
 .account form input[type="password"]{
