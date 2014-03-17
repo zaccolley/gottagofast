@@ -1,24 +1,74 @@
-<main>
+<main class="account-panel">
+<div class="wrapper">
+	
 	<section class="info-section">
-	<div class="shapes">
-		<div></div><div></div><div></div>
-		<div></div><div></div><div></div>
+			<h1>Hey there, {{user.forename}}!</h1>
+	</section>
+
+	<aside>
+		<section>
+			<h1>Your</h1>
+		<ul>
+			<li><a href="#">Details</a></li>
+			<li><a href="#">Accounts</a></li>
+			<li><a href="#">Games</a></li>
+			<li><a href="#">Settings</a></li>
+		</ul>
+		</section>
+	</aside>
+
+	<div class="content details">
+		
+		<section class="heading">
+			<h1>Details</h1>
+		</section>
+
+		<section>
+		
+			<ul class="details">
+
+				<li class="details-item">
+					<label>Image</label>
+					<div class="image">
+						<div class="image-info">
+							<button>Upload image</button>
+							<p>Try for 400x400 size</p>
+							<p>Image must be smaller than 1TB</p>
+							<p>Accepted file types are .GIF, .PNG and .JPG</p>
+						</div>
+						<img src="http://fillmurray.com/200/200" alt="{{user.username}}'s profile image">
+					</div>
+				</li>
+
+				<li class="details-item">
+					<label>Name</label>
+					<input type="text" value="{{user.forename}} {{user.surname}}">
+					<p class="hint">Your IRL name</p>
+				</li>
+
+				<li class="details-item">
+					<label>Username</label>
+					<input type="text" value="{{user.username}}">
+					<p class="hint">You log-in with this</p>
+				</li>
+
+				<li class="details-item">
+					<label>Bio</label>
+					<textarea>{{user.bio}}</textarea>
+					<p class="hint">This will display on your profile page.</p>
+				</li>
+
+				<li class="details-item details-save">
+					<input type="submit" value="Save changes">
+				</li>
+
+			</ul>
+
+			<p></p>
+		
+		</section>
+		
 	</div>
 
-	<div class="wrapper">
-		<div class="desc">
-			<h1>Welcome back, {{user}}!</h1>
-		</div>
-	</div>
-	</section>
-	
-	<section>
-	<div class="wrapper">	
-	
-		<h1>Your details</h1>
-
-		<p>You can edit your details here. Wow, how amazing.</p>
-	
-	</div>
-	</section>
+</div>
 </main>
