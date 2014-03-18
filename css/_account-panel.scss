@@ -1,0 +1,198 @@
+/* _account-panel.scss */
+
+.account-panel {
+	overflow: hidden;
+	background: $black;
+}
+
+.account-panel .info-section h1{
+	display: block;
+	padding: .25em 0;
+	margin-right: .5em;
+
+	font-size: 2.75em;
+	color: $white;
+
+	text-align: right;
+}
+
+.account-panel aside{
+	padding: 1em;
+	float: left;
+	width: 30%;
+	
+	text-transform: uppercase;
+	text-align: right;
+	
+	color: $white;
+	background: lighten($black, 5%);
+	
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.account-panel aside h1{
+	padding-bottom: .5em;
+	
+	font-size: 1.5em;
+	font-weight: 500;
+	font-family: $fredoka;
+
+	color: lighten($white, 5%);
+}
+
+.account-panel aside li{
+	padding: .15em 0;
+	
+	font-family: $openSansCon;
+	font-size: 1.5em;
+	font-weight: 800;
+}
+
+.account-panel aside li:nth-child(1) a{ color: $yellow; }
+.account-panel aside li:nth-child(2) a{ color: $red; }
+.account-panel aside li:nth-child(3) a{ color: $blue; }
+.account-panel aside li:nth-child(4) a{ color: $green; }
+
+.account-panel aside li a{
+	color: inherit;
+
+	text-decoration: none;
+}
+
+.account-panel aside li a:hover{ opacity: .9; }
+
+.account-panel .content{
+	float: left;
+	width: 70%;
+	padding: 1em;
+
+	background-color: lighten($white, 1%);
+	border-top-right-radius: 5px;
+}
+
+.account-panel .content .heading h1{
+	width: 100%;
+	padding-bottom: .25em;
+
+	border-bottom: 3px solid #aaa;
+}
+.account-panel .content.details .heading h1{ border-color: lighten($yellow, 25%); }
+
+.account-panel .details-item{
+	overflow: hidden;
+	margin-bottom: .25em;
+
+	font-size: 1.25em;
+}
+
+.account-panel .details-item .image{
+	float: left;
+	width: 70%;
+}
+
+.account-panel .details-item .image img,
+.account-panel .details-item .image-info{
+	float: left;
+	width: 50%;
+}
+
+.account-panel .details-item .image img{
+	display: block;
+}
+
+.account-panel .details-item .image-info{
+	padding-right: .5em;
+}
+
+.account-panel .details-item .image-info button,
+.account-panel .details-item .image-info p{
+	width: 100%;
+	display: block;
+	padding: .5em 0;
+	color: lighten($black, 15%);
+	font-size: .75em;
+}
+
+.account-panel .details-item .image-info button{
+	font-family: $fredoka;
+	font-weight: 100;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+
+.account-panel .details-item label,
+.account-panel .details-item input,
+.account-panel .details-item textarea{
+	width: 100%;
+	padding: .5em;
+	
+	font-weight: 500;
+}
+
+.account-panel .details-item label{
+	float: left;
+	width: 30%;	
+}
+
+.account-panel .details-item input,
+.account-panel .details-item textarea{
+	float: right;
+	width: 70%;
+	
+	font: inherit;
+	font-family: $openSans;
+	color: lighten($black, 10%);
+
+	background: lighten($black, 70%);
+	border: 3px solid lighten($black, 70%);
+
+	transition: border-color .15s;
+}
+
+.account-panel .details-item input:focus,
+.account-panel .details-item textarea:focus{
+	border-color: lighten($black, 60%);
+}
+
+.account-panel .details-item textarea{
+	resize: vertical;
+	
+	font-size: .75em;
+}
+
+.account-panel .details-item p{
+	width: 70%;
+	float: right;
+	padding: .5em;
+
+	font-size: .5em;
+	color: lighten($black, 40%);
+}
+
+.account-panel .details-item:last-child{
+	margin-top: 1em;
+	padding-top: 1em;
+
+	border-top: 2px solid lighten($black, 80%);
+}
+
+.account-panel .details-save input{
+	font-size: 1.15em;
+	font-weight: 100;
+	font-family: $fredoka;
+	color: $white;
+	text-transform: uppercase;
+	
+	background-color: $green;
+	border: none;
+	border-radius: 5px;
+	
+	transition: background .1s;
+}
+
+.account-panel .details-save input:hover{
+	background: lighten(saturate($green, 10%), 5%);
+	
+	cursor: pointer;
+}
