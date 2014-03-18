@@ -83,15 +83,19 @@ $(document).ready(function(){
 
 });
 
-$(window).scroll(function(){ // When the page scrolls
-	$fadeSpeed = 250;
+if($('.info-section .join').length !== 0){
 
-	var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
+	$(window).scroll(function(){ // When the page scrolls
+		$fadeSpeed = 250;
 
-	if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
-		$('nav .join a').removeClass('hidden');  // Show '.toTheTop' triangle
-	}else{
-		// Above 100px
-		$('nav .join a').addClass('hidden');  // Show '.toTheTop' triangle
-	}
-});
+		var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
+
+		if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
+			$('nav .join a').removeClass('hidden');  // Show '.toTheTop' triangle
+		}else{
+			// Above 100px
+			$('nav .join a').addClass('hidden');  // Show '.toTheTop' triangle
+		}
+	});
+
+}

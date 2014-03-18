@@ -17,6 +17,8 @@
 }
 
 .account-panel aside{
+	position: fixed;
+	left: 0;
 	padding: 1em;
 	float: left;
 	width: 30%;
@@ -26,9 +28,6 @@
 	
 	color: $white;
 	background: lighten($black, 5%);
-	
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
 }
 
 .account-panel aside h1{
@@ -63,12 +62,11 @@
 .account-panel aside li a:hover{ opacity: .9; }
 
 .account-panel .content{
-	float: left;
+	float: right;
 	width: 70%;
 	padding: 1em;
 
 	background-color: lighten($white, 1%);
-	border-top-right-radius: 5px;
 }
 
 .account-panel .content .heading h1{
@@ -78,6 +76,9 @@
 	border-bottom: 3px solid #aaa;
 }
 .account-panel .content.details .heading h1{ border-color: lighten($yellow, 25%); }
+.account-panel .content.accounts .heading h1{ border-color: lighten($red, 25%); }
+.account-panel .content.games .heading h1{ border-color: lighten($blue, 25%); }
+.account-panel .content.settings .heading h1{ border-color: lighten($green, 25%); }
 
 .account-panel .details-item{
 	overflow: hidden;
@@ -170,7 +171,7 @@
 	color: lighten($black, 40%);
 }
 
-.account-panel .details-item:last-child{
+.account-panel .details-save{
 	margin-top: 1em;
 	padding-top: 1em;
 
