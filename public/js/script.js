@@ -1,10 +1,13 @@
 $(document).ready(function(){
+	logoInit();
+	navInit();
+	logInPanelInit();
+	cookieBannerInit();
 
-	setTimeout(function(){
-		$('.logo').removeClass('logo-animation');
-	}, 250);
+	anchorPageScrolling();
+});
 
-
+function prototypeFunctionality(){
 	$('li.game').click(function(){
 		$('li.game').each(function(){
 			$(this).addClass('game-unselected');
@@ -12,7 +15,15 @@ $(document).ready(function(){
 		$(this).addClass('game-selected');
 		$(this).removeClass('game-unselected');
 	});
+}
 
+function logoInit(){
+	setTimeout(function(){
+		$('.logo').removeClass('logo-animation');
+	}, 250);
+}
+
+function navInit(){
 	$('.nav-button').click(function(){
 		$('nav ul').toggleClass('hidden');
 
@@ -25,6 +36,38 @@ $(document).ready(function(){
 		$('.account').find('input[type="submit"]').focus();
 		return false;
 	});
+
+	smallJoinButton();
+}
+
+function smallJoinButton(){
+
+	if($('.info-section .join').length !== 0){
+
+		$(window).scroll(function(){ // When the page scrolls
+			$fadeSpeed = 250;
+
+			var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
+
+			if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
+				$('nav .join a').removeClass('hidden');  // Show '.toTheTop' triangle
+			}else{
+				// Above 100px
+				$('nav .join a').addClass('hidden');  // Show '.toTheTop' triangle
+			}
+		});
+
+	}
+
+}
+
+function cookieBannerInit(){
+	$('.cookie-banner').find('button.close').click(function(){
+		$('.cookie-banner').fadeOut();
+	});
+}
+
+function logInPanelInit(){
 
 	$('.account').find('button[type="submit"]').click(function(){
 
@@ -77,25 +120,39 @@ $(document).ready(function(){
 		$('.account').attr('type', 'submit').focus();
 	});
 
-	$('.cookie-banner').find('button.close').click(function(){
-		$('.cookie-banner').fadeOut();
-	});
-
-});
-
-if($('.info-section .join').length !== 0){
-
-	$(window).scroll(function(){ // When the page scrolls
-		$fadeSpeed = 250;
-
-		var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
-
-		if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
-			$('nav .join a').removeClass('hidden');  // Show '.toTheTop' triangle
-		}else{
-			// Above 100px
-			$('nav .join a').addClass('hidden');  // Show '.toTheTop' triangle
-		}
-	});
-
 }
+
+// so anchor links do a smooth scroll
+function anchorPageScrolling(){
+	$('.account-panel aside a').click(function(){ scrollPage(this) });
+}
+
+function scrollPage(clicked){
+	console.log('scrollPage');
+		// Speed of the animation in ms
+		var animationSpeed = 500
+
+		var host = window.location.protocol + "//" + window.location.host;
+		var url = host + window.location.pathname; // Get current URL
+
+		var id = String(clicked).substr(url.length); // Take the URL and leave the # part
+		var strippedId = id.substr(1);
+
+		var title = capsString(strippedId)+" ~ UoPCS - The Gaming Society";
+		
+		document.title = title;
+
+		var postPosition = $(id).position().top; // Finds the position from the top of the window for the heading with the ID 'hrefValue'
+				
+		// How far scrolled down minus the height of the header
+		var scrollAmount = postPosition;
+		// Moves to the top of the post in 'animationSpeed'ms
+		$('body').animate({ scrollTop: scrollAmount }, animationSpeed);
+		
+		event.preventDefault(); // Stops the link's normal behaviour
+}
+
+function capsString(string){
+	return string.substring(0, 1).toUpperCase()+string.substring(1);
+}
+

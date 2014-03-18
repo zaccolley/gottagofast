@@ -28,6 +28,9 @@
 	
 	color: $white;
 	background: lighten($black, 5%);
+
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .account-panel aside h1{
@@ -67,6 +70,11 @@
 	padding: 1em;
 
 	background-color: lighten($white, 1%);
+}
+
+.account-panel .content:first-of-type{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .account-panel .content .heading h1{
