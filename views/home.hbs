@@ -25,36 +25,13 @@
 		<h1>Games</h1>
 		<h2>People are playing</h2>
 		<ol class="games">
+			{{#each games}}
 			<li class='game'>
-				<img alt="Minecraft" class="boxart" src="img/games/minecraft.jpg">
-				<h3>Minecraft</h3>
-				<p>35 players</p>
+				<img alt="Minecraft" class="boxart" src="img/games/{{this.game_id}}.jpg">
+				<h3>{{this.game_name}}</h3>
+				<p>0 players</p>
 			</li>
-			<li class='game'>
-				<img alt="League of Legends" class="boxart" src="img/games/league_of_legends.jpg">
-				<h3>League of Legends</h3>
-				<p>21 players</p>
-			</li>
-			<li class='game'>
-				<img alt="Starcraft II" class="boxart" src="img/games/starcraft2.jpg">
-				<h3>Starcraft II</h3>
-				<p>18 players</p>
-			</li>
-			<li class='game'>
-				<img alt="World of Warcraft" class="boxart" src="img/games/world_of_warcraft.jpg">
-				<h3>World of Warcraft</h3>
-				<p>15 players</p>
-			</li>
-			<li class='game'>
-				<img alt="Grand Theft Auto V" class="boxart" src="img/games/grand_theft_auto_v.jpg">
-				<h3>Grand Theft Auto V</h3>
-				<p>11 players</p>
-			</li>
-			<li class='game'>
-				<img alt="Counter Strike" class="boxart" src="img/games/counter_strike.jpg">
-				<h3>Counter Strike</h3>
-				<p>5 players</p>
-			</li>
+			{{/each}}
 		</ol>
 	</div>
 	</section>
