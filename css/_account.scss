@@ -12,7 +12,7 @@
 	
 	background: darken($white, 5%);
 	border-radius: 5px;
-	box-shadow: 0 0 50px  rgba(0,0,0,.25);
+	box-shadow: 0 0 50px rgba(0,0,0,.25);
 	
 	transform-origin: center;
 	transition: transform .5s, opacity .5s, box-shadow .5s;
@@ -32,26 +32,55 @@
 
 .account--hidden{
 	opacity: 0;
-	box-shadow: 0 0 100px -100px transparent;
+	box-shadow: 0 0 50px transparent;
 	
 	transform-origin: top;
 	transform: scale(.75) rotateX(90deg) translateY(-25%);
-	transition: transform .25s .25s, opacity .25s, box-shadow .25s;
+	transition: transform .25s .25s, opacity .25s;
+}
+
+.account--hidden__success{
+	opacity: 0;
+	
+	transform: scale(1.25);
+	transition: transform .25s, opacity .25s;
 }
 
 .account--nope{
-	animation: shake .25s;
+	animation: shake .5s;
 }
 
 @keyframes shake{
-	25%{ transform: rotateZ(2.5deg); }
-	75%{ transform: rotateZ(-2.5deg); }
+	25%{ transform: scale(.95); }
+	50%{ transform: scale(1) rotate(.5deg); }
+	75%{ transform: rotate(-.5deg); }
 }
 
 .account form .row {
 	overflow: hidden;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
+
+.account form .row .hint{
+	width: 80%;
+	float: right;
+	padding: .25em;
+	font-size: .9em;
+	visibility: hidden;
+
+	@media (max-width: 700px){
+		width: 100%;
+	}
+}
+
+.account form .row .hint a{
+	font-weight: 700;
+	color: $red;
+
+	text-decoration: none;
+}
+
+.account form .row .hint a:hover{ opacity: .8; }
 
 .account form label,
 .account form input,
@@ -84,13 +113,21 @@
 .account form input{
 	width: 80%;
 	
-	background: transparentize($black, .9);
+	background: lighten($black, 70%);
 	
 	border-radius: 2px;
+	border: 3px solid blue;
+	border-color: lighten($black, 70%);
+
+	transition:  border-color .25s;
 
 	@media (max-width: 700px){
 		width: 100%;
 	}
+}
+
+.account form input.error{
+	border-color: desaturate($red, 20%);
 }
 
 .account form input[type="password"]{

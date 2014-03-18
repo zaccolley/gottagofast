@@ -26,8 +26,54 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$('.account').find('button[type="submit"]').click(function(){
+
+		$('.account').find('input[name="user"]').removeClass('error');
+		$('.account').find('input[name="pass"]').removeClass('error');
+
+		var userEmpty = $('.account').find('input[name="user"]').val() == "";
+		var passEmpty = $('.account').find('input[name="pass"]').val() == "";
+
+		if(userEmpty || passEmpty){
+
+			if(userEmpty){
+				$('.account').find('input[name="user"]').addClass('error');
+				$('.account').find('input[name="user"] + .hint').css('visibility', 'visible');
+			}
+
+			if(passEmpty){
+				$('.account').find('input[name="pass"]').addClass('error');
+				$('.account').find('input[name="pass"] + .hint').css('visibility', 'visible');
+			}
+
+			$('.account').addClass('account--nope');
+			setTimeout(function(){ $('.account').removeClass('account--nope') }, 500);
+
+		}else{
+			$('.account').addClass('account--hidden__success');
+			setTimeout(function(){ window.location = "/account"; }, 250);
+		}
+
+		return false;
+
+	});
+
 	$('.account').find('button[type="reset"]').click(function(){
 		$('.account').addClass('account--hidden');
+
+		setTimeout(function(){
+
+			$('.account').find('input[name="user"]').val("");
+			$('.account').find('input[name="pass"]').val("");
+
+			$('.account').find('input[name="user"]').removeClass('error');
+			$('.account').find('input[name="pass"]').removeClass('error');
+
+			$('.account').find('input[name="user"] + .hint').css('visibility', 'hidden');
+			$('.account').find('input[name="pass"] + .hint').css('visibility', 'hidden');
+
+		}, 750);
+
 		$('.account').attr('type', 'submit').focus();
 	});
 
