@@ -27,13 +27,13 @@ function navInit(){
 	$('.nav-button').click(function(){
 		$('nav ul').toggleClass('hidden');
 
-		$('.account').addClass('account--hidden');
-		$('.account').attr('type', 'submit').focus();
+		$('.login').addClass('login--hidden');
+		$('.login').attr('type', 'submit').focus();
 	});
 
 	$('.log-in a').click(function(e){
-		$('.account').toggleClass('account--hidden');
-		$('.account').find('input[type="submit"]').focus();
+		$('.login').toggleClass('login--hidden');
+		$('.login').find('input[type="submit"]').focus();
 		return false;
 	});
 
@@ -69,62 +69,62 @@ function cookieBannerInit(){
 
 function logInPanelInit(){
 
-	$('.account').find('button[type="submit"]').click(function(){
+	$('.login').find('button[type="submit"]').click(function(){
 
-		$('.account').find('input[name="user"]').removeClass('error');
-		$('.account').find('input[name="pass"]').removeClass('error');
+		$('.login').find('input[name="user"]').removeClass('error');
+		$('.login').find('input[name="pass"]').removeClass('error');
 
-		var userEmpty = $('.account').find('input[name="user"]').val() == "";
-		var passEmpty = $('.account').find('input[name="pass"]').val() == "";
+		var userEmpty = $('.login').find('input[name="user"]').val() == "";
+		var passEmpty = $('.login').find('input[name="pass"]').val() == "";
 
 		if(userEmpty || passEmpty){
 
 			if(userEmpty){
-				$('.account').find('input[name="user"]').addClass('error');
-				$('.account').find('input[name="user"] + .hint').css('visibility', 'visible');
+				$('.login').find('input[name="user"]').addClass('error');
+				$('.login').find('input[name="user"] + .hint').css('visibility', 'visible');
 			}
 
 			if(passEmpty){
-				$('.account').find('input[name="pass"]').addClass('error');
-				$('.account').find('input[name="pass"] + .hint').css('visibility', 'visible');
+				$('.login').find('input[name="pass"]').addClass('error');
+				$('.login').find('input[name="pass"] + .hint').css('visibility', 'visible');
 			}
 
-			$('.account').addClass('account--nope');
-			setTimeout(function(){ $('.account').removeClass('account--nope') }, 500);
+			$('.login').addClass('login--nope');
+			setTimeout(function(){ $('.login').removeClass('login--nope') }, 500);
 
 		}else{
-			$('.account').addClass('account--hidden__success');
-			setTimeout(function(){ window.location = "/account"; }, 250);
+			$('.login').addClass('login--hidden__success');
+			setTimeout(function(){ window.location = "/login"; }, 250);
 		}
 
 		return false;
 
 	});
 
-	$('.account').find('button[type="reset"]').click(function(){
-		$('.account').addClass('account--hidden');
+	$('.login').find('button[type="reset"]').click(function(){
+		$('.login').addClass('login--hidden');
 
 		setTimeout(function(){
 
-			$('.account').find('input[name="user"]').val("");
-			$('.account').find('input[name="pass"]').val("");
+			$('.login').find('input[name="user"]').val("");
+			$('.login').find('input[name="pass"]').val("");
 
-			$('.account').find('input[name="user"]').removeClass('error');
-			$('.account').find('input[name="pass"]').removeClass('error');
+			$('.login').find('input[name="user"]').removeClass('error');
+			$('.login').find('input[name="pass"]').removeClass('error');
 
-			$('.account').find('input[name="user"] + .hint').css('visibility', 'hidden');
-			$('.account').find('input[name="pass"] + .hint').css('visibility', 'hidden');
+			$('.login').find('input[name="user"] + .hint').css('visibility', 'hidden');
+			$('.login').find('input[name="pass"] + .hint').css('visibility', 'hidden');
 
 		}, 750);
 
-		$('.account').attr('type', 'submit').focus();
+		$('.login').attr('type', 'submit').focus();
 	});
 
 }
 
 // so anchor links do a smooth scroll
 function anchorPageScrolling(){
-	$('.account-panel aside a').click(function(){ scrollPage(this) });
+	$('.login-panel aside a').click(function(){ scrollPage(this) });
 }
 
 function scrollPage(clicked){

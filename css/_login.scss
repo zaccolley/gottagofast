@@ -1,0 +1,171 @@
+/* _login.scss */
+
+.login{
+	backface-visibility: hidden;
+	z-index: 9001;
+	position: fixed;
+	padding: 1em;
+	top: 25%; right: 25%; left: 25%;
+	overflow: hidden;
+	
+	color: lighten($black, 15%);
+	
+	background: darken($white, 5%);
+	border-radius: 5px;
+	box-shadow: 0 0 50px rgba(0,0,0,.25);
+	
+	transform-origin: center;
+	transition: transform .5s, opacity .5s, box-shadow .5s;
+
+	@media (max-width: 1200px){
+		right: 15%; left: 15%;
+	}
+
+	@media (max-width: 1000px){
+		right: 10%; left: 10%;
+	}
+
+	@media (max-width: 800px){
+		right: 5%; left: 5%;
+	}
+}
+
+.login--hidden{
+	opacity: 0;
+	box-shadow: 0 0 50px transparent;
+	
+	transform-origin: top;
+	transform: scale(.75) rotateX(90deg) translateY(-25%);
+	transition: transform .25s .25s, opacity .25s;
+}
+
+.login--hidden__success{
+	opacity: 0;
+	
+	transform: scale(1.25);
+	transition: transform .25s, opacity .25s;
+}
+
+.login--nope{
+	animation: shake .5s;
+}
+
+@keyframes shake{
+	25%{ transform: scale(.95); }
+	50%{ transform: scale(1) rotate(.5deg); }
+	75%{ transform: rotate(-.5deg); }
+}
+
+.login form .row {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.login form .row .hint{
+	width: 80%;
+	float: right;
+	padding: .25em;
+	font-size: .9em;
+	visibility: hidden;
+
+	@media (max-width: 700px){
+		width: 100%;
+	}
+}
+
+.login form .row .hint a{
+	font-weight: 700;
+	color: $red;
+
+	text-decoration: none;
+}
+
+.login form .row .hint a:hover{ opacity: .8; }
+
+.login form label,
+.login form input,
+.login form button{
+	float: left;
+	padding: .5em;
+	
+	font-size: 1.5em;
+	color: lighten($black, 10%);
+}
+
+.login form input,
+.login form button{
+	font-family: $openSans;
+}
+
+.login form label{
+	width: 20%;
+	
+	font-family: $openSansCon;
+	font-weight: 800;
+	text-transform: uppercase;
+
+	@media (max-width: 700px){
+		width: 100%;
+		padding: .25em 0;
+	}
+}
+
+.login form input{
+	width: 80%;
+	
+	background: lighten($black, 70%);
+	
+	border-radius: 2px;
+	border: 3px solid blue;
+	border-color: lighten($black, 70%);
+
+	transition:  border-color .25s;
+
+	@media (max-width: 700px){
+		width: 100%;
+	}
+}
+
+.login form input.error{
+	border-color: desaturate($red, 20%);
+}
+
+.login form input[type="password"]{
+	letter-spacing: .25em;
+	font-weight: 900;
+}
+
+.login .buttons{
+	width: 100%;
+	overflow: hidden;
+}
+
+.login form button{
+	font-family: $fredoka;	
+	color: $white;
+	text-transform: uppercase;
+	
+	transition: opacity .1s;
+}
+
+.login form button:hover{
+	opacity: .9;
+	
+	cursor: pointer;
+}
+
+.login form button[type="submit"]{
+	width: 75%;
+	
+	background: $green;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+.login form button[type="reset"]{
+	width: 25%;
+	
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	background: $red;
+}

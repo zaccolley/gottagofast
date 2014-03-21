@@ -1,171 +1,207 @@
 /* _account.scss */
 
 .account{
-	backface-visibility: hidden;
-	z-index: 9001;
+	overflow: hidden;
+	background: $black;
+}
+
+.account .info-section h1{
+	display: block;
+	padding: .25em 0;
+	margin-right: .5em;
+
+	font-size: 2.75em;
+	color: $white;
+
+	text-align: right;
+}
+
+.account aside{
 	position: fixed;
+	left: 0;
 	padding: 1em;
-	top: 25%; right: 25%; left: 25%;
-	overflow: hidden;
+	float: left;
+	width: 30%;
 	
-	color: lighten($black, 15%);
+	text-transform: uppercase;
+	text-align: right;
 	
-	background: darken($white, 5%);
-	border-radius: 5px;
-	box-shadow: 0 0 50px rgba(0,0,0,.25);
+	color: $white;
+	background: lighten($black, 5%);
+
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.account aside h1{
+	padding-bottom: .5em;
 	
-	transform-origin: center;
-	transition: transform .5s, opacity .5s, box-shadow .5s;
+	font-size: 1.5em;
+	font-weight: 500;
+	font-family: $fredoka;
 
-	@media (max-width: 1200px){
-		right: 15%; left: 15%;
-	}
-
-	@media (max-width: 1000px){
-		right: 10%; left: 10%;
-	}
-
-	@media (max-width: 800px){
-		right: 5%; left: 5%;
-	}
+	color: lighten($white, 5%);
 }
 
-.account--hidden{
-	opacity: 0;
-	box-shadow: 0 0 50px transparent;
+.account aside li{
+	padding: .15em 0;
 	
-	transform-origin: top;
-	transform: scale(.75) rotateX(90deg) translateY(-25%);
-	transition: transform .25s .25s, opacity .25s;
+	font-family: $openSansCon;
+	font-size: 1.5em;
+	font-weight: 800;
 }
 
-.account--hidden__success{
-	opacity: 0;
-	
-	transform: scale(1.25);
-	transition: transform .25s, opacity .25s;
-}
+.account aside li:nth-child(1) a{ color: $yellow; }
+.account aside li:nth-child(2) a{ color: $red; }
+.account aside li:nth-child(3) a{ color: $blue; }
+.account aside li:nth-child(4) a{ color: $green; }
 
-.account--nope{
-	animation: shake .5s;
-}
-
-@keyframes shake{
-	25%{ transform: scale(.95); }
-	50%{ transform: scale(1) rotate(.5deg); }
-	75%{ transform: rotate(-.5deg); }
-}
-
-.account form .row {
-	overflow: hidden;
-	margin-bottom: 15px;
-}
-
-.account form .row .hint{
-	width: 80%;
-	float: right;
-	padding: .25em;
-	font-size: .9em;
-	visibility: hidden;
-
-	@media (max-width: 700px){
-		width: 100%;
-	}
-}
-
-.account form .row .hint a{
-	font-weight: 700;
-	color: $red;
+.account aside li a{
+	color: inherit;
 
 	text-decoration: none;
 }
 
-.account form .row .hint a:hover{ opacity: .8; }
+.account aside li a:hover{ opacity: .9; }
 
-.account form label,
-.account form input,
-.account form button{
+.account .content{
+	float: right;
+	width: 70%;
+	padding: 1em;
+
+	background-color: lighten($white, 1%);
+}
+
+.account .content:first-of-type{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.account .content .heading h1{
+	width: 100%;
+	padding-bottom: .25em;
+
+	border-bottom: 3px solid #aaa;
+}
+.account .content.details .heading h1{ border-color: lighten($yellow, 25%); }
+.account .content.accounts .heading h1{ border-color: lighten($red, 25%); }
+.account .content.games .heading h1{ border-color: lighten($blue, 25%); }
+.account .content.settings .heading h1{ border-color: lighten($green, 25%); }
+
+.account .details-item{
+	overflow: hidden;
+	margin-bottom: .25em;
+
+	font-size: 1.25em;
+}
+
+.account .details-item .image{
 	float: left;
+	width: 70%;
+}
+
+.account .details-item .image img,
+.account .details-item .image-info{
+	float: left;
+	width: 50%;
+}
+
+.account .details-item .image img{
+	display: block;
+}
+
+.account .details-item .image-info{
+	padding-right: .5em;
+}
+
+.account .details-item .image-info button,
+.account .details-item .image-info p{
+	width: 100%;
+	display: block;
+	padding: .5em 0;
+	color: lighten($black, 15%);
+	font-size: .75em;
+}
+
+.account .details-item .image-info button{
+	font-family: $fredoka;
+	font-weight: 100;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+
+.account .details-item label,
+.account .details-item input,
+.account .details-item textarea{
+	width: 100%;
 	padding: .5em;
 	
-	font-size: 1.5em;
-	color: lighten($black, 10%);
+	font-weight: 500;
 }
 
-.account form input,
-.account form button{
+.account .details-item label{
+	float: left;
+	width: 30%;	
+}
+
+.account .details-item input,
+.account .details-item textarea{
+	float: right;
+	width: 70%;
+	
+	font: inherit;
 	font-family: $openSans;
-}
+	color: lighten($black, 10%);
 
-.account form label{
-	width: 20%;
-	
-	font-family: $openSansCon;
-	font-weight: 800;
-	text-transform: uppercase;
-
-	@media (max-width: 700px){
-		width: 100%;
-		padding: .25em 0;
-	}
-}
-
-.account form input{
-	width: 80%;
-	
 	background: lighten($black, 70%);
+	border: 3px solid lighten($black, 70%);
+
+	transition: border-color .15s;
+}
+
+.account .details-item input:focus,
+.account .details-item textarea:focus{
+	border-color: lighten($black, 60%);
+}
+
+.account .details-item textarea{
+	resize: vertical;
 	
-	border-radius: 2px;
-	border: 3px solid blue;
-	border-color: lighten($black, 70%);
-
-	transition:  border-color .25s;
-
-	@media (max-width: 700px){
-		width: 100%;
-	}
+	font-size: .75em;
 }
 
-.account form input.error{
-	border-color: desaturate($red, 20%);
+.account .details-item p{
+	width: 70%;
+	float: right;
+	padding: .5em;
+
+	font-size: .5em;
+	color: lighten($black, 40%);
 }
 
-.account form input[type="password"]{
-	letter-spacing: .25em;
-	font-weight: 900;
+.account .details-save{
+	margin-top: 1em;
+	padding-top: 1em;
+
+	border-top: 2px solid lighten($black, 80%);
 }
 
-.account .buttons{
-	width: 100%;
-	overflow: hidden;
-}
-
-.account form button{
-	font-family: $fredoka;	
+.account .details-save input{
+	font-size: 1.15em;
+	font-weight: 100;
+	font-family: $fredoka;
 	color: $white;
 	text-transform: uppercase;
 	
-	transition: opacity .1s;
+	background-color: $green;
+	border: none;
+	border-radius: 5px;
+	
+	transition: background .1s;
 }
 
-.account form button:hover{
-	opacity: .9;
+.account .details-save input:hover{
+	background: lighten(saturate($green, 10%), 5%);
 	
 	cursor: pointer;
-}
-
-.account form button[type="submit"]{
-	width: 75%;
-	
-	background: $green;
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
-}
-
-.account form button[type="reset"]{
-	width: 25%;
-	
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
-	background: $red;
 }

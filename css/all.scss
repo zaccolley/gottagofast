@@ -108,7 +108,7 @@ $shapeAmount: 6;
 	min-height: $headerHeight;
 }
 
-@import "account";
+@import "login";
 @import "logo";
 @import "nav";
 
@@ -211,4 +211,4 @@ section p{
 @import 'footer';
 @import 'cookie-banner';
 
-@import 'account-panel';
+@import 'account';
