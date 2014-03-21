@@ -24,12 +24,11 @@ li{ list-style-position: inside; }
 
 .wrapper{
 	padding: 0 .5em;
-	width: 70%;
+	width: 80%;
 	margin: 0 auto;
 
-	@media (max-width: 1200px){ width: 80%; }
-	@media (max-width: 1000px){ width: 90%;	}
-	@media (max-width:  800px){ width: 100%; }
+	@media (max-width: 1200px){ width: 90%; }
+	@media (max-width: 1000px){ width: 100%; }
 }
 
 header{
