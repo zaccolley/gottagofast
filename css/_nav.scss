@@ -14,7 +14,7 @@ nav{
 nav ul{
 	@media (max-width: 700px){
 		position: absolute;
-		top: 0; right: 10%; bottom: 0; left: 0;
+		top: 0; bottom: 0; left: 0;
 
 		padding: 10px;
 		
@@ -44,6 +44,9 @@ nav li{
 		padding: 0 .5em;
 		
 		background: $white;
+	}
+	@media (max-width: 400px){
+		font-size: .8em;
 	}
 }
 
