@@ -23,9 +23,7 @@ var express = require('express'),
 //lets try some SQL BS
 var connection = mysql.createConnection({
         host     : 'localhost',
-        port     : '8889',
-        user     : 'root',
-        password : 'root'
+        user     : 'upgs'
 });
 
 connection.query('CREATE DATABASE IF NOT EXISTS upgs', function (err) {
