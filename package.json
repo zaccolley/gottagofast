@@ -12,10 +12,11 @@
     "grunt-csso": "~0.5.3",
     "grunt-html": "~0.3.4",
     "grunt-contrib-jshint": "~0.8.0",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "nodemon": "~1.0.17"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "build": "grunt"
   },
   "dependencies": {
