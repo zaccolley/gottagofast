@@ -74,8 +74,6 @@ main{
 	
 	opacity: 0;
 	
-	filter: grayscale(1);
-	
 	transform-origin: center;
 }
 
@@ -98,7 +96,7 @@ $shapeAmount: 6;
 	@keyframes fall-#{$i}{
 		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
 		50%{ opacity: 1; }
-		100%{ filter: grayscale(0); transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
+		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
 	}
 
 }
