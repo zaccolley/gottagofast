@@ -2,17 +2,24 @@
 <div class="wrapper">
 		
 	<a href="/" class=""><h1 class="logo logo-animation">UPGS</h1></a>
-	<nav>
+	<nav {{#if loggedin}}class="logged-in"{{/if}}>
 		<ul class="hidden">
+			{{#unless loggedin}}
 			<li class="join">
 				<a class="hidden" href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join!</a>
 			</li>
+			{{/unless}}
 			<li><a href="#events">Events</a></li>
 			<li><a href="#games">Games</a></li>
 			<li><a href="#servers">Servers</a></li>
 			{{#if loggedin}}
-				<li class='loggedin'>
-					<a href="/account">Account</a>
+				<li class='log-in--logged-in'>
+					<a href="/account">
+						<span class="text">{{user.username}}</span>
+						<span class="avatar">
+							<img src="http://lorempizza.com/32/32" alt="{{user.username}}'s profile image">
+						</span>
+					</a>
 				</li>
 			{{else}}
 				<li class="log-in">
