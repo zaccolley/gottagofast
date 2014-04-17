@@ -10,9 +10,8 @@
 			<h1>{{user.username}}'s</h1>
 		<ul>
 			<li><a href="#details">Details</a></li>
-			<li><a href="#accounts">Accounts</a></li>
 			<li><a href="#games">Games</a></li>
-			<li><a href="#settings">Settings</a></li>
+			<li><a href="#accounts">Accounts</a></li>
 		</ul>
 		</section>
 	</aside>
@@ -24,43 +23,44 @@
 		</section>
 
 		<section>
+
+
+			<img src="http://fillmurray.com/200/200" alt="{{user.username}}'s profile image">
+
+			<p>Name: {{user.forename}} {{user.surname}}</p>
+			<p>Username: {{user.username}}</p>
+			<p>Bio: {{user.bio}}</p>
 		
+		</section>
+		
+	</div>
+
+	<div class="content games" id="games">
+		
+		<section class="heading">
+			<h1>Games</h1>
+		</section>
+
+		<section>
+
 			<ul class="details">
 
 				<li class="details-item">
-					<label>Image</label>
-					<div class="image">
-						<div class="image-info">
-							<button>Upload image</button>
-							<p>Try for 400x400 size</p>
-							<p>Image must be smaller than 1TB</p>
-							<p>Accepted file types are .GIF, .PNG and .JPG</p>
-						</div>
-						<img src="http://fillmurray.com/200/200" alt="{{user.username}}'s profile image">
-					</div>
+					<label>Test detail</label>
+					<input type="text" value="Test">
 				</li>
 
 				<li class="details-item">
-					<label>Name</label>
-					<input type="text" value="{{user.forename}} {{user.surname}}">
-					<p class="hint">Your IRL name</p>
+					<label>Test detail</label>
+					<input type="text" value="Test">
 				</li>
 
 				<li class="details-item">
-					<label>Username</label>
-					<input type="text" value="{{user.username}}">
-					<p class="hint">You log-in with this</p>
-				</li>
-
-				<li class="details-item">
-					<label>Bio</label>
-					<textarea>{{user.bio}}</textarea>
-					<p class="hint">This will display on your profile page.</p>
+					<label>Test detail</label>
+					<input type="text" value="Test">
 				</li>
 
 			</ul>
-
-			<p></p>
 		
 		</section>
 		
@@ -99,72 +99,6 @@
 			</ul>
 
 			<p></p>
-		
-		</section>
-		
-	</div>
-
-	<div class="content games" id="games">
-		
-		<section class="heading">
-			<h1>Games</h1>
-		</section>
-
-		<section>
-
-			<ul class="details">
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-			</ul>
-		
-		</section>
-		
-	</div>
-
-	<div class="content settings" id="settings">
-		
-		<section class="heading">
-			<h1>Settings</h1>
-		</section>
-
-		<section>
-
-			<ul class="details">
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-				
-				<li class="details-item details-save">
-					<input type="submit" value="Save changes">
-				</li>
-
-			</ul>
 		
 		</section>
 		

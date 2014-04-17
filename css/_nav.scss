@@ -2,7 +2,6 @@
 
 nav{
 	width: 70%;
-	padding-left: 5%;
 	
 	@media (max-width: 700px){
 		padding: 10px;
@@ -37,7 +36,10 @@ nav li{
 	text-transform: uppercase;
 
 	list-style: none;
-	
+
+	@media (max-width: 900px){
+		padding: 1em .25em;
+	}	
 	@media (max-width: 700px){
 		width: (100%/4);
 		min-height: 30px;
@@ -50,13 +52,9 @@ nav li{
 	}
 }
 
-nav.logged-in li{
-	width: (100%/4);
-}
-
 nav li a{
 	display: block;
-	padding: 10px 5px;
+	padding: .5em .25em;
 	
 	color: lighten($black, 50%);
 	text-decoration: none;
@@ -75,18 +73,32 @@ nav li a{
 
 nav li a:hover{
 	color: lighten($black, 60%);
-	
 }
 
 nav .log-in a,
-nav .log-in--logged-in a{
+nav .log-out a{
+	text-align: right;
+	
 	border: none;
+	border-left: 2px solid;
 	border-radius: 0;
+}
+
+nav .log-out{
+	width: 15%;
+	padding-left: 0;
+}
+
+nav .log-in--logged-in{
+	width: 25%;
 }
 
 nav .log-in--logged-in a{
 	overflow: hidden;
 	padding: 0;
+	
+	border: none;
+	border-radius: 0;
 }
 
 nav .log-in--logged-in a .text,
@@ -95,20 +107,18 @@ nav .log-in--logged-in a .avatar{
 }
 
 nav .log-in--logged-in a .text{
-	width: 66.66%;
-	padding: .75em .25em;
+	padding: .5em .25em;
 
 	text-align: right;
 }
 
 nav .log-in--logged-in a .avatar{
-	width: 33.33%;
+	padding-left: .25em;
+	max-width: 50%;
 	overflow: hidden;
-	padding: .25em;	
 }
 
 nav .log-in--logged-in a .avatar img{
-	float: right;
 	max-width: 100%;
 	max-height: 100%;
 
