@@ -129,9 +129,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // command line usage
-    grunt.registerTask('default', ['concat', 'uglify', 'sass', 'autoprefixer', 'csso', 'imagemin']); // 'grunt'
-    grunt.registerTask('image-compress', ['imagemin']); // 'grunt image-compress'
+    grunt.registerTask('build', ['concat', 'uglify', 'sass', 'autoprefixer', 'csso', 'imagemin']); // 'grunt'
     grunt.registerTask('lint', ['jshint', 'htmllint']); // 'grunt lint'
-    grunt.registerTask('dev', ['watch']); // 'grunt dev'
+    grunt.registerTask('default', ['build', 'watch']); // 'grunt dev'
 
 };
