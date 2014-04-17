@@ -69,7 +69,7 @@ function cookieBannerInit(){
 
 function logInPanelInit(){
 
-	$('.login').find('button[type="submit"]').click(function(){
+	$('.login').find('button[type="submit"]').click(function(e){
 
 		$('.login').find('input[name="user"]').removeClass('error');
 		$('.login').find('input[name="pass"]').removeClass('error');
@@ -93,28 +93,27 @@ function logInPanelInit(){
 			setTimeout(function(){ $('.login').removeClass('login--nope') }, 500);
 
 		}else{
-			$('.login').addClass('login--hidden__success');
-			//setTimeout(function(){ window.location = "/login"; }, 250);
+
 			var params = {
 
 				user: $('.login').find('input[name="user"]').val(),
 				pass: $('.login').find('input[name="pass"]').val()
 
 			};
+			
 			$.post('/login', params, function(data){
 				console.log('test');
 				if(data == 0){
 					console.log(data);
 				}
 				else{
-					console.log('logged in');
-					$('.log-in').html('<a href="/account">Account</a>');
-					$('.join').addClass('hidden');
+					$('.login').addClass('login--hidden__success');
+					setTimeout(function(){ window.location = ""; }, 250);
 				}
 			});
 		}
 
-		return false;
+		e.preventDefault();
 
 	});
 
