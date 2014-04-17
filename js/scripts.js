@@ -94,7 +94,24 @@ function logInPanelInit(){
 
 		}else{
 			$('.login').addClass('login--hidden__success');
-			setTimeout(function(){ window.location = "/login"; }, 250);
+			//setTimeout(function(){ window.location = "/login"; }, 250);
+			var params = {
+
+				user: $('.login').find('input[name="user"]').val(),
+				pass: $('.login').find('input[name="pass"]').val()
+
+			};
+			$.post('/login', params, function(data){
+				console.log('test');
+				if(data == 0){
+					console.log(data);
+				}
+				else{
+					console.log('logged in');
+					$('.log-in').html('<a href="/account">Account</a>');
+					$('.join').addClass('hidden');
+				}
+			});
 		}
 
 		return false;
