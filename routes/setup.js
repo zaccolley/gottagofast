@@ -3,7 +3,7 @@
  * GET setup page.
  */
 
- //git commit -m "basic sesions, moved dbconnect into utils, setup in /setup
+ //git commit -m "basic sessions, moved dbconnect into utils, setup in /setup, do not add sensitive info, no hashing yet"
 
 exports.show = function(req, res){
 
@@ -29,11 +29,12 @@ exports.show = function(req, res){
 							(6, 'Starcraft 2'),\
 							(7, 'World of Warcraft');");*/
 	  		db.connection.query('CREATE TABLE IF NOT EXISTS user('
+	  			+ 'user_id int(11) NOT NULL AUTO_INCREMENT,'
 	            + 'user_name varchar(60) NOT NULL,'
-	            + 'user_email varchar(60) NOT NULL'
+	            + 'user_email varchar(60) NOT NULL,'
 	            + 'user_handle varchar(60) NOT NULL,'
 	            + 'user_password varchar(32) NOT NULL,'
-	            + 'user_bio` varchar(500) NOT NULL,'
+	            + 'user_bio varchar(500) NOT NULL,'
 	            + 'PRIMARY KEY (user_id),'
 	            + 'UNIQUE KEY user_handle (user_handle)'
 	            +  ')', function (err) {
