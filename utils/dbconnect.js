@@ -1,10 +1,9 @@
 var mysql 	= require('mysql');
-var connection = mysql.createConnection({
-        host     : '',
-        port     : '',
-        user     : '',
-        password : ''
-});
+var dbdetails = require('./dbdetails.js');
+
+// copy dbdetails-template.js to dbdetails.js with your db details
+
+var connection = mysql.createConnection(dbdetails);
 
 connection.query('USE upgs');
 
