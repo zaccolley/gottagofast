@@ -31,6 +31,11 @@
 
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+
+	@media (max-width: 700px){
+		width: 100%;
+		padding: .5em;
+	}
 }
 
 .account aside h1{
@@ -49,6 +54,17 @@
 	font-family: $openSansCon;
 	font-size: 1.5em;
 	font-weight: 800;
+}
+
+.account aside h1,
+.account aside li{
+	@media (max-width: 700px){
+		float: left;
+		width: (100%/5);
+
+		font-size: 1em;
+		text-align: center
+	}
 }
 
 .account aside li:nth-child(1) a{ color: $yellow; }
@@ -70,11 +86,23 @@
 	padding: 1em;
 
 	background-color: lighten($white, 1%);
+
+	@media (max-width: 700px){
+		width: 100%;
+		margin-top: 5em;
+	}
 }
 
 .account .content:first-of-type{
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+}
+
+.account .content:last-of-type{
+	margin-bottom: 400px;
+
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .account .content .heading h1{
@@ -210,9 +238,11 @@
 .account .accounts .details-item{
 	float: left;
 	width: 50%;
+	padding-right: 3em;
 
 	@media (max-width: 700px){
 		width: 100%;
+		padding-right: 0;
 	}
 }
 

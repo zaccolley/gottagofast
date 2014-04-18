@@ -163,7 +163,7 @@ function scrollPage(clicked){
 		var postPosition = $(id).position().top; // Finds the position from the top of the window for the heading with the ID 'hrefValue'
 				
 		// How far scrolled down minus the height of the header
-		var scrollAmount = postPosition + 175;
+		var scrollAmount = postPosition;
 		// Moves to the top of the post in 'animationSpeed'ms
 		$('body').animate({ scrollTop: scrollAmount }, animationSpeed);
 		
