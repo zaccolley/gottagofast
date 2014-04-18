@@ -5,3 +5,6 @@ css/.sass-cache
 
 node_modules/
 npm-debug.log
+
+public/css/*.css
+public/js/*.js
