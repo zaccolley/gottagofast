@@ -21,6 +21,8 @@ function logoInit(){
 	setTimeout(function(){
 		$('.logo').removeClass('logo-animation');
 	}, 250);
+
+	$('body').css('padding-top', $('header').outerHeight());
 }
 
 function navInit(){

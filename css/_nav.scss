@@ -1,6 +1,7 @@
 /* _nav.scss */
 
 nav{
+	float: left; 
 	width: 70%;
 	
 	@media (max-width: 700px){
@@ -11,11 +12,13 @@ nav{
 }
 
 nav ul{
+	padding: 1em;
 	@media (max-width: 700px){
 		position: absolute;
 		top: 0; bottom: 0; left: 0;
 
-		padding: 10px;
+		padding: .5em .25em;
+		background: $white;
 		
 		transition: transform .5s;
 	}
@@ -26,11 +29,12 @@ nav ul.hidden{
 }
 
 nav li{
+	float: left;
 	width: (100%/5);
-	padding: 1em;
+	padding: 0 .75em;
 	
 	font-weight: 600;
-	font-size: 1em;
+	font-size: .9em;
 	font-family: $openSansCon;
 	text-align: center;
 	text-transform: uppercase;
@@ -38,14 +42,12 @@ nav li{
 	list-style: none;
 
 	@media (max-width: 900px){
-		padding: 1em .25em;
+		padding: 0 .25em;
 	}	
 	@media (max-width: 700px){
 		width: (100%/4);
 		min-height: 30px;
-		padding: 0 .5em;
-		
-		background: $white;
+		padding: 0 .25em;
 	}
 	@media (max-width: 400px){
 		font-size: .8em;
@@ -67,7 +69,7 @@ nav li a{
 	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
 
 	@media (max-width: 700px){
-		padding: .25em .5em;
+		padding: .5em;
 	}		
 }
 
@@ -75,13 +77,35 @@ nav li a:hover{
 	color: lighten($black, 60%);
 }
 
+nav .join{
+	@media (max-width: 700px){ display: none; }
+}
+
+nav .join a{
+	width: 70%;
+	margin: 0 auto;
+	
+	font-size: 1em;
+
+	border-color: saturate($green, 10%);
+	border-radius: 5px;
+	
+	transition: opacity .25s, transform .25s;
+}
+
+nav .join a.hidden{
+	opacity: 0;
+	
+	transform: scale(.75);
+}
+
+nav .join a:hover{
+	color: $white;
+}
+
 nav .log-in a,
 nav .log-out a{
-	text-align: right;
-	
-	border: none;
-	border-left: 2px solid;
-	border-radius: 0;
+	border-color: transparent;
 }
 
 nav .log-out{
@@ -94,39 +118,32 @@ nav .log-in--logged-in{
 }
 
 nav .log-in--logged-in a{
+	float: right;
 	overflow: hidden;
 	padding: 0;
+
+	line-height: 2.15em;
+	white-space: nowrap;
 	
-	border: none;
+	text-align: left;
+	text-overflow: ellipsis;
+	text-transform: none;
+
+	border: transparent;
 	border-radius: 0;
 }
 
-nav .log-in--logged-in a .text,
-nav .log-in--logged-in a .avatar{
+nav .log-in--logged-in a img{
 	float: left;
-}
-
-nav .log-in--logged-in a .text{
-	padding: .5em .25em;
-
-	text-align: right;
-}
-
-nav .log-in--logged-in a .avatar{
-	padding-left: .25em;
-	max-width: 50%;
-	overflow: hidden;
-}
-
-nav .log-in--logged-in a .avatar img{
-	max-width: 100%;
-	max-height: 100%;
+	margin-right: .5em;
+	width: 32px;
+	height: 32px;
 
 	border: 2px solid lighten($black, 75%);
 	border-radius: 2px;
 }
 
-nav .log-in--logged-in a:hover .avatar img{
+nav .log-in--logged-in a:hover img{
 	filter: hue-rotate(180deg);
 }
 
@@ -159,29 +176,4 @@ nav .nav-button{
 
 nav .nav-button:hover{
 	opacity: .8;
-}
-
-nav .join{
-	@media (max-width: 700px){ display: none; }
-}
-
-nav .join a{
-	width: 70%;
-	padding: 10px 5px;
-	
-	font-size: 1em;
-
-	border-radius: 5px;
-	
-	transition: opacity .25s, transform .25s;
-}
-
-nav .join a.hidden{
-	opacity: 0;
-	
-	transform: scale(0);
-}
-
-nav .join a:hover{
-	color: $white;
 }

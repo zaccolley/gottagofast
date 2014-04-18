@@ -15,10 +15,8 @@
 			{{#if loggedin}}
 				<li class='log-in--logged-in'>
 					<a href="/account">
-						<span class="text">Account</span>
-						<span class="avatar">
-							<img src="http://lorempizza.com/32/32" alt="{{user.username}}'s profile image">
-						</span>
+						<img src="http://lorempizza.com/32/32" alt="{{user.username}}'s profile image">
+						{{ user.username }}
 					</a>
 				</li>
 				<li class="log-out"><a href="/logout">Logout</a></li>

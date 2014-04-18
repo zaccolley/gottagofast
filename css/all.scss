@@ -1,8 +1,6 @@
 @import "reset";
 @import "colours";
 
-$headerHeight: 70px;
-
 // fonts
 
 $fredoka: 'Fredoka One', Helvetica, Arial, sans-serif;
@@ -10,11 +8,8 @@ $openSans: 'Open Sans', Helvetica, Arial, sans-serif;
 $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 
 body{
-	padding-top: $headerHeight;
 	font-family: $openSans;
 	background: $white;
-
-	@media (max-width: 700px){ padding-top: 0; }
 }
 
 li{ list-style-position: inside; }
@@ -40,8 +35,7 @@ header{
 	transform: translateX(0);
 
 	@media (max-width: 700px){
-		position: relative;
-		height: auto;
+		position: absolute;
 	}
 }
 
@@ -96,11 +90,6 @@ $shapeAmount: 6;
 		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
 	}
 
-}
-
-.logo, nav, nav li{
-	float: left; 
-	min-height: $headerHeight;
 }
 
 @import "login";
