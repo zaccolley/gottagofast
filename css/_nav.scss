@@ -145,6 +145,8 @@ nav .log-in--logged-in a img{
 
 	border: 2px solid lighten($black, 75%);
 	border-radius: 2px;
+
+	transition: -webkit-filter .25s;
 }
 
 nav .log-in--logged-in a:hover img{
