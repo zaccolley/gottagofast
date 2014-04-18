@@ -354,10 +354,14 @@ $nintendo-color: #E4741D;
 .account .accounts .psn button{ color: $psn-color; }
 .account .accounts .nintendo button{ color: $nintendo-color; }
 
-
 .account .accounts button{
 	float: right;
+	padding: 0 .25em;
+
+	font-size: .85em;
 }
+
+.account .accounts button:hover{ color: $white; }
 
 .account .accounts .facebook button:hover{
 	background-color: $facebook-color;
