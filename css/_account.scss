@@ -163,9 +163,9 @@
 	border-radius: 5px;
 }
 
-.account .details-item label,
-.account .details-item input,
-.account .details-item textarea{
+.account .content label,
+.account .content input,
+.account .content textarea{
 	width: 100%;
 	padding: .5em;
 	
@@ -173,13 +173,13 @@
 	color: lighten($black, 10%);
 }
 
-.account .details-item label{
+.account .content label{
 	float: left;
 	width: 30%;	
 }
 
-.account .details-item input,
-.account .details-item textarea{
+.account .content input,
+.account .content textarea{
 	float: right;
 	width: 70%;
 	
@@ -189,22 +189,51 @@
 
 	background: lighten($black, 70%);
 	border: 3px solid lighten($black, 70%);
+	border-radius: 2px;
 
 	transition: border-color .15s;
 }
 
-.account .details-item input:focus,
-.account .details-item textarea:focus{
+.account .content input:focus,
+.account .content textarea:focus{
 	border-color: lighten($black, 60%);
 }
 
-.account .details-item textarea{
+.account .content textarea{
 	resize: vertical;
 	
 	font-size: .75em;
 }
 
-.account .details-item p{
+.account .content select,
+.account .content button{
+	font: inherit;
+	color: inherit;
+	
+	background: $white;
+
+	border: 2px solid;
+	border-radius: 2px;
+}
+
+.account .content select:hover,
+.account .content button:hover{
+	color: $white;
+	background-color: $black;
+	border-color: $black;
+
+	cursor: pointer;
+}
+
+.account .content button{
+	padding: .5em;
+}
+
+.account .content select{	
+	padding: .25em;
+}
+
+.account .hint{
 	width: 70%;
 	float: right;
 	padding: .5em;
@@ -317,17 +346,6 @@ $nintendo-color: #E4741D;
 	background-color: $nintendo-color;
 }
 
-.account .accounts button{
-	float: right;
-	font: inherit;
-	color: inherit;
-	
-	background: $white;
-
-	border: 2px solid;
-	border-radius: 2px;
-}
-
 .account .accounts .facebook button{ color: $facebook-color; }
 .account .accounts .twitter button{ color: $twitter-color; }
 .account .accounts .steam button{ color: $steam-color }
@@ -336,12 +354,9 @@ $nintendo-color: #E4741D;
 .account .accounts .psn button{ color: $psn-color; }
 .account .accounts .nintendo button{ color: $nintendo-color; }
 
-.account .accounts button:hover{
-	color: $white;
-	background-color: $black;
-	border-color: $black;
 
-	cursor: pointer;
+.account .accounts button{
+	float: right;
 }
 
 .account .accounts .facebook button:hover{
@@ -378,3 +393,57 @@ $nintendo-color: #E4741D;
 	background-color: $nintendo-color;
 	border-color: $nintendo-color;
 }
+
+.account .games table,
+.account .games thead,
+.account .games tbody,
+.account .games tfoot,
+.account .games td,
+.account .games tr{
+	width: 100%;
+    display:block;
+}
+
+.account .games table thead{
+	font-weight: 700;
+	font-family: $openSansCon;
+	text-transform: uppercase;
+
+	border-bottom: 2px solid darken($white, 10%);
+}
+
+.account .games table tbody{
+	padding: 1em 0;
+}
+
+.account .games table tr{
+    width: 100%;
+    overflow: hidden;
+}
+
+.account .games table td{
+	float: left;
+	width: 33.33%;
+	padding: .5em;
+}
+
+.account .games table tfoot{
+	position: relative;
+	padding-top: .5em;
+
+	border-top: 2px solid darken($white, 10%);
+}
+
+.account .games table tfoot::before{
+	content: 'Add new game';
+	position: absolute;
+	top: -.75em;
+	padding: 0 .5em;
+
+	font-size: .9em;
+	color: darken($white, 50%);
+
+	background: $white;
+}
+
+
