@@ -30,7 +30,7 @@
 .games-section .game{
 	float: left;
 	position: relative;
-	width: 16.66%;
+	width: (100%/6);
 	padding-right: 1%;
 	
 	list-style: none;
@@ -38,33 +38,38 @@
 	font-size: .8em;
 	color: $white;
 	text-transform: uppercase;
-	text-align: center;
 
-	@media (max-width: 700px){ width: (100%/5);	}
-	@media (max-width: 550px){ width: (100%/4);	}
-	@media (max-width: 400px){ width: (100%/3);	}
-	@media (max-width: 350px){ width: (100%/2);	}
+	@media (max-width: 800px){ width: (100%/5);	}
+	@media (max-width: 700px){ width: (100%/4);	}
+	@media (max-width: 600px){ width: (100%/3);	}
+	@media (max-width: 400px){ width: (100%/2);	}
 }
 
 .games-section .game:nth-child(n+6){
-	@media (max-width: 700px){ display: none; }
+	@media (max-width: 800px){ display: none; }
 }
 
 .games-section .game:nth-child(n+5){
-	@media (max-width: 550px){ display: none; }
+	@media (max-width: 700px){ display: none; }
 }
 
 .games-section .game:nth-child(n+4){
-	@media (max-width: 400px){ display: none; }
+	@media (max-width: 600px){ display: none; }
 }
 
 .games-section .game:nth-child(n+3){
-	@media (max-width: 350px){ display: none; }
+	@media (max-width: 400px){ display: none; }
 }
 
 .games-section .game h3{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: .5em 0;
+
 	font-family: $openSansCon;
 	font-weight: 700;
+	font-size: 1.15em;
 }
 
 .games-section .game:hover{ cursor: pointer; }
