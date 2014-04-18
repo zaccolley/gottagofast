@@ -21,7 +21,7 @@
 	left: 0;
 	padding: 1em;
 	float: left;
-	width: 30%;
+	width: 28%;
 	
 	text-transform: uppercase;
 	text-align: right;
@@ -35,6 +35,8 @@
 	@media (max-width: 700px){
 		width: 100%;
 		padding: .5em;
+
+		border-radius: 0;
 	}
 }
 
@@ -89,16 +91,19 @@
 
 	@media (max-width: 700px){
 		width: 100%;
-		margin-top: 5em;
 	}
 }
 
 .account .content:first-of-type{
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+
+	@media (max-width: 700px){
+		margin-top: 5em;
+	}
 }
 
-.account .content:last-of-type{
+.account .content:last-child{
 	margin-bottom: 400px;
 
 	border-bottom-left-radius: 5px;
@@ -238,7 +243,6 @@
 .account .accounts .details-item{
 	float: left;
 	width: 50%;
-	padding-right: 3em;
 
 	@media (max-width: 700px){
 		width: 100%;
@@ -276,6 +280,7 @@ $steam-color: lighten($black, 8%);
 $google-color: #dd4b39;
 $xbox-color: #52b043;
 $psn-color: #003791;
+$nintendo-color: #E4741D;
 
 .account .accounts .facebook::before{
 	background-image: url('../../img/facebook.png');
@@ -307,6 +312,11 @@ $psn-color: #003791;
 	background-color: $psn-color;
 }
 
+.account .accounts .nintendo::before{
+	background-image: url('../../img/nintendo.png');
+	background-color: $nintendo-color;
+}
+
 .account .accounts button{
 	float: right;
 	font: inherit;
@@ -324,9 +334,12 @@ $psn-color: #003791;
 .account .accounts .google button{ color: $google-color; }
 .account .accounts .xbox button{ color: $xbox-color; }
 .account .accounts .psn button{ color: $psn-color; }
+.account .accounts .nintendo button{ color: $nintendo-color; }
 
 .account .accounts button:hover{
 	color: $white;
+	background-color: $black;
+	border-color: $black;
 
 	cursor: pointer;
 }
@@ -359,4 +372,9 @@ $psn-color: #003791;
 .account .accounts .psn button:hover{ 
 	background-color: $psn-color;
 	border-color: $psn-color;
+}
+
+.account .accounts .nintendo button:hover{ 
+	background-color: $nintendo-color;
+	border-color: $nintendo-color;
 }
