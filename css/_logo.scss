@@ -24,6 +24,10 @@
 	}
 }
 
+.logged-in .logo{
+	width: 20%;
+}
+
 /* old normal background version of logo
 
 .logo{
@@ -63,17 +67,22 @@
 .logo::before{ background-position: left; }
 .logo::after{  background-position: right; }
 
+.logged-in .logo,
 .logo-animation,
 .logo:hover{
 	letter-spacing: -.75em;
 	color: transparent;
 }
 
-.logo-animation::before, .logo:hover::before{
+.logged-in .logo::before,
+.logo-animation::before,
+.logo:hover::before{
 	transform: rotateZ(180deg);
 }
 
-.logo-animation::after, .logo:hover::after{
+.logged-in .logo::after,
+.logo-animation::after,
+.logo:hover::after{
 	transform: rotateZ(-180deg);
 }
 

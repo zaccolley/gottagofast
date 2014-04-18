@@ -1,8 +1,8 @@
-<header>
+<header {{#if loggedin}}class="logged-in"{{/if}}>
 <div class="wrapper">
 		
 	<a href="/" class=""><h1 class="logo logo-animation">UPGS</h1></a>
-	<nav {{#if loggedin}}class="logged-in"{{/if}}>
+	<nav>
 		<ul class="hidden">
 			{{#unless loggedin}}
 			<li class="join">
