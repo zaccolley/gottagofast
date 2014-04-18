@@ -394,14 +394,8 @@ $nintendo-color: #E4741D;
 	border-color: $nintendo-color;
 }
 
-.account .games table,
-.account .games thead,
-.account .games tbody,
-.account .games tfoot,
-.account .games td,
-.account .games tr{
+.account .games table{
 	width: 100%;
-    display:block;
 }
 
 .account .games table thead{
@@ -422,28 +416,31 @@ $nintendo-color: #E4741D;
 }
 
 .account .games table td{
-	float: left;
-	width: 33.33%;
 	padding: .5em;
 }
 
-.account .games table tfoot{
-	position: relative;
-	padding-top: .5em;
-
-	border-top: 2px solid darken($white, 10%);
+.account .games .dataTables_length{
+	float: left;
+	width: 50%;
 }
 
-.account .games table tfoot::before{
-	content: 'Add new game';
-	position: absolute;
-	top: -.75em;
-	padding: 0 .5em;
+.account .games .dataTables_filter{
+	float: right;
+	width: 50%;
+}
 
-	font-size: .9em;
-	color: darken($white, 50%);
+.account .games .dataTables_length label,
+.account .games .dataTables_filter label{
+	width: 100%;
+}
 
-	background: $white;
+.account .games .dataTables_info{
+	padding: .5em;
+
+	text-align: center;
+	color: lighten($black, 15%);
+
+	border-top: 2px solid darken($white, 10%);
 }
 
 

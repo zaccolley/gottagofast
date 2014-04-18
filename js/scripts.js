@@ -3,9 +3,18 @@ $(document).ready(function(){
 	navInit();
 	logInPanelInit();
 	cookieBannerInit();
+	dataTablesInit();
 
 	anchorPageScrolling();
 });
+
+function dataTablesInit(){
+	$('.account .games table').dataTable({
+		"bScrollInfinite": true,
+		"bScrollCollapse": true,
+		"sScrollY": "200px"
+    });
+}
 
 function prototypeFunctionality(){
 	$('li.game').click(function(){
