@@ -12,6 +12,8 @@ body{
 	background: $white;
 }
 
+a{ text-decoration: none; }
+
 li{ list-style-position: inside; }
 
 .wrapper{
@@ -41,55 +43,6 @@ header{
 
 main{
 	position: relative;
-}
-
-
-.shapes{
-	z-index: -1;
-	position: absolute;
-	top:0; bottom:0;
-	width: 100%;
-	overflow: hidden;
-	
-	background: darken($black, .075%);
-}
-
-.shapes div{
-	position: absolute;
-	left: 0; top: 0;
-	height: 100%; width: 100%;
-	
-	background-repeat: no-repeat;
-	background-position: left center;
-	background-size: 200px;
-	
-	opacity: 0;
-	
-	transform-origin: center;
-}
-
-$shapeAmount: 6;
-
-@for $i from 1 through $shapeAmount{
-
-	$count: $i - 1;
-
-	.shapes div:nth-child(#{$i}){
-		animation: fall-#{$i} 10s -#{$i}s linear infinite alternate;
-		
-		background-image: url("../../img/cross.png");
-		@if($i % 2 == 0){
-			background-image: url("../../img/buttons.png")
-		}
-
-	}	
-
-	@keyframes fall-#{$i}{
-		0%{ transform: translateY(-100%) translateX((100%/$shapeAmount) * $count); }
-		50%{ opacity: 1; }
-		100%{ transform: translateY(100%) translateX((100%/$shapeAmount) * $count); }
-	}
-
 }
 
 @import "login";
@@ -126,35 +79,17 @@ section p{
 
 .info-section,
 .games-section{
+	background: $black;
 	color: $white;
 }
 
-.join a{
-	display: block;
-	padding: .5em;
-	
-	font-family: $fredoka;
-	font-size: 1.5em;
-	font-weight: 500;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: $white;
-	
-	background: saturate($green, 10%);
-	border-radius: 2px;
-	
-	transition: background .1s;
-}
+@import 'buttons';
 
-.join a:hover{
-	background: lighten(saturate($green, 10%), 5%);
-	
-	cursor: pointer;
-}
+@import 'join';
 
 @import 'info';
 
-@import 'social';
+@import 'social-links';
 @import 'games';
 @import 'servers';
 

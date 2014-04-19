@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="A place within Portsmouth where gamers of all types can meet. We are here to promote gaming to everyone.">
-	<meta name="keywords" content="UPGS, University of Portsmouth Gaming Society, Gaming Society, university, society, portsmouth, gaming, computer games">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<!-- Open Graph details -->
@@ -22,22 +21,7 @@
 	<script type="text/javascript" src="../js/html5shiv/html5shiv.js"></script>
 </head>
 <body>
-	<div class="login login--hidden">	
-		<form action="/login">
-			<div class="row">
-				<label>Username</label><input type="text" name="user">
-				<p class="hint">Not a member? <a href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Sign up</a></p>
-			</div>
-			<div class="row">
-				<label>Password</label><input type="password" name="pass">
-				<p class="hint"><a href="#">Forgot your password?</a></p>
-			</div>
-			<div class="buttons">
-				<button type="reset">Nah</button>
-				<button type="submit">Ok log me in!</button>
-			</div>
-		</form>
-	</div>
+	{{> login}}
 
 	{{> header}}
 

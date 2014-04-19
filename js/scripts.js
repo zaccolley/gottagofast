@@ -36,7 +36,7 @@ function logoInit(){
 
 function navInit(){
 	$('.nav-button').click(function(){
-		$('nav ul').toggleClass('hidden');
+		$('.nav-links').toggleClass('nav-links--hidden');
 
 		$('.login').addClass('login--hidden');
 		$('.login').attr('type', 'submit').focus();
@@ -61,10 +61,10 @@ function smallJoinButton(){
 			var offset = $('.info-section .join').offset().top + $('.info-section .join').height() - $('header').height();
 
 			if( $(window).scrollTop() > offset ) {     // If the page is scrolled down by 100px
-				$('nav .join a').removeClass('hidden');  // Show '.toTheTop' triangle
+				$('nav .join').removeClass('join--hidden');  // Show '.toTheTop' triangle
 			}else{
 				// Above 100px
-				$('nav .join a').addClass('hidden');  // Show '.toTheTop' triangle
+				$('nav .join').addClass('join--hidden');  // Show '.toTheTop' triangle
 			}
 		});
 
