@@ -68,7 +68,7 @@ nav li a{
 	border: 2px solid;
 	border-radius: 5px;
 	
-	transition: padding .1s, border .1s, color .1s;
+	transition: padding .15s, border .15s, color .15s;
 	
 	-webkit-tap-highlight-color: transparent; /* removes tap highlight on touch devices */
 
@@ -78,7 +78,7 @@ nav li a{
 }
 
 nav li a:hover{
-	color: lighten($black, 60%);
+	color: lighten($black, 25%);
 }
 
 nav .join{
@@ -146,17 +146,17 @@ nav .log-in--logged-in a img{
 	border: 2px solid lighten($black, 75%);
 	border-radius: 2px;
 
-	transition: -webkit-filter .25s;
+	transition: -webkit-filter .15s;
 }
 
 nav .log-in--logged-in a:hover img{
 	filter: hue-rotate(180deg);
 }
 
-nav li:nth-child(2) a:hover{ color: $yellow; }
-nav li:nth-child(3) a:hover{ color: $red; }
-nav li:nth-child(4) a:hover{ color: $blue; }
-nav li:nth-child(5) a:hover{ color: $green; }
+nav .nav-link:nth-child(1) a:hover{ color: $green; }
+nav .nav-link:nth-child(2) a:hover{ color: $yellow; }
+nav .nav-link:nth-child(3) a:hover{ color: $red; }
+nav .nav-link:nth-child(4) a:hover{ color: $blue; }
 
 nav .nav-button{
 	float: right;

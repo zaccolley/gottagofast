@@ -9,24 +9,25 @@
 				<a class="hidden" href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join!</a>
 			</li>
 			{{/unless}}
-			<li><a href="#events">Events</a></li>
-			<li><a href="#games">Games</a></li>
-			<li><a href="#servers">Servers</a></li>
+			<li class="nav-link"><a href="#events">Events</a></li>
+			<li class="nav-link"><a href="#games">Games</a></li>
+			<li class="nav-link"><a href="#servers">Servers</a></li>
 			{{#if loggedin}}
-				<li class='log-in--logged-in'>
+				<li class='nav-link log-in--logged-in'>
 					<a href="/account">
 						<img src="http://lorempizza.com/32/32" alt="{{user.username}}'s profile image">
 						{{ user.username }}
 					</a>
 				</li>
-				<li class="log-out"><a href="/logout">Logout</a></li>
+				<li class="nav-link log-out"><a href="/logout">Logout</a></li>
 			{{else}}
-				<li class="log-in">
+				<li class="nav-link log-in">
 					<a href="#login">Log-in</a>
 				</li>
 			{{/if}}
 		</ul>
 		<div class="nav-button">Nav</div>
 	</nav>
+	
 </div>
 </header>
