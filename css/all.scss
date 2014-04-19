@@ -154,40 +154,6 @@ section p{
 
 @import 'info';
 
-.events-section{
-	background: darken($white, 2.5%)
-}
-
-.events{
-	float: left;
-	width: 50%;
-	padding-right: 1em;
-
-	
-	@media (max-width: 400px){
-		margin-bottom: 10px;
-		width: 100%;
-	}
-}
-
-.events p{
-	padding-bottom: .5em;
-}
-
-.events p em{ font-style: italic; }
-.events p strong{ font-weight: 600; }
-
-.current-event{
-	list-style: none;
-}
-
-.current-event li{
-	padding: .25em 0;
-	border-bottom: 2px solid #ddd;
-}
-
-.current-event li:last-child{ border: 0; }
-
 @import 'social';
 @import 'games';
 @import 'servers';
