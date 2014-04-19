@@ -270,37 +270,49 @@
 }
 
 .account .accounts .details-item{
-	float: left;
-	width: 50%;
-
-	@media (max-width: 700px){
-		width: 100%;
-		padding-right: 0;
-	}
+	width: 100%;
+	padding-bottom: .25em;
+	border-bottom: 1px solid darken($white, 10%);
 }
 
-.account .accounts .details-item::before{
+.account .accounts .details-item:last-child{ border-bottom: 0; }
+
+.account .accounts .service,
+.account .accounts .identifier{	
+	padding: 0 1em;
+	
+	font-size: .85em;
+	line-height: 1.75em;
+}
+
+.account .accounts .service{
+	float: left;
+	font-weight: 600;
+	width: 50%;
+	color: lighten($black, 15%);
+}
+
+.account .accounts .identifier{
+	float: right;
+	width: 35%;
+
+	font-size: .85em;
+	font-weight: 500;
+	text-align: right;
+	color: lighten($black, 25%);
+}
+
+.account .accounts .service::before{
 	content: '';
 	float: left;
-	margin-top: .5em;
+	margin-right: .5em;
 	width: 1.75em;
-	min-height: 1.75em;
-	max-width: 15%;
+	height: 1.75em;
 
 	background-size: 90%;
 	background-position: center;
 	background-repeat: no-repeat;
 	border-radius: 2px;
-}
-
-.account .accounts label{
-	float: left;
-	width: 85%;
-	line-height: 1.5em;
-}
-
-.account .accounts label:hover{
-	cursor: pointer;
 }
 
 $facebook-color: #3B5998;
@@ -311,37 +323,37 @@ $xbox-color: #52b043;
 $psn-color: #003791;
 $nintendo-color: #E4741D;
 
-.account .accounts .facebook::before{
+.account .accounts .facebook .service::before{
 	background-image: url('../../img/facebook.png');
 	background-color: $facebook-color;
 }
 
-.account .accounts .twitter::before{
+.account .accounts .twitter .service::before{
 	background-image: url('../../img/twitter.png');
 	background-color: $twitter-color;
 }
 
-.account .accounts .steam::before{
+.account .accounts .steam .service::before{
 	background-image: url('../../img/steam.png');
 	background-color: $steam-color;
 }
 
-.account .accounts .google::before{
+.account .accounts .google .service::before{
 	background-image: url('../../img/google.png');
 	background-color: $google-color;
 }
 
-.account .accounts .xbox::before{
+.account .accounts .xbox .service::before{
 	background-image: url('../../img/xbox.png');
 	background-color: $xbox-color;
 }
 
-.account .accounts .psn::before{
+.account .accounts .psn .service::before{
 	background-image: url('../../img/psn.png');
 	background-color: $psn-color;
 }
 
-.account .accounts .nintendo::before{
+.account .accounts .nintendo .service::before{
 	background-image: url('../../img/nintendo.png');
 	background-color: $nintendo-color;
 }
@@ -356,7 +368,8 @@ $nintendo-color: #E4741D;
 
 .account .accounts button{
 	float: right;
-	padding: 0 .25em;
+	width: 15%;
+	padding: .25em;
 
 	font-size: .85em;
 }
