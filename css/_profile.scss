@@ -1,0 +1,37 @@
+/* _profile.scss */
+
+.profile .content{
+	width: 90%;
+}
+
+.profile .content .details{
+	float: left;
+	width: 40%;
+}
+
+.profile .accounts .games{
+	float: left;
+	width: 60%;
+}
+
+.profile .content .details .profile-img{
+	float: left;
+	width: 50%;
+	padding: 1em;
+
+	background: darken($white, 5%);
+	border-radius: 5px;
+}
+
+.profile .content .details .profile-img img{
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	margin: 0 auto;
+
+	border-radius: 5px;
+}
+
+.profile .content .details p{
+	padding: 0;
+}
