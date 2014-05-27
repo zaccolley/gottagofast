@@ -41,20 +41,20 @@
 				</li>
 
 				<li class="details-item">
-					<label>Name</label>
-					<input type="text" value="{{user.forename}} {{user.surname}}">
+					<label for="profile-name">Name</label>
+					<input id="profile-name" type="text" value="{{user.forename}} {{user.surname}}">
 					<p class="hint">Your IRL name</p>
 				</li>
 
 				<li class="details-item">
-					<label>Username</label>
-					<input type="text" value="{{user.username}}">
+					<label for="profile-user">Username</label>
+					<input id="profile-user" type="text" value="{{user.username}}">
 					<p class="hint">You log-in with this</p>
 				</li>
 
 				<li class="details-item">
-					<label>Bio</label>
-					<textarea>{{user.bio}}</textarea>
+					<label for="profile-bio">Bio</label>
+					<textarea id="profile-bio">{{user.bio}}</textarea>
 					<p class="hint">This will display on your profile page.</p>
 				</li>
 
@@ -241,18 +241,8 @@
 			<ul class="details">
 
 				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
+					<label for="profile-public">Profile public</label>
+					<input id="profile-public" type="checkbox">
 				</li>
 				
 				<li class="details-item details-save">

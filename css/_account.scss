@@ -169,7 +169,6 @@
 	width: 100%;
 	padding: .5em;
 	
-	font-weight: 600;
 	color: lighten($black, 10%);
 }
 
@@ -186,6 +185,7 @@
 	font: inherit;
 	font-family: $openSans;
 	color: lighten($black, 10%);
+	line-height: 1;
 
 	background: lighten($black, 70%);
 	border: 3px solid lighten($black, 70%);
@@ -287,7 +287,6 @@
 
 .account .accounts .service{
 	float: left;
-	font-weight: 600;
 	width: 50%;
 	color: lighten($black, 15%);
 }
@@ -448,6 +447,7 @@ $nintendo-color: #E4741D;
 
 .account .games .dataTables_length label,
 .account .games .dataTables_filter label{
+	line-height: 2.75em;
 	width: 100%;
 }
 
@@ -460,5 +460,28 @@ $nintendo-color: #E4741D;
 
 	border-top: 2px solid darken($white, 10%);
 }
+
+.account .games .dataTable td a{
+	padding: .25em .5em;
+
+	color: $red;
+	font-size: .75em;
+	text-transform: uppercase;
+
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+.account .games .dataTable td a:hover{
+	border-color: $red;
+}
+
+.account .content input[type="checkbox"]{
+	margin: .75em 0;
+	width: auto;
+	float: none;
+}
+
+
 
 
