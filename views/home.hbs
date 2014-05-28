@@ -8,7 +8,7 @@
 		</div>	
 		{{#unless loggedin}}		
 		<div class="join">
-			<a href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join the society!</a>
+			<a class="btn btn--fill btn--success btn--big" href="http://www.upsu.net/store/product/583-gaming-society-membership-2013-14/">Join the society!</a>
 			<p>Get access to this site and entry to tournaments!</p>
 		</div>
 		{{/unless}}	
@@ -24,8 +24,8 @@
 			{{#each games}}
 			<li class='game'>
 				<img alt="{{this.game_name}}" class="boxart" src="img/games/{{this.game_id}}.jpg">
-				<h3>{{this.game_name}}</h3>
-				<p>0 players</p>
+				<h3 class="game__title">{{this.game_name}}</h3>
+				<p class="game__player-count">0 players</p>
 			</li>
 			{{/each}}
 		</ol>

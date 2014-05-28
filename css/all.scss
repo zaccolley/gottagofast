@@ -7,6 +7,10 @@ $fredoka: 'Fredoka One', Helvetica, Arial, sans-serif;
 $openSans: 'Open Sans', Helvetica, Arial, sans-serif;
 $openSansCon: 'Open Sans Condensed', Helvetica, Arial, sans-serif;
 
+@import 'buttons';
+@import 'typography';
+@import 'forms';
+
 body{
 	font-family: $openSans;
 	background: $white;
@@ -58,11 +62,13 @@ section{
 section h1,
 section h2{
 	display: inline-block;
+	margin: 0;
+	padding-bottom: .5em;
+	
 	font-size: 1.5em;
 	font-weight: 500;
 	text-transform: uppercase;
 	color: #131313;
-	padding-bottom: .5em;
 	
 	@media (max-width: 400px){ font-size: 1.25em; }
 }
@@ -83,8 +89,6 @@ section p{
 	color: $white;
 }
 
-@import 'buttons';
-
 @import 'join';
 
 @import 'info';
@@ -98,3 +102,7 @@ section p{
 
 @import 'account';
 @import 'profile';
+
+.component{
+	padding: 1em 0;
+}

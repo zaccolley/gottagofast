@@ -1,0 +1,195 @@
+/*_typography.scss */
+
+main{
+	font-size: 1em;
+
+	@media (max-width: 1000px){ font-size: .8em; }
+}
+
+main h1, main h2,
+main h3, main h4,
+main h5, main h6,
+main p{
+	margin-bottom: 1em;
+}
+
+main h1,
+main h2,
+main h3{
+	color: $black;
+	font-weight: 400;
+	font-family: $fredoka;
+	text-transform: uppercase;
+	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+main h1{
+	font-size: 2.25em;
+}
+
+main h2{
+	font-size: 1.75em;
+	color: lighten($black, 5%);
+}
+
+main h3{
+	font-size: 1.5em;
+	color: lighten($black, 5%);
+}
+
+main h4,
+main h5,
+main h6{
+	text-transform: uppercase;
+}
+
+main h4{
+	font-weight: 700;
+	font-size: 1.45em;
+	color: lighten($black, 7.5%);
+}
+
+main h5{ 
+	font-weight: 600;
+	font-size: 1.25em;
+	color: lighten($black, 10%);
+}
+
+main h6{
+	font-weight: 500;
+	font-size: .9em;
+	color: lighten($black, 12.5%);
+}
+
+main p{	
+	font-size: 1.25em;
+	line-height: 1.45;
+}
+
+main a{
+	font-weight: 500;
+	
+	color: inherit;
+	text-decoration: none;
+	
+	transition: opacity .15s;
+}
+
+main em{
+	font-style: italic;
+}
+
+main strong{
+	font-weight: bolder;
+}
+
+main hr{
+	margin: 1.5em 0;
+
+	border: 0;
+	border-top: 2px solid lighten($black, 75%);
+}
+
+main blockquote{
+	margin: 1.5em 0;
+	padding: 0 .75em;
+	font-size: 1.35em;
+
+	font-size: 1.35em;
+	font-style: italic;
+	font-family: $fredoka;
+	text-align: center;
+}
+
+main blockquote p{
+	font-size: 2em;
+	line-height: 1.25em;
+	color: lighten(desaturate($red, 25%), 5%);
+}
+
+main blockquote cite{
+	display: block;
+
+	font-size: .65em;
+	color: lighten(desaturate($red, 25%), 5%);
+	text-align: right;
+}
+
+main q{
+	quotes: "“" "”" "‘" "’";
+	
+	font-weight: 500;
+	color: lighten($black, 10%);
+}
+
+main q::before,
+main q::after{
+	vertical-align: -.3em;
+	margin: 0 2px;
+	line-height: 0;
+
+	font-size: 1.25em;
+	font-style: normal;
+	font-weight: 400;
+	font-family: $fredoka;
+	color: inherit;
+}
+
+main q::before{ content: open-quote; }
+main q::after{ content: close-quote; }
+
+main cite::before{
+	content: '—';
+
+	color: inherit;
+}
+
+main cite a{
+	color: inherit;
+	background: none;
+}
+
+main small{
+	font-variant: small-caps;
+	font-size: .85em;
+	font-family: $openSans;
+	text-transform: lowercase;
+}
+
+main code{
+	padding: .75em;
+
+	font-family: monospace;
+	color: $white;
+
+	background: $black;
+
+	border-radius: 5px;
+}
+
+main pre > code{
+	display: block;
+	margin: 1em 0;
+}
+
+$markColour: transparentize(invert($red), .3);
+
+main mark{	
+	background: $markColour;
+	color: $black;
+}
+
+main sup,
+main sub{
+	font-size: .7em;
+}
+
+main sup{
+	vertical-align: super;
+}
+
+main sub{
+	vertical-align: sub;
+}

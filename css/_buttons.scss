@@ -2,36 +2,42 @@
 
 .btn{
 	display: block;
-	font: inherit;
-	color: inherit;
+	font: 1em;
+	color: $black;
 	padding: .5em;
+	margin: .5em 0;
 
 	text-align: center;
 
-	border: 2px solid;
+	background: none;
+
+	border: 2px solid $black;
 	border-radius: 2px;
 
-	transition: opacity .15s;
+	transition: background .25s, color .25s, border .25s;
+	cursor: pointer;
 }
 
-.btn--alt, .btn--primary, .btn--success, .btn--error, .btn--fill{ @extend .btn; }
+.btn--primary{ 	color: $blue;  border-color: $blue; }
+.btn--success{ 	color: $green; border-color: $green; }
+.btn--error{   	color: $red;   border-color: $red; }
 
-.btn--default{ 	color: $black; }
-.btn--alt{ 		color: $white; }
-.btn--primary{ 	color: $blue; }
-.btn--success{ 	color: $green; }
-.btn--error{   	color: $red;   }
+.btn:hover, .btn--fill{ background: $black; border-color: $black; color: $white; }
 
-.btn--fill{ color: $white; }
+.btn--primary:hover, .btn--primary.btn--fill{ 	background: $blue; border-color: $blue; }
+.btn--success:hover, .btn--success.btn--fill{ 	background: $green; border-color: $green; }
+.btn--error:hover, .btn--error.btn--fill{ 		background: $red; border-color: $red; }
 
-.btn--alt--fill, .btn--primary--fill, .btn--success--fill, .btn--error--fill{ @extend .btn--fill; }
+.btn--primary.btn--fill:hover{ 	background: lighten($blue, 10%); border-color: lighten($blue, 10%); }
+.btn--success.btn--fill:hover{ 	background: lighten($green, 10%); border-color: lighten($green, 10%); }
+.btn--error.btn--fill:hover{ 	background: lighten($red, 10%); border-color: lighten($red, 10%); }
 
-.btn--default--fill{ 	background-color: $black; border-color: $black; }
-.btn--alt--fill{ 		background-color: $white; border-color: $white; }
-.btn--primary--fill{ 	background-color: $blue; border-color: $blue; }
-.btn--success--fill{ 	background-color: $green; border-color: $green; }
-.btn--error--fill{ 		background-color: $red; border-color: $red; }
+.btn--small{
+	font-size: .75em;
+	border-width: 1px;
+}
 
-.btn:hover{
-	opacity: .9;
+.btn--big{
+	padding: .75em;
+	font-size: 1.5em;
 }

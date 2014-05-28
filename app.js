@@ -7,6 +7,7 @@ var express = require('express'),
 	routes = require('./routes'),
 	account = require('./routes/account'),
 	index = require('./routes/index'),
+	styleguide = require('./routes/styleguide'),
 	user = require('./routes/user'),
 	setup = require('./routes/setup'),
 	
@@ -40,6 +41,8 @@ app.get('/setup', setup.show);
 //
 
 app.get('/', index.show);
+
+app.get('/styleguide', styleguide.show);
 
 app.get('/login', function(req, res){
 	res.redirect('/');
