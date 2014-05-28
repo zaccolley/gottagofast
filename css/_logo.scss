@@ -3,24 +3,24 @@
 .logo{
 	float: left; 
 	padding: 15px 0;
-	width: 30%;
+	width: 20%;
 
 	font-family: $fredoka;
-	font-size: 40px;
+	font-size: 35px;
 	font-weight: 500;
 	color: $black;
 	
-	line-height: 45px;
+	line-height: 35px;
 	white-space: nowrap;
 	
 	transition: letter-spacing .5s .25s, color .15s .25s;
 
 	@media (max-width: 700px){
-		width: 40%;
-		min-height: 30px;
+		width: 30%;
+		min-height: 25px;
 	
 		font-size: 2em;
-		line-height: 30px;
+		line-height: 25px;
 	}
 }
 
@@ -33,7 +33,7 @@
 	content: '+';
 	
 	display: inline-block;
-	width: 38px; height: 40px;
+	width: 33px; height: 35px;
 	
 	color: transparent;
 	
@@ -44,7 +44,7 @@
 	transform-origin: 50%; /* ensures they spin from the center */
 
 	@media (max-width: 700px){
-		width: 30px; height: 30px;
+		width: 23px; height: 25px;
 	}
 	
 }
