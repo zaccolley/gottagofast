@@ -77,6 +77,7 @@
 .account aside li a{
 	color: inherit;
 
+	font-weight: bolder;
 	text-decoration: none;
 }
 
@@ -123,14 +124,15 @@
 
 .account .details-item{
 	overflow: hidden;
+	padding: 0 .25em;
 	margin-bottom: .25em;
 
 	font-size: 1.25em;
 }
 
 .account .details-item .image{
-	float: left;
-	width: 70%;
+	overflow: hidden;
+	padding: .5em;
 }
 
 .account .details-item .image img,
@@ -141,105 +143,25 @@
 
 .account .details-item .image img{
 	display: block;
+	border-radius: 5px;
 }
 
 .account .details-item .image-info{
 	padding-right: .5em;
 }
 
-.account .details-item .image-info button,
 .account .details-item .image-info p{
 	width: 100%;
 	display: block;
-	padding: .5em 0;
+	padding: .5em;
+	margin: .5em 0;
+
 	color: lighten($black, 15%);
 	font-size: .75em;
 }
 
-.account .details-item .image-info button{
-	font-family: $fredoka;
-	font-weight: 100;
-	text-transform: uppercase;
-	border-radius: 5px;
-}
-
-.account .content label,
-.account .content input,
-.account .content textarea{
+.account .details-item .image-info input[type="file"]{
 	width: 100%;
-	padding: .5em;
-	
-	color: lighten($black, 10%);
-}
-
-.account .content label{
-	float: left;
-	width: 30%;	
-}
-
-.account .content input,
-.account .content textarea{
-	float: right;
-	width: 70%;
-	
-	font: inherit;
-	font-family: $openSans;
-	color: lighten($black, 10%);
-	line-height: 1;
-
-	background: lighten($black, 70%);
-	border: 3px solid lighten($black, 70%);
-	border-radius: 2px;
-
-	transition: border-color .15s;
-}
-
-.account .content input:focus,
-.account .content textarea:focus{
-	border-color: lighten($black, 60%);
-}
-
-.account .content textarea{
-	resize: vertical;
-	
-	font-size: .75em;
-}
-
-.account .content select,
-.account .content button{
-	font: inherit;
-	color: inherit;
-	
-	background: $white;
-
-	border: 2px solid;
-	border-radius: 2px;
-}
-
-.account .content select:hover,
-.account .content button:hover{
-	color: $white;
-	background-color: $black;
-	border-color: $black;
-
-	cursor: pointer;
-}
-
-.account .content button{
-	padding: .5em;
-}
-
-.account .content select{	
-	padding: .25em;
-}
-
-.account .hint{
-	width: 70%;
-	float: right;
-	padding: .5em;
-
-	font-size: .5em;
-	color: lighten($black, 40%);
 }
 
 .account .details-save{
@@ -247,26 +169,6 @@
 	padding-top: 1em;
 
 	border-top: 2px solid lighten($black, 80%);
-}
-
-.account .details-save input{
-	font-size: 1.15em;
-	font-weight: 100;
-	font-family: $fredoka;
-	color: $white;
-	text-transform: uppercase;
-	
-	background-color: $green;
-	border: none;
-	border-radius: 5px;
-	
-	transition: background .1s;
-}
-
-.account .details-save input:hover{
-	background: lighten(saturate($green, 10%), 5%);
-	
-	cursor: pointer;
 }
 
 .account .accounts .details-item{
@@ -279,9 +181,8 @@
 
 .account .accounts .service,
 .account .accounts .identifier{	
-	padding: 0 1em;
+	padding: .25em .75em;
 	
-	font-size: .85em;
 	line-height: 1.75em;
 }
 
@@ -295,7 +196,6 @@
 	float: right;
 	width: 35%;
 
-	font-size: .85em;
 	font-weight: 500;
 	text-align: right;
 	color: lighten($black, 25%);
@@ -357,13 +257,13 @@ $nintendo-color: #E4741D;
 	background-color: $nintendo-color;
 }
 
-.account .accounts .facebook button{ color: $facebook-color; }
-.account .accounts .twitter button{ color: $twitter-color; }
-.account .accounts .steam button{ color: $steam-color }
-.account .accounts .google button{ color: $google-color; }
-.account .accounts .xbox button{ color: $xbox-color; }
-.account .accounts .psn button{ color: $psn-color; }
-.account .accounts .nintendo button{ color: $nintendo-color; }
+.account .accounts .facebook button{ color: $facebook-color; border-color: $facebook-color; }
+.account .accounts .twitter button{ color: $twitter-color; border-color: $twitter-color; }
+.account .accounts .steam button{ color: $steam-color;  border-color: $steam-color; }
+.account .accounts .google button{ color: $google-color; border-color: $google-color; }
+.account .accounts .xbox button{ color: $xbox-color; border-color: $xbox-color; }
+.account .accounts .psn button{ color: $psn-color; border-color: $psn-color; }
+.account .accounts .nintendo button{ color: $nintendo-color; border-color: $nintendo-color; }
 
 .account .accounts button{
 	float: right;
@@ -474,12 +374,6 @@ $nintendo-color: #E4741D;
 
 .account .games .dataTable td a:hover{
 	border-color: $red;
-}
-
-.account .content input[type="checkbox"]{
-	margin: .75em 0;
-	width: auto;
-	float: none;
 }
 
 

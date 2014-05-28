@@ -28,10 +28,14 @@
 			<ul class="details">
 
 				<li class="details-item">
-					<label>Image</label>
 					<div class="image">
 						<div class="image-info">
-							<button>Upload image</button>
+
+							<label class="file">
+								<input type="file" id="file">
+								<span class="file-custom"></span>
+							</label>
+
 							<p>Try for 400x400 size</p>
 							<p>Image must be smaller than 1TB</p>
 							<p>Accepted file types are .GIF, .PNG and .JPG</p>
@@ -40,20 +44,20 @@
 					</div>
 				</li>
 
-				<li class="details-item">
-					<label for="profile-name">Name</label>
+				<li class="details-item input--text">
+					<label  class="input--text__label" for="profile-name">Name</label>
 					<input id="profile-name" type="text" value="{{user.forename}} {{user.surname}}">
 					<p class="hint">Your IRL name</p>
 				</li>
 
-				<li class="details-item">
-					<label for="profile-user">Username</label>
+				<li class="details-item input--text">
+					<label class="input--text__label" for="profile-user">Username</label>
 					<input id="profile-user" type="text" value="{{user.username}}">
 					<p class="hint">You log-in with this</p>
 				</li>
 
-				<li class="details-item">
-					<label for="profile-bio">Bio</label>
+				<li class="details-item input--text">
+					<label class="input--text__label" for="profile-bio">Bio</label>
 					<textarea id="profile-bio">{{user.bio}}</textarea>
 					<p class="hint">This will display on your profile page.</p>
 				</li>
@@ -73,8 +77,6 @@
 		</section>
 
 		<section>
-
-		<p>Here you can add the games you play.</p>
 
 		<table>
 			<thead>
@@ -179,48 +181,48 @@
 
 				<li class="details-item steam">
 					<span class="service">Steam</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">zaccolley</span>	
 				</li>
 
 				<li class="details-item xbox">
 					<span class="service">Xbox Live</span>
-					<button>Link</button>
+					<button class="btn">Link</button>
 				</li>
 
 				<li class="details-item psn">
 					<span class="service">PSN</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">zaccolley</span>	
 				</li>
 
 				<li class="details-item nintendo">
 					<span class="service">3DS Friend Code</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">1234 - 5678 - 9101</span>	
 				</li>
 
 				<li class="details-item nintendo">
 					<span class="service">WiiU Friend Code</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">1234 - 5678 - 9101</span>	
 				</li>
 
 				<li class="details-item facebook">
 					<span class="service">Facebook</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">zaccolley</span>
 				</li>
 
 				<li class="details-item twitter">
 					<span class="service">Twitter</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">zaccolley</span>
 				</li>
 
 				<li class="details-item google">
 					<span class="service">Google +</span>
-					<button>Remove</button>
+					<button class="btn">Remove</button>
 					<span class="identifier">+zaccolley</span>	
 				</li>
 
@@ -241,12 +243,15 @@
 			<ul class="details">
 
 				<li class="details-item">
-					<label for="profile-public">Profile public</label>
-					<input id="profile-public" type="checkbox">
+					<label class="control checkbox">
+						<input type="checkbox">
+						<span class="control-indicator"></span>
+						Make your profile public
+					</label>
 				</li>
 				
 				<li class="details-item details-save">
-					<input type="submit" value="Save changes">
+					<input class="btn btn--success btn--fill" type="submit" value="Save changes">
 				</li>
 
 			</ul>
