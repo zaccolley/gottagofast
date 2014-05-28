@@ -1,173 +1,87 @@
-<main class="account">
+<main class="account game">
 <div class="wrapper">
 	
 	<section class="info-section">
-			<h1>Hey there, {{user.forename}}!</h1>
+		<h1>Minecraft</h1>
+		<p>Minecraft is a sandbox indie game originally created by Swedish programmer Markus "Notch" Persson and later developed and published by Mojang. It was publicly released for the PC on May 17, 2009, as a developmental alpha version and, after gradual updates, was published as a full release version on November 18, 2011.</p>
 	</section>
 
 	<aside>
 		<section>
-			<h1>{{user.username}}'s</h1>
-		<ul>
-			<li><a href="#details">Details</a></li>
-			<li><a href="#accounts">Accounts</a></li>
-			<li><a href="#games">Games</a></li>
-			<li><a href="#settings">Settings</a></li>
-		</ul>
-		</section>
+			<img src="http://localhost:3000/img/games/5.jpg" alt="Minecraft">
+			<p>0 Players</p>
+		
+			<p>Platform:</p>
+			
+			<label class="control radio">
+				<input checked type="radio" id="radio1" name="radio">
+				<span class="control-indicator"></span>
+				All
+			</label>
+			<label class="control radio">
+				<input type="radio" id="radio1" name="radio">
+				<span class="control-indicator"></span>
+				PC
+			</label>
+			<label class="control radio">
+				<input type="radio" id="radio2" name="radio">
+				<span class="control-indicator"></span>
+				Mac
+			</label>
+			<label class="control radio">
+				<input type="radio" id="radio1" name="radio">
+				<span class="control-indicator"></span>
+				Xbox Live
+			</label>
+			<label class="control radio">
+				<input type="radio" id="radio2" name="radio">
+				<span class="control-indicator"></span>
+				PSN
+			</label>
+
+
 	</aside>
 
-	<div class="content details" id="details">
-		
-		<section class="heading">
-			<h1>Details</h1>
-		</section>
+	<div class="content">
 
-		<section>
-		
-			<ul class="details">
+		<div class="input--text">
+			<label class="input--text__label" for="profile-user">Search</label>
+			<input id="profile-user" type="text" value="{{user.username}}">
+		</div>
 
-				<li class="details-item">
-					<label>Image</label>
-					<div class="image">
-						<div class="image-info">
-							<button>Upload image</button>
-							<p>Try for 400x400 size</p>
-							<p>Image must be smaller than 1TB</p>
-							<p>Accepted file types are .GIF, .PNG and .JPG</p>
-						</div>
-						<img src="http://fillmurray.com/200/200" alt="{{user.username}}'s profile image">
-					</div>
-				</li>
 
-				<li class="details-item">
-					<label>Name</label>
-					<input type="text" value="{{user.forename}} {{user.surname}}">
-					<p class="hint">Your IRL name</p>
-				</li>
+		<ul class="players">
+			<li class="player">
+				<img class="player__avatar" src="http://lorempizza.com/64/64" alt="User profile image">
+				<p class="player__username">Username</p>
+				<button class="btn btn--success player__action-btn">Add on Steam</button>
+			</li>
 
-				<li class="details-item">
-					<label>Username</label>
-					<input type="text" value="{{user.username}}">
-					<p class="hint">You log-in with this</p>
-				</li>
+			<li class="player">
+				<img class="player__avatar" src="http://lorempizza.com/64/64" alt="User profile image">
+				<p class="player__username">Username</p>
+				<button class="btn btn--success player__action-btn">Add on Steam</button>
+			</li>
 
-				<li class="details-item">
-					<label>Bio</label>
-					<textarea>{{user.bio}}</textarea>
-					<p class="hint">This will display on your profile page.</p>
-				</li>
+			<li class="player">
+				<img class="player__avatar" src="http://lorempizza.com/64/64" alt="User profile image">
+				<p class="player__username">Username</p>
+				<button class="btn btn--success player__action-btn">Add on Steam</button>
+			</li>
 
-			</ul>
+			<li class="player">
+				<img class="player__avatar" src="http://lorempizza.com/64/64" alt="User profile image">
+				<p class="player__username">Username</p>
+				<button class="btn btn--success player__action-btn">Add on Steam</button>
+			</li>
 
-			<p></p>
-		
-		</section>
-		
-	</div>
+			<li class="player">
+				<img class="player__avatar" src="http://lorempizza.com/64/64" alt="User profile image">
+				<p class="player__username">Username</p>
+				<button class="btn btn--success player__action-btn">Add on Steam</button>
+			</li>
+		</ul>
 
-	<div class="content accounts" id="accounts">
-		
-		<section class="heading">
-			<h1>Accounts</h1>
-		</section>
-
-		<section>
-		
-			<ul class="details">
-
-				<li class="details-item">
-					<label>Facebook</label>
-					<input type="text" value="Linked">
-				</li>
-
-				<li class="details-item">
-					<label>Facebook</label>
-					<input type="text" value="Linked">
-				</li>
-
-				<li class="details-item">
-					<label>Facebook</label>
-					<input type="text" value="Linked">
-				</li>
-
-				<li class="details-item">
-					<label>Facebook</label>
-					<input type="text" value="Linked">
-				</li>
-
-			</ul>
-
-			<p></p>
-		
-		</section>
-		
-	</div>
-
-	<div class="content games" id="games">
-		
-		<section class="heading">
-			<h1>Games</h1>
-		</section>
-
-		<section>
-
-			<ul class="details">
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-			</ul>
-		
-		</section>
-		
-	</div>
-
-	<div class="content settings" id="settings">
-		
-		<section class="heading">
-			<h1>Settings</h1>
-		</section>
-
-		<section>
-
-			<ul class="details">
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-
-				<li class="details-item">
-					<label>Test detail</label>
-					<input type="text" value="Test">
-				</li>
-				
-				<li class="details-item details-save">
-					<input type="submit" value="Save changes">
-				</li>
-
-			</ul>
-		
-		</section>
-		
 	</div>
 
 </div>

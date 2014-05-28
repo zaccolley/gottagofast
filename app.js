@@ -8,6 +8,7 @@ var express = require('express'),
 	account = require('./routes/account'),
 	index = require('./routes/index'),
 	styleguide = require('./routes/styleguide'),
+	game = require('./routes/game'),
 	user = require('./routes/user'),
 	setup = require('./routes/setup'),
 	
@@ -43,6 +44,8 @@ app.get('/setup', setup.show);
 app.get('/', index.show);
 
 app.get('/styleguide', styleguide.show);
+
+app.get('/game', game.show);
 
 app.get('/login', function(req, res){
 	res.redirect('/');

@@ -1,0 +1,40 @@
+/* _players.scss */
+
+.players{
+	margin: 1.5em 0;
+}
+
+.player{
+	overflow: hidden;
+	padding: .25em 0;
+
+	border-bottom: 2px solid darken($white, 5%);
+}
+
+.player:last-child{ border: none; }
+
+.player__avatar,
+.player__username,
+.player__action-btn{
+	float: left;
+}
+
+.player__username,
+.player__avatar{
+	margin: .25em 0;
+}
+
+.player__avatar{
+	width: 5%;
+	border-radius: 2px;
+}
+
+.player__username{
+	width: 80%;
+	padding: .25em .5em;
+	margin: 0;
+}
+
+.player__action-btn{
+	width: 15%;
+}

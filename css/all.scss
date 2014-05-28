@@ -89,6 +89,8 @@ section p{
 	color: $white;
 }
 
+@import 'players';
+
 @import 'join';
 
 @import 'info';
@@ -102,6 +104,8 @@ section p{
 
 @import 'account';
 @import 'profile';
+
+@import 'game';
 
 .component{
 	padding: 1em 0;
