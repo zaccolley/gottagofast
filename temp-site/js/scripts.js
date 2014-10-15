@@ -1,7 +1,11 @@
 (function(){
 	
+	copyButtonSetup();	
+	
 	updateDetails();
-	copyButtonSetup();
+	requestInterval(function(){
+		updateDetails();
+	}, 5000);
 
 })()
 
@@ -21,7 +25,7 @@ function updateDetails(){
 
 		if(info){
 			status = "online";
-			statusStr = "Server online!";
+			statusStr = "Server online! <strong>Version: "+info.Version+"</strong>";
 
 			if(!players){
 				$('.players').html('<li>No players online!</li>');
@@ -35,15 +39,6 @@ function updateDetails(){
 					$('.players').append("<li class='avatar avatar-hidden' style='background-image: url(http://minotar.net/avatar/"+player+"/32);' data-name='"+player+"''>"+player+"</li>");
 				
 				}
-
-				$('.players').find('.avatar').each(function(i, avatar){
-					var time = (i + 1) * 100 + 250;
-
-					setTimeout(function(){
-						$(avatar).removeClass('avatar-hidden');
-					}, time);
-
-				});
 
 			}
 

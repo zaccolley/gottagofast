@@ -138,6 +138,11 @@ body{
 	text-align: right;
 }
 
+.server .status strong{ 
+	color: #555;
+	font-weight: 600;
+}
+
 .server-online .status, .server-offline .status, .server-unknown .status{ opacity: 1; }
 
 .server-online .status{  color: #939740; }
@@ -232,13 +237,6 @@ body{
 	height: 32px;
 	background: url('../img/steve.png');
 	background-repeat: no-repeat;
-	transition: opacity .15s, transform .25s, background .15s;
-	transform-origin: center;
-}
-
-.players .avatar-hidden{
-	opacity: 0;
-	transform: scale(0) rotate(180deg);
 }
 
 .players .avatar:hover{ cursor: help; }
