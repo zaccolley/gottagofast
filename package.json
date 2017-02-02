@@ -2,27 +2,27 @@
   "name": "UPGS-website",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-imagemin": "~0.4.1",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-autoprefixer": "~0.6.5",
-    "grunt-csso": "~0.5.3",
-    "grunt-html": "~0.3.4",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-sass": "^0.12.1",
-    "grunt-cli": "^0.1.13",
-    "nodemon": "~1.0.17"
+    "grunt": "~1.0.1",
+    "grunt-contrib-concat": "~1.0.1",
+    "grunt-contrib-uglify": "~2.0.0",
+    "grunt-contrib-imagemin": "~1.0.1",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-autoprefixer": "~3.0.4",
+    "grunt-csso": "~2.2.0",
+    "grunt-html": "~8.3.1",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-cli": "^1.2.0",
+    "nodemon": "~1.11.0"
   },
   "scripts": {
     "start": "nodemon app.js",
     "build": "grunt"
   },
   "dependencies": {
-    "express": "3.4.8",
+    "express": "4.14.1",
     "express3-handlebars": ">= 0.5.0",
-    "mysql": "~2.0",
-    "connect-redis": "1.4.x"
+    "mysql": "~2.13.0",
+    "connect-redis": "~3.2.0"
   }
 }
